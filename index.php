@@ -9,7 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
-    <title>Gamefinder david</title>
+    <title>Gamefinder</title>
 </head>
 
 <body>
