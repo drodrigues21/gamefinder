@@ -7,7 +7,7 @@ body {
 
 .main_container {
     background-image: linear-gradient(to right top, #592c59, #4f2c5f, #432e64, #322f69, #17316d);
-    height: 100vh;
+    height: 100%;
 }
 
 .header_container {
@@ -238,7 +238,7 @@ body {
     position: relative;
     width: 20px;
     height: 20px;
-
+    margin-bottom: 50px;
 }
 
 .arrows span {
