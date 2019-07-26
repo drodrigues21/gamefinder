@@ -15,12 +15,12 @@ window.addEventListener("click", function(e){
     } 
 }); 
 // tabs 
-// const tabs = document.querySelector(".tabs");
+// var tabs = document.querySelector(".tabs");
 
-// const panels = document.querySelectorAll('.panel');
+// var panels = document.querySelectorAll('.panel');
 // tabs.addEventListener("click", function(e){
 //     if(e.target.tagName == "DIV"){
-//         const targetPanel= document.querySelector(e.target.dataset.target);
+//         var targetPanel= document.querySelector(e.target.dataset.target);
 //         panels.forEach(function(panel){
 //             if(panel == targetPanel){
 //                 panel.classList.add('active');

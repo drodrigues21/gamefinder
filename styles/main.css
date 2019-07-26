@@ -7,7 +7,7 @@ body {
 
 .main_container {
     background-image: linear-gradient(to right top, #592c59, #4f2c5f, #432e64, #322f69, #17316d);
-    height: 100vh;
+    height: 100%;
 }
 
 .header_container {
