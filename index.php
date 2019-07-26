@@ -69,6 +69,9 @@
                 <span></span>
             </div>
         </div>
+        <div id="filterCatContainer">
+            <?php include("subSecFilterCat.php"); ?>
+        </div>
     </div>
 </body>
 
