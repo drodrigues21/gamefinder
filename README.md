@@ -1,3 +1,3 @@
 # gamefinder
 
-//This is the first version of gameFinder.
+//This is the first version of Gamefinder.
