@@ -14,6 +14,7 @@
 
 <body>
     <div class="mainContainer">
+        <section class="firstSectionContainer" >
         <div class="headerContainer">
             <div class="catchFraseContainer">
                 <h3>For all your gaming needs.</h3>
@@ -66,12 +67,24 @@
         </div>
         <div class="arrowsContainer">
             <div class="arrows">
-                <span></span>
+                <a href="index.php#filterCatContainer"><span></span></a>
             </div>
         </div>
-        <div id="filterCatContainer">
-            <?php include("subSecFilterCat.php"); ?>
-        </div>
+        </section>
+        <section class="secondSectionContainer" >
+            <div id="filterCatContainer">
+                <?php include("subSecFilterCat.php"); ?>
+            </div>
+            <div class="footer_container">
+                <nav class="footerNav">
+                   <ul class="footerNavLinks">
+                       <li><a href="#">About Us</a></li>
+                       <li><a href="#">Contact US</a></li>
+                       <li><a href="https://wcoding.com/" target="_blank">Wcoding</a></li>
+                   </ul>
+                </nav>
+            </div>
+        </section>
     </div>
 </body>
 

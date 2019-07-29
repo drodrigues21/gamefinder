@@ -1,4 +1,4 @@
-<form action="submitform.php" method="POST">
+<form action="submitform.php" method="POST" id="subSectionForm">
     <div id="places"> Location :
         <input type="checkbox" name="indoor" value="indoor" id="indoor" /> Indoor
         <input type="checkbox" name="bar" value="bar" id="bar" /> Bar
@@ -26,12 +26,12 @@
         <input type="radio" name="radiogroup" value="yes" id="yes" /> Yes
         <input type="radio" name="radiogroup" value="no" id="no" /> No
     </div>
-    <div class="playerRange"> Amount of players <br>
+    <div id="playerRange"> Amount of players <br>
         2 players<input type="range" min="1" max="20" value="0" class="slider" name="playerRange" id="playerRange">20+
         players
         <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
     </div>
-    <div class="timeRange"> Amount of time <br>
+    <div id="timeRange"> Amount of time <br>
         5 minutes<input type="range" min="1" max="60" value="0" class="slider" name="timeRange"
             onchange="show_value(this.value);" id="timeRange"> 60+ minutes
         <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
@@ -41,8 +41,8 @@
         <input type="radio" name="radiogroup" value="med" id="med" /> Medium Amount
         <input type="radio" name="radiogroup" value="max" id="max" /> High Amount
     </div>
-    <p>
+    <div id="btnFormContainer">
         <button type="submit" id="subscribe">Find!</button>
         <button type="reset" id="reset">Reset</button>
-    </p>
+    </div>
 </form>
