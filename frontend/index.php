@@ -40,31 +40,24 @@
                     <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
                 </div>
                 <button type="submit" class="btn surpriseButton">Surprise me!</button>
-                <button type="submit" class="btn otherButton">What?</button>
+                <!-- <button type="submit" class="btn otherButton">What?</button> -->
             </form>
         </div>
         <div class="topFiveContainer">
             <div class="topFiveHeader">
                 <h3>Top 5 games</h3>
             </div>
-            <div class="topFiveContent">
             <!-- include file of backend +
             do the while and include once-->
-                <div class="topFive">
-                    <?php include("smallcardgame.php") ?>
-                </div>
-                <div class="topFive">
-                    <?php include("smallcardgame.php") ?>
-                </div>
-                <div class="topFive">
-                    <?php include("smallcardgame.php") ?>
-                </div>
-                <div class="topFive">
-                    <?php include("smallcardgame.php") ?>
-                </div>
-                <div class="topFive">
-                    <?php include("smallcardgame.php") ?>
-                </div>
+            <div class="topFiveContent">
+                <?php 
+                    include("../backend/getTopFive.php");
+                    while ($data = $response->fetch()) {
+                        // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
+                        include("smallcardgame.php");
+                    }
+                    // $response->closeCursor();
+                ?>
             </div>
         </div>
         <div class="arrowsContainer">

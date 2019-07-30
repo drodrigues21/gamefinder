@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,13 +11,19 @@ body {
 
 .mainContainer {
     background-image: linear-gradient(to right top, #592c59, #4f2c5f, #432e64, #322f69, #17316d);
+    /* background-image: linear-gradient(to right bottom, #1040ae, #006ccd, #0091d4, #00b1cc, #1ecfc0); */
+    /* background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb); */
+    /* background-image: linear-gradient(to right bottom, #176fb3, #0087c0, #009dbe, #00b1af, #1cc298); */
 }
 
+/* Start of first main section */
 .firstSectionContainer {
     height: 100%;
     margin-bottom: 0.2em;
 }
 
+
+/* Start of header section */
 .headerContainer {
     display: flex;
     flex-direction: column;
@@ -21,14 +31,14 @@ body {
 
 .catchFraseContainer {
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.315);
 }
 
 .catchFraseContainer h3 {
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 1px;
-    color: rgb(255, 255, 255);
+    color: rgb(240, 240, 240);
     margin: 0;
     padding: 10px;
 }
@@ -38,13 +48,10 @@ body {
     justify-content: space-around;
 }
 
-/* .navbarContainer {} */
-
 .navbar {
     display: flex;
     list-style: none;
     margin: 10px 0px 0px 200px;
-
 }
 
 .navbar li {
@@ -53,7 +60,7 @@ body {
 }
 
 .navbar li a {
-    color: #fff;
+    color: rgb(250, 250, 250);
     font-size: 0.8rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -68,7 +75,7 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: rgb(255, 255, 255);
+    background: rgb(240, 240, 240);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 300ms ease-in;
@@ -88,13 +95,17 @@ body {
     transform: scale(0.7);
 }
 
+/* End of header section */
+
+
+/* Start of Search bar section */
 .searchBarContainer {
     width: 700px;
     margin: 0 auto 100px auto;
 }
 
 .searchBarContainer h2 {
-    color: #d1c9d4;
+    color: rgb(235, 235, 235);
     font-size: 2.5rem;
     text-align: center;
     padding-bottom: 50px;
@@ -121,6 +132,7 @@ body {
 .searchField {
     background-color: #ffffff;
     width: 400px;
+    height: 50px;
     display: flex;
     border-radius: 5px;
 }
@@ -136,7 +148,7 @@ body {
 }
 
 .btn {
-    background-color: rgb(9, 133, 112);
+    background-color: rgb(17, 161, 137);
     color: #ffffff;
     padding: 12px 15px;
     border: none;
@@ -148,7 +160,9 @@ body {
 }
 
 .searchButton {
-    margin: 1px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
     padding: 8px 12px;
     border-radius: 25px;
 }
@@ -182,8 +196,12 @@ body {
     transform-origin: left;
 }
 
+/* End of Search bar section */
+
+
+/* Start of Top Five section */
 .topFiveContainer {
-    margin-bottom: 4.5em;
+    margin-bottom: 4em;
 }
 
 .topFiveHeader {
@@ -197,68 +215,75 @@ body {
 .topFiveContent {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .topFive {
     display: flex;
-    min-width: 12%;
-    /* height: 180px; */
+    width: 250px;
+    height: 180px;
     padding: 0.5em;
     cursor: pointer;
-    background-color: rgba(102, 102, 102, 0.3);
-    /* background-color: rgba(230, 230, 230, 0.671); */
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-.topFive img {
-    width: 80px;
-    height: 80px;
-    padding: 0.5em;
-}
-
-.topFiveDescription h3 {
-    font-size: 1.2rem;
-    color: #fff;
-    letter-spacing: 1px;
-    margin-bottom: 1em;
-}
-
-.topFiveDescription p {
-    font-size: 0.8rem;
-    color: #fff;
-    margin-bottom: 5.5em;
-}
-
-.topFiveDescription a {
-    display: inline-block;
-    width: 45px;
-    font-size: 0.9rem;
-    color: #fff;
-    letter-spacing: 1px;
-    text-decoration: none;
-    padding-left: 6em;
-
-}
-
-.topFiveDescription a::after {
-    content: "";
-    display: block;
-    width: 0%;
-    padding-top: 5px;
-    border-bottom: 3px solid #2FFFAD;
-    transition: .5s;
-}
-
-.topFiveDescription a:hover::after {
-    width: 91%;
 }
 
 .topFive:hover {
     transform: scale(1.2);
 }
 
+.topFive img {
+    width: 70px;
+    height: 70px;
+    padding: 0.3em;
+}
+
+.topFiveDescription h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0.4em 0em 1em 0.4em;
+}
+
+.topFiveDescription p {
+    font-size: 0.8rem;
+    color: #fff;
+    margin: 0.4em 0em 7.5em 0.4em;
+}
+
+.topFiveDescription a {
+    position: relative;
+    font-size: 0.8rem;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 8em;
+}
+
+.topFiveDescription a::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease-in;
+}
+
+.topFiveDescription a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background: #2FFFAD;
+}
+
+/* End of Top Five section */
+
+
+/* Start of scroll down arrow section */
 .arrowsContainer {
     width: 100px;
     display: flex;
@@ -266,7 +291,6 @@ body {
     align-items: center;
     margin: 0 auto;
     padding: 2.2em;
-    /* cursor: pointer; */
 }
 
 .arrows {
@@ -308,6 +332,11 @@ body {
     }
 }
 
+/* End of scroll down arrow section */
+/* End of first main section */
+
+
+/* Start of second main section */
 .secondSectionContainer {
     height: 100vh;
     display: flex;
@@ -315,6 +344,8 @@ body {
     justify-content: space-between;
 }
 
+
+/* Start of filter catagories section */
 #filterCatContainer {
     padding-top: 4em;
 }
@@ -324,7 +355,7 @@ body {
     margin: 0 auto;
     padding: 4em;
     border-radius: 5px;
-    box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.75);
     background-color: rgba(255, 255, 255, 0.959);
 }
 
@@ -345,16 +376,6 @@ body {
 
 }
 
-/* #btnFormContainer {
-    background-color: rgb(9, 133, 112);
-    color: #ffffff;
-    padding: 0.7em;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 1em;
-} */
-
 #subscribe,
 #reset {
     background-color: rgb(11, 161, 104);
@@ -371,6 +392,10 @@ body {
     background-color: rgb(3, 117, 74);
 }
 
+/* End of filter catagories section */
+
+
+/* Start of footer section */
 .footer_container {
     height: 80px;
     background-color: rgba(255, 255, 255, 0.3);
@@ -415,3 +440,5 @@ body {
     transform-origin: left;
     background: #2FFFAD;
 }
+
+/* End of footer section */
