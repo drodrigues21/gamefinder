@@ -10,7 +10,7 @@ body {
 }
 
 .mainContainer {
-    background-image: linear-gradient(to right top, #592c59, #4f2c5f, #432e64, #322f69, #17316d);
+    background-image: linear-gradient(to right bottom, #592c59, #4f2c5f, #432e64, #322f69, #17316d);
     /* background-image: linear-gradient(to right bottom, #1040ae, #006ccd, #0091d4, #00b1cc, #1ecfc0); */
     /* background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb); */
     /* background-image: linear-gradient(to right bottom, #176fb3, #0087c0, #009dbe, #00b1af, #1cc298); */
