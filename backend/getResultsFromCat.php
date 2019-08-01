@@ -6,10 +6,9 @@ $drink = isset($_POST['radiogroup1']) ? $_POST['radiogroup1'] : 2; // show all r
 $players = isset($_POST['anyP']) ? 'anyP' : htmlentities($_POST['playerRange']);
 $time = isset($_POST['anyT']) ? 'anyT' : htmlentities($_POST['timeRange']);
 $prep = isset($_POST['radiogroup2']) ? $_POST['radiogroup2'] : null;
-
 // Creation of the query
-$query = "SELECT DISTINCT(name), isDrink, minP, maxP, minT, maxT, prep FROM games g WHERE 1";
-
+$query = "SELECT DISTINCT(name), isDrink, minP, maxP, shortTxt, fullTxt, minT, maxT, img, prep, rating FROM games g WHERE 1";
+$subquery = "";
 // Location (Need to add IN or ( OR ))
 if ($locations and count($locations) >= 1) {
     $subquery = " AND ";
@@ -59,14 +58,10 @@ if ($prep == 'min') {
     $subquery .= " AND g.prep IN ('$prep','min', 'med')";
 }
 
-// BUGS
-// 1 sliders are always passing a value
-// 2 search filters not interacting as intended
-
 // Continue queries
 $query .= $subquery;
 
-echo "</br>$query</br>";
+// echo "</br>$query</br>";
 $response = $db->query($query);
 
 require_once("displayResults.php");
