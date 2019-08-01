@@ -1,5 +1,5 @@
 <h3>Find your game</h3>
-<form action="./backend/getResultsFromCat.php" method="POST" id="filterForm">
+<form action="../backend/getResultsFromCat.php" method="POST" id="filterForm">
     <div id="filterFormContainer">
         <div class="leftSideForm">
             <!-- <p>Location:</p> -->
@@ -40,11 +40,11 @@
                             <label for="beach"><span></span>Beach</label>
                         </div>
                         <div class="checkBoxStyle">
-                            <input type="checkbox" name="location[]" value="car" id="car" /> 
+                            <input type="checkbox" name="location[]" value="car" id="car" />
                             <label for="car"><span></span>Car</label>
                         </div>
                         <div class="checkBoxStyle">
-                            <input type="checkbox" name="location[]" value="plane" id="plane" /> 
+                            <input type="checkbox" name="location[]" value="plane" id="plane" />
                             <label for="plane"><span></span>Plane</label>
                         </div>
                         <div class="checkBoxStyle">
@@ -52,44 +52,37 @@
                             <label for="boat"><span></span>Boat</label>
                         </div>
                         <div class="checkBoxStyle">
-                            <input type="checkbox" name="location[]" value="park" id="park" /> 
+                            <input type="checkbox" name="location[]" value="park" id="park" />
                             <label for="park"><span></span>Park</label>
                         </div>
                     </div>
                 </fieldset>
             </div>
-            <div class="isDrink"> 
+            <div class="isDrink">
                 <p>Drinking game? </p>
                 <div class="radioGroup">
-                    <input type="radio" id="yes" name="playerSelector"><label for="yes">Yes</label><input type="radio" id="no" name="playerSelector"  checked><label for="no">No</label>
+                    <input type="radio" id="yes" name="playerSelector"><label for="yes">Yes</label><input type="radio"
+                        id="no" name="playerSelector" checked><label for="no">No</label>
                 </div>
             </div>
             <div class="playerRangeContainer">
                 <!-- <p>Number of players:</p> -->
                 <div class="rangeSlider">
                     <span id="playerBullet" class="playerSliderLabel">2</span>
-                    <input id="playerRange" class="slider"  name="playerRange" type="range" value="2" min="2" max="20">
+                    <input id="playerRange" class="slider" name="playerRange" type="range" value="2" min="2" max="20">
                 </div>
                 <div class="playerBoxMinmax">
                     <span>2</span>
                     <span>20+</span>
                 </div>
+                <div>
+                    <label><input type="checkbox" name="anyP" value="1" checked> Any amount of players</label>
+                </div>
             </div>
-<<<<<<< HEAD
-        </fieldset>
-    </div>
-    <div id="setting"> Social Setting :
-        <div>
-            <input type="checkbox" name="social[]" value="partyWork" id="partyWork" /> Work Party
-            <input type="checkbox" name="social[]" value="partyFriends" id="partyFriends" /> Party with friends
-            <input type="checkbox" name="social[]" value="family" id="family" /> Family
-            <input type="checkbox" name="social[]" value="date" id="date" /> Date
-=======
->>>>>>> b8d7a916908b10c87759d26aa297f616549c3261
         </div>
         <div class="rightSideForm">
             <div class="settingContainer">
-            <p>Social Setting:</p>
+                <p>Social Setting:</p>
                 <fieldset class="settingFieldset">
                     <legend class="settingLegend"></legend>
                     <div class="settingCheckboxes">
@@ -98,8 +91,8 @@
                             <label for="partyWork"><span></span>Work Party</label>
                         </div>
                         <div class="checkBoxStyle">
-                            <input type="checkbox" name="social[]" value="partyClose" id="partyClose" />
-                            <label for="partyClose"><span></span>Friends Party</label>
+                            <input type="checkbox" name="social[]" value="partyFriends" id="partyFriends" />
+                            <label for="partyFriends"><span></span>Friends Party</label>
                         </div>
                         <div class="checkBoxStyle">
                             <input type="checkbox" name="social[]" value="family" id="family" />
@@ -129,48 +122,29 @@
             <div class="prepAmount">
                 <p>Amount of preparation:</p>
                 <div class="radioGroup">
-                    <input type="radio" id="low" name="prepSelector" checked><label for="low">Low</label><input type="radio" id="medium" name="prepSelector"><label for="medium">Medium</label><input type="radio" id="max" name="prepSelector"><label for="max">Max</label>
+                    <input type="radio" id="low" name="prepSelector" checked><label for="low">Low</label><input
+                        type="radio" id="medium" name="prepSelector"><label for="medium">Medium</label><input
+                        type="radio" id="max" name="prepSelector"><label for="max">Max</label>
                 </div>
             </div>
             <div class="timeRange">
-            <!-- <p>Time:</p> -->
+                <!-- <p>Time:</p> -->
                 <div id="timeSlider" class="range-slider ">
                     <span id="timeBullet" class="timeSliderLabel">5</span>
-                    <input id="timeRange" type="range" min="5" max="60" value="0" class="slider" name="timeRange" onchange="show_value(this.value);">
+                    <input id="timeRange" type="range" min="5" max="60" value="0" class="slider" name="timeRange"
+                        onchange="show_value(this.value);">
                 </div>
                 <div class="timeBoxMinmax">
                     <span>5</span>
                     <span>60+</span>
                 </div>
+                <div>
+                    <label><input type="checkbox" name="anyT" value="1" checked>Any amount of time </label>
+                </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <div id="isDrink"> Looking for a drinking game? :
-        <input type="radio" name="radiogroup1" value="1" id="yes" /> Yes
-        <input type="radio" name="radiogroup1" value="NULL" id="no" /> No
-    </div>
-    <div class="playerRange"> Amount of players <br>
-        2 players<input type="range" min="2" max="21" value="2" class="slider" name="playerRange" id="playerRange">20+
-        players
-        <input type="checkbox" name="anyP" value="anyP" checked> Any amount of players<br>
-        <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
-    </div>
-    <div class="timeRange"> Amount of time <br>
-        5 minutes<input type="range" min="5" max="61" value="2" class="slider" name="timeRange"
-            onchange="show_value(this.value);" id="timeRange"> 60+ minutes
-        <input type="checkbox" name="anyT" value="anyT" checked> Any amount of time<br>
-        <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
-    </div>
-    <div id="prepAmount"> Amount of preparation needed :
-        <input type="radio" name="radiogroup2" value="min" id="min" /> Minimal Amount or Less
-        <input type="radio" name="radiogroup2" value="med" id="med" /> Medium Amount or Less
-        <input type="radio" name="radiogroup2" value="max" id="max" /> High Amount or Less
-    </div>
-    <p>
-=======
     <div class="FromButton">
->>>>>>> b8d7a916908b10c87759d26aa297f616549c3261
         <button type="submit" id="subscribe">Find!</button>
         <button type="reset" id="reset">Reset</button>
     </div>

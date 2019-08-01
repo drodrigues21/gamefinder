@@ -1,6 +1,5 @@
 <?php
 require('dbconnect.php');
-
 $locations = isset($_POST['location']) ? $_POST['location'] : null;
 $socials = isset($_POST['social']) ? $_POST['social'] : null;
 $drink = isset($_POST['radiogroup1']) ? $_POST['radiogroup1'] : 2; // show all results
