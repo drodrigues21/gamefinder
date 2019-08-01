@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
+    <script defer src="../scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
 
@@ -52,9 +53,11 @@
             <div class="topFiveContent">
                 <?php 
                     include("../backend/getTopFive.php");
+                    $count = 0;
                     while ($data = $response->fetch()) {
                         // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
                         include("smallcardgame.php");
+                        $count++;
                     }
                     // $response->closeCursor();
                 ?>
