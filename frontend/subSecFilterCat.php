@@ -27,8 +27,7 @@
     <div id="setting"> Social Setting :
         <div>
             <input type="checkbox" name="social[]" value="partyWork" id="partyWork" /> Work Party
-            <input type="checkbox" name="social[]" value="partyClose" id="partyClose" /> Party with close friends
-            <input type="checkbox" name="social[]" value="partyFar" id="partyFar" /> Party with acquaintances
+            <input type="checkbox" name="social[]" value="partyFriends" id="partyFriends" /> Party with friends
             <input type="checkbox" name="social[]" value="family" id="family" /> Family
             <input type="checkbox" name="social[]" value="date" id="date" /> Date
         </div>
@@ -40,22 +39,24 @@
     </div>
     <div id="isDrink"> Looking for a drinking game? :
         <input type="radio" name="radiogroup1" value="1" id="yes" /> Yes
-        <input type="radio" name="radiogroup1" value="null" id="no" /> No
+        <input type="radio" name="radiogroup1" value="NULL" id="no" /> No
     </div>
     <div class="playerRange"> Amount of players <br>
-        2 players<input type="range" min="2" max="20" value="0" class="slider" name="playerRange" id="playerRange">20+
+        2 players<input type="range" min="2" max="21" value="2" class="slider" name="playerRange" id="playerRange">20+
         players
+        <input type="checkbox" name="anyP" value="anyP" checked> Any amount of players<br>
         <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
     </div>
     <div class="timeRange"> Amount of time <br>
-        5 minutes<input type="range" min="5" max="60" value="0" class="slider" name="timeRange"
+        5 minutes<input type="range" min="5" max="61" value="2" class="slider" name="timeRange"
             onchange="show_value(this.value);" id="timeRange"> 60+ minutes
+        <input type="checkbox" name="anyT" value="anyT" checked> Any amount of time<br>
         <!-- <span id="slider_value2" style="color:black;font-weight:bold;"></span> -->
     </div>
     <div id="prepAmount"> Amount of preparation needed :
-        <input type="radio" name="radiogroup2" value="min" id="min" /> Minimal Amount
-        <input type="radio" name="radiogroup2" value="med" id="med" /> Medium Amount
-        <input type="radio" name="radiogroup2" value="max" id="max" /> High Amount
+        <input type="radio" name="radiogroup2" value="min" id="min" /> Minimal Amount or Less
+        <input type="radio" name="radiogroup2" value="med" id="med" /> Medium Amount or Less
+        <input type="radio" name="radiogroup2" value="max" id="max" /> High Amount or Less
     </div>
     <p>
         <button type="submit" id="subscribe">Find!</button>

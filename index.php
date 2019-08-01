@@ -48,19 +48,19 @@
             </div>
             <div class="top_five_content">
                 <div class="top_five">
-                    <?php include("smallcardgame.php") ?>
+                    <?php include("./frontend/smallcardgame.php") ?>
                 </div>
                 <div class="top_five">
-                    <?php include("smallcardgame.php") ?>
+                    <?php include("./frontend/smallcardgame.php") ?>
                 </div>
                 <div class="top_five">
-                    <?php include("smallcardgame.php") ?>
+                    <?php include("./frontend/smallcardgame.php") ?>
                 </div>
                 <div class="top_five">
-                    <?php include("smallcardgame.php") ?>
+                    <?php include("./frontend/smallcardgame.php") ?>
                 </div>
                 <div class="top_five">
-                    <?php include("smallcardgame.php") ?>
+                    <?php include("./frontend/smallcardgame.php") ?>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div id="filterCatContainer">
-            <?php include("subSecFilterCat.php"); ?>
+            <?php include("./frontend/subSecFilterCat.php"); ?>
         </div>
     </div>
 </body>
