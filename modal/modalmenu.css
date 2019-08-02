@@ -163,8 +163,8 @@ a:hover {
 }
 
 /* input fields */
-.modalbody input[type=text],
-.modalbody input[type=password] {
+.inputIcons input[type=text],
+.inputIcons input[type=password] {
     width: 100%;
     padding: 17px 30px;
     margin: 10px 0px;
@@ -176,8 +176,8 @@ a:hover {
     text-align: center;
 }
 
-.modalbody input[type=text]:focus,
-.modalbody input[type=password]:focus {
+.inputIcons input[type=text]:focus,
+.inputIcons input[type=password]:focus {
     border: 2px solid #007ee5;
 }
 
