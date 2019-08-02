@@ -25,12 +25,6 @@ a:hover {
 
 /* --------modals ------- */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -169,8 +163,8 @@ a:hover {
 }
 
 /* input fields */
-input[type=text],
-input[type=password] {
+.modalbody input[type=text],
+.modalbody input[type=password] {
     width: 100%;
     padding: 17px 30px;
     margin: 10px 0px;
@@ -182,12 +176,12 @@ input[type=password] {
     text-align: center;
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
+.modalbody input[type=text]:focus,
+.modalbody input[type=password]:focus {
     border: 2px solid #007ee5;
 }
 
-input:hover {
+.modalbody input:hover {
     border: 2px solid darkgrey;
 }
 
@@ -196,7 +190,6 @@ input:hover {
 .mediaSignup {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
-    /* For the horizontal lines beside 'or' */
     background-image: linear-gradient(lightgrey, lightgrey), linear-gradient(lightgrey, lightgrey);
     background-size: 40% 1px;
     background-position: center left, center right;
