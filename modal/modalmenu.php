@@ -1,6 +1,10 @@
 <?php
 session_start();
 ?>
+<head>
+    <link rel="stylesheet" href="../modal/modalmenu.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
 
 <ul class="nav navbar">
     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
@@ -8,12 +12,6 @@ session_start();
     <li><a href="#" onclick="document.getElementById('signUpAndIn').style.display='block'"><i class="fas fa-user-lock"></i> Sign In</a></li>
     <li><a href="#"><i class="fas fa-dice"></i> Game Tools</a></li>
 </ul>
-
-<head>
-    <link rel="stylesheet" href="../modal/modalmenu.css">
-</head>
-
-
 
 <!-- About us modal -->
 <?php

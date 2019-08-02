@@ -352,3 +352,38 @@ signinCancel.addEventListener('click', function (e) {
         spans[i].textContent = '';
     }
 });
+
+// Kakao login
+
+// initialization
+Kakao.init('cd42352d6849f53b69a61e4f63da5fa4');
+console.log('is init :' + Kakao.isInitialized());
+
+var kakaoLogin = document.querySelector('#kakaoLogin');
+
+function loginWithKakao() {
+    Kakao.Auth.loginForm({
+        success: function (authObj) {
+            // 로그인 성공시, API를 호출합니다.
+            Kakao.API.request({
+                url: '/v2/user/me',
+                success: function (res) {
+                    alert(JSON.stringify(res));
+                    // redirect the user to member area
+                },
+                fail: function (error) {
+                    alert(JSON.stringify(error));
+                }
+            });
+        },
+        fail: function (err) {
+            alert(JSON.stringify(err));
+        },
+        persistAccessToken: false
+    });
+}
+
+kakaoLogin.addEventListener('click', function () {
+    loginWithKakao();
+    console.log('You clicked!');
+});
