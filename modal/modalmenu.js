@@ -11,7 +11,7 @@ document.addEventListener("click", function (e) {
         modalSignUp.style.display = "none";
         form.reset();
         signinForm.reset();
-        let spans = document.querySelector('.error');
+        let spans = document.querySelectorAll('.error');
         signinPassword.style.border = signinUsername.style.border = username.style.border = password.style.border = confirmPassword.style.border = email.style.border = '';
         signinPassword.style.boxShadow = signinUsername.style.boxShadow = username.style.boxShadow = password.style.boxShadow = confirmPassword.style.boxShadow = email.style.boxShadow = '';
         for (var i = 0; i < spans.length; i++) {
@@ -31,7 +31,7 @@ for (let i = 0; i < tabs.length; i++) {
         e.preventDefault();
         let target = e.target;
         console.log(target);
-        let spans = document.querySelector('.error');
+        let spans = document.querySelectorAll('.error');
 
         for (var i = 0; i < spans.length; i++) {
             spans[i].textContent = '';
@@ -120,7 +120,7 @@ var confirmPassword = document.getElementById('pswConfirm');
 var submitBtn = document.getElementById('register');
 var cancelBtn = document.querySelector('#signupCancel');
 var form = document.getElementById('signUp');
-var span = document.querySelector('.error');
+var spans = document.querySelectorAll('.error');
 
 
 // username validation
@@ -244,8 +244,8 @@ submitBtn.addEventListener('click', function (e) {
         username.value = password.value = confirmPassword.value = email.value = '';
         username.style.border = password.style.border = confirmPassword.style.border = email.style.border = '';
         username.style.boxShadow = password.style.boxShadow = confirmPassword.style.boxShadow = email.style.boxShadow = '';
-        for (var i = 0; i < span.length; i++) {
-            span[i].textContent = '';
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].textContent = '';
         }
     }
 });
@@ -256,8 +256,8 @@ cancelBtn.addEventListener('click', function (e) {
     username.value = password.value = confirmPassword.value = email.value = '';
     username.style.border = password.style.border = confirmPassword.style.border = email.style.border = '';
     username.style.boxShadow = password.style.boxShadow = confirmPassword.style.boxShadow = email.style.boxShadow = '';
-    for (var i = 0; i < span.length; i++) {
-        span[i].textContent = '';
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].textContent = '';
     }
 });
 
@@ -334,7 +334,7 @@ signinBtn.addEventListener('click', function (e) {
 
     } else {
         signinForm.reset();
-        let spans = document.querySelector('.error');
+        let spans = document.querySelectorAll('.error');
         signinPassword.style.border = signinUsername.style.border = '';
         signinPassword.style.boxShadow = signinUsername.style.boxShadow = '';
         for (var i = 0; i < spans.length; i++) {
@@ -345,7 +345,7 @@ signinBtn.addEventListener('click', function (e) {
 
 signinCancel.addEventListener('click', function (e) {
     signinForm.reset();
-    let spans = document.querySelector('.error');
+    let spans = document.querySelectorAll('.error');
     signinPassword.style.border = signinUsername.style.border = '';
     signinPassword.style.boxShadow = signinUsername.style.boxShadow = '';
     for (var i = 0; i < spans.length; i++) {
