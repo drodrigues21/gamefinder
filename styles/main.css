@@ -103,7 +103,7 @@ body {
 /* Start of Search bar section */
 .searchBarContainer {
     width: 700px;
-    margin: 0 auto 100px auto;
+    margin: 0 auto 6em auto;
 }
 
 .searchBarContainer h2 {
@@ -202,6 +202,7 @@ body {
 /* Start of Top Five section */
 .topFiveContainer {
     margin-bottom: 4em;
+    width: 100%;
 }
 
 .topFiveHeader {
@@ -213,30 +214,91 @@ body {
 }
 
 .topFiveContent {
-    display: flex;
-    justify-content: space-evenly;
+    width: 100%;
     height: 200px;
     position: relative;
 }
 
 .topFive {
+    width: 210px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
     display: flex;
-    width: 250px;
-    height: 180px;
-    padding: 0.5em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     cursor: pointer;
-    background-color: rgba(243, 243, 243, 0.952);
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+
+
     position: absolute;
-    /* top: 0; */
-    left: calc(50% - 135px);
+    top: 0;
+    left: calc(50% - 105px);
+}
+
+.icon {
+    /* margin: 0 auto; */
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(90deg, rgb(0, 133, 143) 0%, rgb(21, 171, 182) 40%, rgb(0, 94, 100) 60%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    transition: all 0.8s ease;
+    background-position: 0px;
+    background-size: 200px;
+    font-size: 1rem;
+}
+
+.title {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(0, 133, 143);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(0, 133, 143);
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .topFive:hover {
-    transform: scale(1.2);
+    height: 220px;
 }
 
+/* .topFive:hover .info {
+    height: 90%;
+} */
+
+.topFive:hover .text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+}
+
+.topFive:hover .icon {
+    background-position: -100px;
+    transition: all 0.3s ease;
+}
+
+
+
+/* 
 .topFive img {
     width: 70px;
     height: 70px;
@@ -253,9 +315,9 @@ body {
     font-size: 0.8rem;
     color: rgb(0, 133, 143);
     margin: 0.4em 0em 7.5em 0.4em;
-}
+} */
 
-.topFiveDescription a {
+/* .topFiveDescription a {
     position: relative;
     font-size: 0.9rem;
     color: rgb(0, 133, 143);
@@ -282,7 +344,7 @@ body {
     transform: scaleX(1);
     transform-origin: left;
     background: rgb(34, 175, 185);
-}
+} */
 
 /* Top Five Animation */
 
@@ -325,7 +387,7 @@ body {
     }
 
     100% {
-        transform: translateX(260%);
+        transform: translateX(130%);
     }
 }
 
@@ -339,7 +401,7 @@ body {
     }
 
     100% {
-        transform: translateX(130%);
+        transform: translateX(260%);
     }
 }
 
@@ -471,7 +533,7 @@ body {
 }
 
 .settingContainer p {
-    width: 30%;
+    width: 20%;
 }
 
 .placesFieldset,
@@ -618,7 +680,7 @@ body {
 }
 
 .prepAmount {
-    margin: 120px 0px 25px 15px;
+    margin: 135px 0px 25px 15px;
 }
 
 .timeRange {
