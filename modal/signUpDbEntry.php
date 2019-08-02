@@ -1,15 +1,7 @@
 <link href = "modalmenu.css" rel = "stylesheet">
 
 <?php
-    try
-    {
-        $db = new PDO('mysql:host=localhost;dbname=gamefinder;charset=utf8','root','root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); 
-
-    }
-    catch (Exception $ex)
-    {
-        die('Error : ' . $ex->getMessage()); 
-    }
+   include("../backend/dbconnect.php");
     
     if (isset($_POST['username']) AND isset($_POST['psw']) AND isset($_POST['email']) AND isset($_POST['pswconfirm']) AND preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$_POST['email'])){
         $username = addslashes(htmlspecialchars(htmlentities(trim($_POST['username']))));

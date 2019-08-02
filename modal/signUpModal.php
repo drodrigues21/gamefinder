@@ -26,10 +26,6 @@
         <div class = "pwtoggle" id="pwtoggleConf"><i class="far fa-eye"></i></div>
     </div>
 
-    <?php
-    include 'signUpDbEntry.php'; 
-    ?>
-
     <div class="clearfix"> 
         <input type="submit" class="signupbtn" name="signup" value="Sign Up" id="register">
         <button type="button" onclick="document.getElementById('signUpAndIn').style.display='none'" class="cancelbtn" id = "signupCancel">Cancel</button> 

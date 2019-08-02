@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
+
+
+    <link rel="stylesheet" href="../styles/main.css">
     <script defer src="../scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
@@ -23,13 +28,7 @@
                 <div class="headerContent">
                     <div class="logoContainer"><a href="index2.html"><img src="../images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
-                        <ul class="navbar">
-                            <li><a href="index2.html">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Tools</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Login/Register</a></li>
-                        </ul>
+                        <?php include("../modal/modalmenu.php"); ?>
                     </nav>
                 </div>
             </div>
@@ -84,6 +83,7 @@
             </div>
         </section>
     </div>
+
 </body>
 
 </html>
