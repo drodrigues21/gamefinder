@@ -25,10 +25,10 @@
 
     <div class = "mediaSignup">
         <div class="msInnertext">or</div>                        
-        <button type="button" id="msbtn">
-            <i class="fab fa-facebook"></i><p>Sign In with Facebook</p>
-        </button>        
-    </div> 
+        <div id="kakaoLoginButtonContainer">
+            <a id="kakaoLogin"><img src="../images/kLoginButton.png"/></a>
+        </div>       
+    </div>
 
     <div id ="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign up</a>.</div> 
 

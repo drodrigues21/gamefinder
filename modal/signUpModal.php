@@ -31,12 +31,5 @@
         <button type="button" onclick="document.getElementById('signUpAndIn').style.display='none'" class="cancelbtn" id = "signupCancel">Cancel</button> 
     </div> 
 
-    <div class = "mediaSignup">
-        <div class="msInnertext">or</div>                        
-        <button type="button" id="msbtn">
-            <i class="fab fa-facebook"></i><p>Sign Up with Facebook</p>
-        </button>        
-    </div> 
-
     <div id="terms">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</div> 
 </form> 
