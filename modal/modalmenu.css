@@ -179,10 +179,6 @@ a:hover {
 .inputIcons input[type=text]:focus,
 .inputIcons input[type=password]:focus {
     border: 2px solid #007ee5;
-<<<<<<< HEAD
-    s
-=======
->>>>>>> 2ae5c3b3b09c5d5601a667034a8009dd1bf11c93
 }
 
 .modalbody input:hover {
@@ -202,13 +198,10 @@ a:hover {
 
 .msInnertext {
     margin: 10px;
-<<<<<<< HEAD
-=======
     background-image: linear-gradient(lightgrey, lightgrey), linear-gradient(lightgrey, lightgrey);
     background-size: 40% 1px;
     background-position: center left, center right;
     background-repeat: no-repeat;
->>>>>>> 2ae5c3b3b09c5d5601a667034a8009dd1bf11c93
 }
 
 #msbtn {
@@ -389,13 +382,10 @@ a:hover {
     color: rgb(2, 182, 140);
     text-decoration: none;
     cursor: pointer;
-<<<<<<< HEAD
-=======
 }
 
 /* Kakao Login Container */
 
 #kakaoLoginButtonContainer {
     padding: 10px 0;
->>>>>>> 2ae5c3b3b09c5d5601a667034a8009dd1bf11c93
 }
