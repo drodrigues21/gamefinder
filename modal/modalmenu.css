@@ -1,4 +1,4 @@
-/* NAV/MENU */
+/* --------nav/menu------- */
 .nav{
     display:flex; 
     flex-direction:row; 
@@ -15,7 +15,6 @@ li{
 a{
     color: #0060B6;
     text-decoration: none;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  */
 }
 
 a:hover 
@@ -34,7 +33,6 @@ a:hover
 }
 
 .modal { 
-    /* box-sizing:border-box;  */
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -113,7 +111,7 @@ a:hover
 
 .returnbtn{
     position:absolute; 
-    top:450px;
+    bottom:-60px;
     left:20px;
     width: 90%; 
     padding: 14px 50px; 
@@ -126,6 +124,11 @@ a:hover
 
 .returnbtn:hover{
     background-color:lightgrey; 
+}
+
+#aboutusimg{
+    width: 50%; 
+    margin-bottom:30px;
 }
 
 /* ---------- sign up sign in ----------- */
@@ -247,15 +250,12 @@ input:hover{
   color:white; 
 }
 
-/* msgs*/
-/* signup */
+/*msgs*/
 #terms{
     margin-top:30px;
     padding:10px;
     font-size:13px;
 }
-
-/* signin */
 
 .signinOptions{
     display:flex;
@@ -285,10 +285,8 @@ input:hover{
     background:lightgrey; 
     transition: all .3s ease-in-out; 
 }
-
 .head div:nth-child(1){
-    background: transparent !important; 
-    transition: all .3s ease-in-out; 
+	background: transparent; 
 }
 
 .modalContent .body{
@@ -297,10 +295,83 @@ input:hover{
 
 /* tab switch */
 
-#signUp{
-    display:none; 
+
+.hidden{
+	display: none;
 }
 
 
-/* error message */
+/* error message style */
 
+.error{
+    font-size: 12px; 
+    color:red; 
+}
+
+.phperror{
+    font-size: 40px;
+    color: lightcoral; 
+    margin: 50px; 
+}
+
+/* success message style */
+.success{
+    font-size:40px; 
+    color:lightseagreen; 
+    margin: 50px; 
+}
+
+/* loggedin nav */
+
+
+#logoffbtn{
+    color: #0060B6;
+    border:none; 
+    background:transparent; 
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+}
+
+#logoffbtn:hover{
+    color:rgb(2, 182, 140); 
+    text-decoration:none; 
+    cursor:pointer;
+}
+
+
+#profile {
+    position: absolute; 
+    background-color: white; 
+    width: 16%; 
+    right: -115px;
+    top: 40px; 
+    border:1px solid #0060B6;
+    display: none;
+}
+
+#profileMenu {
+    position: relative;
+    width: 80%; 
+    text-align: left;
+    margin: auto; 
+    padding: 20px 0px;
+    margin:20px; 
+}
+
+#profile li {
+    list-style-type: none;
+    text-decoration: none;
+    color: #0060B6;
+    font-family: 'Fira Sans', sans-serif;
+    text-transform: uppercase; 
+    font-size: 16px;
+    margin: 25px 0; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid whitesmoke; 
+}
+
+#profile li:hover{
+    color:rgb(2, 182, 140); 
+    text-decoration:none; 
+    cursor:pointer;  
+}
