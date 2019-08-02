@@ -790,7 +790,7 @@ body {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding-top: 1em;
+    padding-top: 0.5em;
     margin-right: 80px;
 }
 

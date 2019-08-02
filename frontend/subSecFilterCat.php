@@ -75,8 +75,9 @@
                     <span>2</span>
                     <span>20+</span>
                 </div>
-                <div>
-                    <label><input type="checkbox" name="anyP" value="1" checked> Any amount of players</label>
+                <div class="checkBoxStyle">
+                    <input type="checkbox" name="anyP" value="1" id="anyAmountPlayer" checked />
+                    <label for="anyAmountPlayer"><span></span>Any amount of players</label>
                 </div>
             </div>
         </div>
@@ -138,8 +139,9 @@
                     <span>5</span>
                     <span>60+</span>
                 </div>
-                <div>
-                    <label><input type="checkbox" name="anyT" value="1" checked>Any amount of time </label>
+                <div class="checkBoxStyle">
+                    <input type="checkbox" name="anyT" value="1" id="anyAmountTime" checked />
+                    <label for="anyAmountTime"><span></span>Any amount of time</label>
                 </div>
             </div>
         </div>
