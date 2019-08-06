@@ -54,12 +54,13 @@
                     include("backend/getTopFive.php");
                     $count = 0;
                     while ($data = $response->fetch()) {
-                        // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
                         include("frontend/smallcardgame.php");
                         $count++;
                     }
-                    // $response->closeCursor();
                     ?>
+                </div>
+                <div class="modalBg">
+                    <?php include("frontend/test.php"); ?>
                 </div>
             </div>
             <div class="arrowsContainer">
@@ -83,7 +84,7 @@
             </div>
         </section>
     </div>
-
+    <script src="scripts/modelTemplate.js"></script>
 </body>
 
 </html>
