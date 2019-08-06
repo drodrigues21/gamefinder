@@ -21,7 +21,7 @@
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("menuBar.php"); ?>
+            <?php include("frontend/menuBar.php"); ?>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
                 <form action="">
@@ -63,7 +63,7 @@
             <div id="filterCatContainer">
                 <?php include("frontend/subSecFilterCat.php"); ?>
             </div>
-            <?php include("footer.php"); ?>
+            <?php include("frontend/footer.php"); ?>
         </section>
     </div>
     <script src="scripts/modelTemplate.js"></script>
