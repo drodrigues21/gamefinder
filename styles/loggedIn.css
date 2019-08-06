@@ -1,0 +1,84 @@
+/* --------nav/menu------- */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    font-family: 'Fira Sans', sans-serif;
+    margin: 15px;
+}
+
+li {
+    margin: 5px 10px;
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover, .dropbtn:hover {
+    color: rgb(2, 182, 140);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropbtn{
+  color: #0060B6;
+  background:transparent; 
+  margin: 5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown{
+    position: relative;
+  display: inline-block;
+}
+
+.profileMenu{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#logOutbtn {
+    color: #0060B6;
+    border: none;
+    background: transparent;
+    text-align:left; 
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+}
+
+#logOutbtn:hover {
+    color: rgb(2, 182, 140);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profileMenu li {
+    list-style-type: none;
+    text-decoration: none;
+    color: #0060B6;
+    font-family: 'Fira Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 25px 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.profileMenu li:hover {
+    color: rgb(2, 182, 140);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.show {
+    display:block;
+}

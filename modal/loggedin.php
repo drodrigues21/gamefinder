@@ -6,13 +6,13 @@
     if(isset($_SESSION['signinUsername'])) {
         $username = $_SESSION['signinUsername'];
     }
-    print_r($username); 
+    // print_r($username); 
 
 
     if(isset($_COOKIE["username"])) {
         $username = $_COOKIE['username'];
     }
-    print_r($_COOKIE); 
+    // print_r($_COOKIE); 
 
     ?> 
 
@@ -39,7 +39,7 @@
         </header>  
 
         <?php
-        include 'aboutusModal.php';
+        include('aboutusModal.php');
         ?> 
 
         <script src = "modalmenu.js"> 

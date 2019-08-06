@@ -1,16 +1,6 @@
 <?php
-session_start();
+include('metainfo.php');
 ?>
-
-<!DOCTYPE html>
-    <head>
-        <meta charset = "utf-8"/>
-        <link href = "modalmenu.css" rel = "stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/df6c9542c9.js"></script>        
-        <title>Menu header</title>
-    </head>
     
     <body>
         <header> 
@@ -24,7 +14,7 @@ session_start();
 
 <!-- About us modal -->
         <?php
-        include 'aboutusModal.php';
+        include('aboutusModal.php');
         ?> 
         
 <!-- signup/registration modal -->
@@ -37,8 +27,8 @@ session_start();
                 </div>
                 <div class="modalBody">    
                     <?php
-                    include 'signInModal.php'; 
-                    include 'signUpModal.php'; 
+                    include('signInModal.php'); 
+                    include('signUpModal.php'); 
                     ?>
                 </div>
             </div>
