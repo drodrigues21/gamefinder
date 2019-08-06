@@ -4,14 +4,6 @@ setcookie('username', ($_POST['signinUsername']), time()+365 * 24 * 3600, null, 
 setcookie('passwordHash',  password_hash(($_POST['signinpsw']), PASSWORD_DEFAULT), time()+365 * 24 * 3600, null, null, false, true);
 
 include('dbconnect.php'); 
-// try
-// {
-// $db = new PDO('mysql:host=localhost;dbname=gamefinder;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-// }
-// catch (Exception $e)
-// {
-//     die('Error : ' . $e->getMessage());
-// }
 
 $username = htmlspecialchars($_POST['signinUsername']);
 $password = password_hash(htmlspecialchars($_POST['signinpsw']), PASSWORD_DEFAULT);

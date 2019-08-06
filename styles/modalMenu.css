@@ -309,7 +309,7 @@ a:hover {
 }
 
 
-/* error message style */
+/* error message + success message style */
 
 .error {
     font-size: 12px;
@@ -322,11 +322,20 @@ a:hover {
     margin: 50px;
 }
 
-/* success message style */
 .success {
     font-size: 40px;
     color: lightseagreen;
     margin: 50px;
+}
+
+.correct{
+    border:1px solid green; 
+    box-shadow: 0 0 1px 1px green; 
+}
+
+.incorrect{
+    border:1px solid red; 
+    box-shadow: 0 0 1px 1px red; 
 }
 
 /* Kakao Login Container */
