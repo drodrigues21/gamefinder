@@ -63,6 +63,5 @@ $query .= $subquery;
 
 // echo "</br>$query</br>";
 $response = $db->query($query);
-
-require_once("displayResults.php");
-//header('Location: displayResults.php');
+$count = 0;
+include('../frontend/resultsPage.php');

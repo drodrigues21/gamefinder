@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
@@ -21,17 +21,7 @@
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <div class="headerContainer">
-                <div class="catchFraseContainer">
-                    <h3>For all your gaming needs.</h3>
-                </div>
-                <div class="headerContent">
-                    <div class="logoContainer"><a href="index2.html"><img src="images/10.png" alt=""></a></div>
-                    <nav class="navbarContainer">
-                        <?php include("modal/modalmenu.php"); ?>
-                    </nav>
-                </div>
-            </div>
+            <?php include("menuBar.php"); ?>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
                 <form action="">
@@ -73,15 +63,7 @@
             <div id="filterCatContainer">
                 <?php include("frontend/subSecFilterCat.php"); ?>
             </div>
-            <div class="footer_container">
-                <nav class="footerNav">
-                    <ul class="footerNavLinks">
-                        <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'">About Us</a></li>
-                        <li><a href="#">Contact US</a></li>
-                        <li><a href="https://wcoding.com/" target="_blank">Wcoding</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <?php include("footer.php"); ?>
         </section>
     </div>
     <script src="scripts/modelTemplate.js"></script>
