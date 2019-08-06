@@ -2,9 +2,9 @@
 <form action="../backend/getResultsFromCat.php" method="POST" id="filterForm">
     <div id="filterFormContainer">
         <div class="leftSideForm">
-            <!-- <p>Location:</p> -->
+            <p>Location:</p>
             <div class="placesContainer">
-                <p>Location:</p>
+                <!-- <p>Location:</p> -->
                 <fieldset class="placesFieldset checkBoxStyle">
                     <legend class="placesLegend">
                         <input type="checkbox" name="indoor" value="1" id="indoor" />
@@ -58,13 +58,27 @@
                     </div>
                 </fieldset>
             </div>
-            <div class="isDrink">
-                <p>Drinking game? </p>
-                <div class="radioGroup">
-                    <input type="radio" id="yes" name="playerSelector"><label for="yes">Yes</label><input type="radio"
-                        id="no" name="playerSelector" checked><label for="no">No</label>
+            
+
+            <div class="timeRange">
+                <!-- <p>Time:</p> -->
+                <div id="timeSlider" class="range-slider ">
+                    <span id="timeBullet" class="timeSliderLabel">5</span>
+                    <input id="timeRange" type="range" min="5" max="60" value="0" class="slider" name="timeRange"
+                        onchange="show_value(this.value);">
+                </div>
+                <div class="timeBoxMinmax">
+                    <span>5</span>
+                    <span>60+</span>
+                </div>
+                <div class="checkBoxStyle">
+                    <input type="checkbox" name="anyT" value="1" id="anyAmountTime" checked />
+                    <label for="anyAmountTime"><span></span>Any amount of time</label>
                 </div>
             </div>
+
+
+
             <div class="playerRangeContainer">
                 <!-- <p>Number of players:</p> -->
                 <div class="rangeSlider">
@@ -77,13 +91,14 @@
                 </div>
                 <div class="checkBoxStyle">
                     <input type="checkbox" name="anyP" value="1" id="anyAmountPlayer" checked />
-                    <label for="anyAmountPlayer"><span></span>Any amount of players</label>
+                    <label class="test" for="anyAmountPlayer"><span></span>Any amount of players</label>
                 </div>
             </div>
         </div>
         <div class="rightSideForm">
+            <p>Social Setting:</p>
             <div class="settingContainer">
-                <p>Social Setting:</p>
+                <!-- <p>Social Setting:</p> -->
                 <fieldset class="settingFieldset">
                     <legend class="settingLegend"></legend>
                     <div class="settingCheckboxes">
@@ -120,6 +135,16 @@
                     </div>
                 </fieldset>
             </div>
+
+            <div class="isDrink">
+                <p>Drinking game? </p>
+                <div class="radioGroup">
+                    <input type="radio" id="yes" name="playerSelector"><label for="yes">Yes</label><input type="radio"
+                        id="no" name="playerSelector" checked><label for="no">No</label>
+                </div>
+            </div>
+
+
             <div class="prepAmount">
                 <p>Amount of preparation:</p>
                 <div class="radioGroup">
@@ -128,22 +153,11 @@
                         type="radio" id="max" name="prepSelector"><label for="max">Max</label>
                 </div>
             </div>
-            <div class="timeRange">
-                <!-- <p>Time:</p> -->
-                <div id="timeSlider" class="range-slider ">
-                    <span id="timeBullet" class="timeSliderLabel">5</span>
-                    <input id="timeRange" type="range" min="5" max="60" value="0" class="slider" name="timeRange"
-                        onchange="show_value(this.value);">
-                </div>
-                <div class="timeBoxMinmax">
-                    <span>5</span>
-                    <span>60+</span>
-                </div>
-                <div class="checkBoxStyle">
-                    <input type="checkbox" name="anyT" value="1" id="anyAmountTime" checked />
-                    <label for="anyAmountTime"><span></span>Any amount of time</label>
-                </div>
-            </div>
+            
+
+
+
+
         </div>
     </div>
     <div class="FromButton">

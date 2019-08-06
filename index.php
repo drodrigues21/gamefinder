@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 
-    <link rel="stylesheet" href="../styles/main.css">
-    <script defer src="../scripts/playerslider.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
 
@@ -26,9 +26,9 @@
                     <h3>For all your gaming needs.</h3>
                 </div>
                 <div class="headerContent">
-                    <div class="logoContainer"><a href="index2.html"><img src="../images/10.png" alt=""></a></div>
+                    <div class="logoContainer"><a href="index2.html"><img src="images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
-                        <?php include("../modal/modalmenu.php"); ?>
+                        <?php include("modal/modalmenu.php"); ?>
                     </nav>
                 </div>
             </div>
@@ -51,11 +51,11 @@
             do the while and include once-->
                 <div class="topFiveContent">
                     <?php
-                    include("../backend/getTopFive.php");
+                    include("backend/getTopFive.php");
                     $count = 0;
                     while ($data = $response->fetch()) {
                         // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
-                        include("smallcardgame.php");
+                        include("frontend/smallcardgame.php");
                         $count++;
                     }
                     // $response->closeCursor();
@@ -70,12 +70,12 @@
         </section>
         <section class="secondSectionContainer">
             <div id="filterCatContainer">
-                <?php include("subSecFilterCat.php"); ?>
+                <?php include("frontend/subSecFilterCat.php"); ?>
             </div>
             <div class="footer_container">
                 <nav class="footerNav">
                     <ul class="footerNavLinks">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'">About Us</a></li>
                         <li><a href="#">Contact US</a></li>
                         <li><a href="https://wcoding.com/" target="_blank">Wcoding</a></li>
                     </ul>

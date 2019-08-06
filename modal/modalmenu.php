@@ -2,7 +2,7 @@
 session_start();
 ?>
 <head>
-    <link rel="stylesheet" href="../modal/modalmenu.css">
+    <link rel="stylesheet" href="modal/modalmenu.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
@@ -15,7 +15,7 @@ session_start();
 
 <!-- About us modal -->
 <?php
-    include('aboutusModal.php');
+    include("aboutusModal.php");
 ?> 
 
 <!-- signup/registration modal -->
@@ -34,7 +34,7 @@ session_start();
         </div>
     </div>
 </div> 
-<script src="../modal/modalmenu.js"></script> 
+<script src="modal/modalmenu.js"></script> 
 
 
 
