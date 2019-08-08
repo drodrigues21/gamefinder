@@ -18,11 +18,18 @@
     <script defer src="../scripts/playerslider.js"></script>
     <title>Results</title>
 </head>
+<?php
+if (empty($_POST["filterCat"])) {
+    include("../backend/searchBackend.php");
+} else {
+    include("../backend/getResultsFromCat.php");
+}
+?>
 
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("menuBar.php"); ?>
+            <?php include("../frontend/menuBar.php"); ?>
         </section>
 
         <section class="secondSectionContainer">

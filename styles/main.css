@@ -90,7 +90,7 @@ body {
 }
 
 .logoContainer {
-    margin: -40px 200px 0px 0px;
+    margin: -55px 400px 0px 0px;
 }
 
 .logoContainer img {
@@ -209,8 +209,6 @@ body {
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-
-
     position: absolute;
     top: 0;
     left: calc(50% - 105px);
@@ -256,12 +254,8 @@ body {
 }
 
 .topFive:hover {
-    height: 220px;
+    height: 225px;
 }
-
-/* .topFive:hover .info {
-    height: 90%;
-} */
 
 .topFive:hover .topFiveText {
     transition: all 0.3s ease;
@@ -336,6 +330,76 @@ body {
 
 /* End of Top Five animation */
 
+/* Top Five modal */
+
+.modalBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.modalActive {
+    visibility: visible;
+    opacity: 1;
+}
+
+.closeModal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modalGameViewContainer {
+    color: rgb(7, 93, 114);
+    background-color: #fff;
+    width: 55%;
+    height: 55%;
+    padding: 2em;
+    border-radius: 5px;
+    position: relative;
+}
+
+.gameViewHeader {
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    padding: 0.5em 2em;
+}
+
+.gameViewHeader h3 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding-left: 2em;
+}
+
+.gameViewImg {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.gameViewContent {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em 2em;
+}
+
+
 /* End of Top Five section */
 
 
@@ -394,7 +458,7 @@ body {
 
 /* Start of second main section */
 .secondSectionContainer {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -403,13 +467,17 @@ body {
 
 /* Start of filter catagories section */
 #filterCatContainer {
-    width: 75%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    margin: 2em auto;
     padding-top: 1em;
-    padding-bottom: 3em;
+    padding-bottom: 1em;
     border-radius: 5px;
     box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.75);
     background-color: rgba(255, 255, 255, 0.959);
+    /* border: 1px solid red; */
 }
 
 #filterCatContainer h3 {
@@ -418,7 +486,7 @@ body {
     letter-spacing: 1px;
     margin-top: 0;
     text-transform: uppercase;
-    text-align: center;
+    /* text-align: center; */
 }
 
 #filterFormContainer {
@@ -429,12 +497,15 @@ body {
     margin-bottom: 1.5em;
 }
 
-.leftSideForm {
-    width: 45%;
+.leftSideForm p,
+.rightSideForm p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: rgb(0, 133, 143);
 }
 
 .rightSideForm {
-    width: 46%;
+    /* width: 30%; */
 }
 
 .leftSideForm {
@@ -577,6 +648,10 @@ body {
     transition: width 150ms ease 100ms;
 }
 
+.test {
+    padding-left: 15px;
+}
+
 /* End of checkboxes style */
 
 .settingFieldset div {
@@ -602,17 +677,17 @@ body {
 .playerRangeContainer,
 .timeRange,
 .prepAmount {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
+    font-size: 1rem;
+    letter-spacing: 1px;
     color: rgb(0, 133, 143);
 }
 
 .isDrink {
-    margin-top: 70px;
+    margin-top: 150px;
 }
 
 .prepAmount {
-    margin: 135px 0px 25px 15px;
+    margin-top: 100px;
 }
 
 .timeRange {
@@ -651,7 +726,7 @@ body {
 .radioGroup {
     border: solid rgb(0, 133, 143);
     display: inline-block;
-    margin-left: 145px;
+    /* margin-left: 145px; */
     border-radius: 10px;
     overflow: hidden;
 }
@@ -790,7 +865,7 @@ body {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding-top: 1em;
+    padding-top: 0.5em;
     margin-right: 80px;
 }
 

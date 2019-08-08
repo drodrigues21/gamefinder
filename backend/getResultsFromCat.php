@@ -96,6 +96,4 @@ $query .= $subquery;
 $response = $db->query($query);
 $count = 0;
 
-// print_r($query);
-
-include('../frontend/resultsPage.php');
+//print_r($query);

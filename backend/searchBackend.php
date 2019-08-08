@@ -1,7 +1,7 @@
 <?php
-require('dbconnect.php');
+require_once('dbconnect.php');
 
-$inquiry = $_POST['search'];
+$inquiry = isset($_POST['search']);
 $random = isset($_POST['randomGame']);
 
 
@@ -15,7 +15,3 @@ if (isset($random) and $random != '') {
 }
 
 $response = $db->query($query);
-
-
-
-include('../frontend/resultsPage.php');

@@ -1,5 +1,6 @@
 <h3>Find your game</h3>
-<form action="../backend/getResultsFromCat.php" method="POST" id="filterForm">
+<form action="./resultsPage.php" method="POST" id="filterForm">
+    <input type="hidden" name="filterCat" value="filterCat" />
     <div id="filterFormContainer">
         <div class="leftSideForm">
             <!-- <p>Location:</p> -->
@@ -185,11 +186,11 @@
                     <span>20+</span>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="anyP" value="1" <?php if (isset($checks['players']) and $checks['players'] == "anyP") {
-                                                                            echo "checked";
-                                                                        } else {
-                                                                            echo "";
-                                                                        } ?>> Any amount of players</label>
+                    <label><input type="checkbox" name="anyP" id="anyP" value="1" <?php if (isset($checks['players']) and $checks['players'] == "anyP") {
+                                                                                        echo "checked";
+                                                                                    } else {
+                                                                                        echo "";
+                                                                                    } ?>> Any amount of players</label>
                 </div>
             </div>
         </div>
@@ -337,19 +338,18 @@
                                                                                     echo $time;
                                                                                 } else {
                                                                                     echo "5";
-                                                                                } ?> class="slider" name="timeRange"
-                        onchange="show_value(this.value);">
+                                                                                } ?> class="slider" name="timeRange">
                 </div>
-                <div class="timeBoxMinmax">
+                <div class=" timeBoxMinmax">
                     <span>5</span>
                     <span>60+</span>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="anyT" value="1" <?php if (isset($checks['time']) and $checks['time'] == "anyT") {
-                                                                            echo "checked";
-                                                                        } else {
-                                                                            echo "";
-                                                                        } ?>>Any amount of time </label>
+                    <label><input type="checkbox" name="anyT" id="anyT" value="1" <?php if (isset($checks['time']) and $checks['time'] == "anyT") {
+                                                                                        echo "checked";
+                                                                                    } else {
+                                                                                        echo "";
+                                                                                    } ?>>Any amount of time </label>
                 </div>
             </div>
         </div>

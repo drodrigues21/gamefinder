@@ -1,5 +1,5 @@
 <div class="cardCont">
-    <img src="<?= $data['img'] ?>" alt="placeholder">
+    <img src=".<?= $data['img'] ?>" alt="placeholder">
     <div class="searchResults">
         <h3 class="topFiveTitle"><?= $data['name'] ?></h3>
         <div id=shortTxt>

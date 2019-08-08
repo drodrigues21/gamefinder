@@ -13,18 +13,18 @@
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 
-    <link rel="stylesheet" href="../styles/main.css">
-    <script defer src="../scripts/playerslider.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
 
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("menuBar.php"); ?>
+            <?php include("frontend/menuBar.php"); ?>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
-                <form action="../backend/searchBackend.php" method="POST">
+                <form action="./frontend/resultsPage.php" method="POST">
                     <div class="searchField">
                         <input type="text" class="searchBox" name="search" placeholder="What are you looking for?">
                         <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
@@ -41,14 +41,12 @@
             do the while and include once-->
                 <div class="topFiveContent">
                     <?php
-                    include("../backend/getTopFive.php");
+                    include("backend/getTopFive.php");
                     $count = 0;
                     while ($data = $response->fetch()) {
-                        // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
-                        include("smallcardgame.php");
+                        include("frontend/smallcardgame.php");
                         $count++;
                     }
-                    // $response->closeCursor();
                     ?>
                 </div>
             </div>
@@ -60,12 +58,12 @@
         </section>
         <section class="secondSectionContainer">
             <div id="filterCatContainer">
-                <?php include("subSecFilterCat.php"); ?>
+                <?php include("frontend/subSecFilterCat.php"); ?>
             </div>
-            <?php include("footer.php"); ?>
+            <?php include("frontend/footer.php"); ?>
         </section>
     </div>
-
+    <script src="scripts/modelTemplate.js"></script>
 </body>
 
 </html>
