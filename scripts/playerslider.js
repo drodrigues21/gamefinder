@@ -22,3 +22,5 @@ function timeSliderValue() {
     var bulletPosition = ((timeSliderRange.value - 5) / timeSliderRange.max);
     timeBulletRange.style.left = (bulletPosition * 250) + "px";
 }
+timeSliderValue();
+playerSliderValue();
