@@ -49,9 +49,6 @@
                     }
                     ?>
                 </div>
-                <div class="modalBg">
-                    <?php include("frontend/test.php"); ?>
-                </div>
             </div>
             <div class="arrowsContainer">
                 <div class="arrows">

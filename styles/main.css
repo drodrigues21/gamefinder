@@ -353,16 +353,6 @@ body {
     opacity: 1;
 }
 
-.modaltest {
-    color: rgb(7, 93, 114);
-    background-color: #fff;
-    width: 70%;
-    height: 70%;
-    padding: 50px;
-    border-radius: 5px;
-    position: relative;
-}
-
 .closeModal {
     position: absolute;
     top: 15px;
@@ -372,9 +362,42 @@ body {
     cursor: pointer;
 }
 
-/* .modalTopFive {
-    color: rgb(235, 235, 235);
-} */
+.modalGameViewContainer {
+    color: rgb(7, 93, 114);
+    background-color: #fff;
+    width: 55%;
+    height: 55%;
+    padding: 2em;
+    border-radius: 5px;
+    position: relative;
+}
+
+.gameViewHeader {
+    display: flex;
+    justify-content: ;
+    align-items: center;
+    padding: 0.5em 2em;
+}
+
+.gameViewHeader h3 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding-left: 2em;
+}
+
+.gameViewImg {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.gameViewContent {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em 2em;
+}
 
 
 /* End of Top Five section */
@@ -474,8 +497,11 @@ body {
     margin-bottom: 1.5em;
 }
 
-.leftSideForm {
-    /* width: 30%; */
+.leftSideForm p,
+.rightSideForm p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: rgb(0, 133, 143);
 }
 
 .rightSideForm {
@@ -661,7 +687,7 @@ body {
 }
 
 .prepAmount {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .timeRange {

@@ -1,4 +1,4 @@
-<div id="elt_<?= $count; ?>" class="topFive">
+<div id="elt_<?= $count; ?>" class="topFive" game-id="<?= $data['id']; ?>"" >
     <div class="TopFiveIcon"><?php
                                 $topPosition = $count + 1;
                                 echo "#$topPosition";
