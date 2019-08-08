@@ -24,12 +24,12 @@
             <?php include("menuBar.php"); ?>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
-                <form action="">
+                <form action="../backend/searchBackend.php" method="POST">
                     <div class="searchField">
-                        <input type="text" class="searchBox" placeholder="What are you looking for?">
+                        <input type="text" class="searchBox" name="search" placeholder="What are you looking for?">
                         <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
                     </div>
-                    <button type="submit" class="btn surpriseButton">Surprise me!</button>
+                    <button type="submit" name="randomGame" class="btn surpriseButton">Surprise me!</button>
                     <!-- <button type="submit" class="btn otherButton">What?</button> -->
                 </form>
             </div>

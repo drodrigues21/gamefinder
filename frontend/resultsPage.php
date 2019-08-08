@@ -31,7 +31,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="sectionCont">
             <?php
             while ($data = $response->fetch()) {
                 include('../frontend/cardGame.php');
