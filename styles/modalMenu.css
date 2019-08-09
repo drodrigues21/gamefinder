@@ -400,9 +400,22 @@
 }
 
 /* Account page */
+.mainDiv{
+    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
+    height: 100vh;    
+    margin: 0;  
+}
+
+.userHeader{
+    margin: 50px; 
+}
 
 .info{
+    margin: 50px;
     list-style: none; 
     font-family: 'Montserrat', sans-serif;
+}
 
+.info>li{
+    margin: 20px;
 }
