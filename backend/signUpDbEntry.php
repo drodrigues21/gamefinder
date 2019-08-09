@@ -1,4 +1,4 @@
-<link href = "./styles/modalMenu.css" rel = "stylesheet">
+<!-- <link href = "./styles/modalMenu.css" rel = "stylesheet"> -->
 
 <?php
    include("dbconnect.php");
@@ -21,7 +21,7 @@
             
             echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>"; 
             ?>
-            <meta http-equiv="refresh" content="5;url=./frontend/modalMenu.php"> 
+            <meta http-equiv="refresh" content="5;url=../index.php"> 
 
             <?php
 

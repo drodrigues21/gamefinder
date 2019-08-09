@@ -1,4 +1,3 @@
-
 <form id="signIn" class = "myForm" method="POST" action="./backend/signinDbAccess.php"> 
     <div class = "inputIcons">         
         <i class="fa fa-user icon"></i>                        
