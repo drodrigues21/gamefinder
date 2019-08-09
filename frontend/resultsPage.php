@@ -1,3 +1,4 @@
+<?php require_once("../utils.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,5 +50,5 @@ if (empty($_POST["filterCat"])) {
             <?php include("footer.php"); ?>
         </section>
     </div>
-
+    <script src="../scripts/modelTemplate.js"></script>
 </body>

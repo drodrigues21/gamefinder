@@ -1,11 +1,11 @@
 <h3>Find your game</h3>
-<form action="./resultsPage.php" method="POST" id="filterForm">
+<form action="http://localhost:8888/Sites/gamefinder/frontend/resultsPage.php" method="POST" id="filterForm">
     <input type="hidden" name="filterCat" value="filterCat" />
     <div id="filterFormContainer">
         <div class="leftSideForm">
-            <!-- <p>Location:</p> -->
+            <p>Location:</p>
             <div class="placesContainer">
-                <p>Location:</p>
+                <!-- <p>Location</p> -->
                 <fieldset class="placesFieldset checkBoxStyle">
                     <legend class="placesLegend">
                         <input type="checkbox" name="indoor" value="1" id="indoor" />
@@ -195,8 +195,9 @@
             </div>
         </div>
         <div class="rightSideForm">
+            <p>Social Setting:</p>
             <div class="settingContainer">
-                <p>Social Setting:</p>
+                <!-- <p>Social Setting:</p> -->
                 <fieldset class="settingFieldset">
                     <legend class="settingLegend"></legend>
                     <div class="settingCheckboxes">
@@ -345,7 +346,7 @@
                     <span>60+</span>
                 </div>
                 <div>
-                    <label><input type="checkbox" name="anyT" id="anyT" value="1" <?php if (isset($checks['time']) and $checks['time'] == "anyT") {
+                    <label><input type="checkbox" name="anyT" value="1" id="anyT" <?php if (isset($checks['time']) and $checks['time'] == "anyT") {
                                                                                         echo "checked";
                                                                                     } else {
                                                                                         echo "";
@@ -356,6 +357,6 @@
     </div>
     <div class="FromButton">
         <button type="submit" id="subscribe">Find!</button>
-        <button type="reset" id="reset">Reset</button>
+        <!-- <button type="reset" id="reset">Reset</button> -->
     </div>
 </form>

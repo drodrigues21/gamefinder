@@ -1,4 +1,6 @@
-var topFiveDivs = document.querySelectorAll(".topFive");
+const localhost = "http://localhost:8888/Sites/gamefinder/";
+
+var topFiveDivs = document.querySelectorAll("div[modal=game]");
 
 for (let i = 0; i < topFiveDivs.length; i++) {
     topFiveDivs[i].addEventListener('click', function (e) {
@@ -12,14 +14,20 @@ for (let i = 0; i < topFiveDivs.length; i++) {
         // get back content from backend
 
         var topFiveContainer = e.target.parentNode;
-        if (topFiveContainer.className == "topFiveContent") {
+
+        if (topFiveContainer.className == "topFiveContent" || topFiveContainer.className == "sectionCont") {
             topFiveContainer = e.target;
+        }
+        // cardgame handle
+        console.log(topFiveContainer);
+        while (topFiveContainer.className != "cardCont") {
+            topFiveContainer = topFiveContainer.parentNode;
         }
         var game_id = "game_id=" + topFiveContainer.getAttribute("game-id");
 
         //AJAX
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost:8888/Sites/gamefinder/backend/gameView.php?" + game_id, true);
+        xhr.open("GET", localhost + "backend/gameView.php?" + game_id, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var content = JSON.parse(xhr.responseText);
@@ -67,7 +75,7 @@ function generate_content_modal(content) {
 
     let gameViewImg = document.createElement('img');
     gameViewImg.className = "gameViewImg";
-    gameViewImg.src = content.img;
+    gameViewImg.src = "http://localhost:8888/Sites/gamefinder/images/" + content.img;
 
     let gameViewName = document.createElement('h3');
     gameViewName.textContent = content.name;
@@ -82,7 +90,7 @@ function generate_content_modal(content) {
     gameViewText.textContent = content.fullTxt;
 
     let gameViewinfo = document.createElement('p');
-    gameViewinfo.textContent = "Min Players: " + content.minP + " - Max Players: " + content.maxP + " / Min Time: " + content.minT + " - Max Time: " + content.maxT + " / Rating: " + content.rating;
+    gameViewinfo.textContent = content.minP + " - " + content.maxP + ' Players | ' + content.minT + " - " + content.maxT + " Minutes | Rating: " + content.rating;
 
     gameViewContent.appendChild(gameViewText);
     gameViewContent.appendChild(gameViewinfo);

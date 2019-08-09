@@ -1,7 +1,7 @@
 <?php
 require_once('dbconnect.php');
 
-$inquiry = isset($_POST['search']);
+$inquiry = ($_POST['search']);
 $random = isset($_POST['randomGame']);
 
 
@@ -13,5 +13,7 @@ if (isset($random) and $random != '') {
 } else {
     $query = "SELECT * FROM games g ORDER BY rating DESC LIMIT 25";
 }
+
+
 
 $response = $db->query($query);

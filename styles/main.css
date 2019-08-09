@@ -683,11 +683,11 @@ body {
 }
 
 .isDrink {
-    margin-top: 150px;
+    margin-top: 40px;
 }
 
 .prepAmount {
-    margin-top: 100px;
+    margin-top: 106px;
 }
 
 .timeRange {
@@ -695,7 +695,7 @@ body {
 }
 
 #timeSlider {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 /* Start of radio buttons */

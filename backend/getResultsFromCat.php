@@ -15,7 +15,7 @@ $checks['time'] = $time;
 
 // print_r($_POST);
 // Creation of the query
-$query = "SELECT DISTINCT(name), isDrink, minP, maxP, shortTxt, fullTxt, minT, maxT, img, prep, rating FROM games g WHERE 1";
+$query = "SELECT DISTINCT(name),id,  isDrink, minP, maxP, shortTxt, fullTxt, minT, maxT, img, prep, rating FROM games g WHERE 1";
 
 $subquery = "";
 // Location
@@ -93,7 +93,12 @@ if ($prep == 'min') {
 $query .= $subquery;
 
 // echo "</br>$query</br>";
+// echo $checks['time'];
+// echo $checks['players'];
+// if ($checks['time'] == "anyT") {
+//     echo $checks['time'];
+// }
 $response = $db->query($query);
 $count = 0;
 
-//print_r($query);
+// print_r($query);

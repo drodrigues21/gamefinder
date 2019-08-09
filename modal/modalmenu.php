@@ -8,7 +8,7 @@ session_start();
 </head>
 
 <ul class="nav navbar">
-    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="http://localhost:8888/Sites/gamefinder/index.php"><i class="fas fa-home"></i> Home</a></li>
     <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'"><i
                 class="far fa-address-card"></i> About Us </a></li>
     <li><a href="#" onclick="document.getElementById('signUpAndIn').style.display='block'"><i
