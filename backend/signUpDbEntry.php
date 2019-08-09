@@ -13,7 +13,7 @@
         try
         {
             if($password != $passwordConfirm){ throw new Exception("<p class = 'error'>Passwords do not match</p>");}
-            $req = $db->prepare('INSERT INTO members(username,password,email, date_subscription) VALUES (:username, :password, :email, CURDATE())');
+            $req = $db->prepare('INSERT INTO members(username, password, email, registrationDate) VALUES (:username, :password, :email, CURDATE())');
             $req ->execute(array(
             'username' => $username,
             'password' => $password_hash,

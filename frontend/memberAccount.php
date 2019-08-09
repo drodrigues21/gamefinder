@@ -12,11 +12,11 @@ session_start();
     <div class = "mainDiv">
             <?php include("modalMenu.php"); ?>
             <h3 class ="userHeader">Account Information</h3>
-
+            <?php include("../backend/loadInfosUserConnected.php"); ?>
             <ul class = "info">
-                <li> Full Name:  </li>
-                <li> Email Address: <?php echo $_SESSION["email"]?> </li>
-                <li> User Name: <?php echo $_SESSION["signinUsername"] ?></li>
+                <!-- <li> Full Name:  </li> -->
+                <li> Email Address: <?= $user["email"];?> </li>
+                <li> User Name: <?= $user["username"];?></li>
                 <li> Password: </li>
                 <li> Date of Birth: </li>
                 <li> Country: </li>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("./utils.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@ session_start();
                 <div class="headerContent">
                     <div class="logoContainer"><a href="index2.html"><img src="images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
-                        <?php include("frontend/modalMenu.php"); ?>
+                        <?php include("./frontend/modalMenu.php"); ?>
                     </nav>
                 </div>
             </div>

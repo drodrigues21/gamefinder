@@ -4,6 +4,10 @@
 </head>
 
 <?php
+if(!@include("./utils.php")) {
+    require_once("../utils.php");
+}
+
 if(isset($_SESSION['signinUsername'])) {
     $username = $_SESSION['signinUsername'];
 }
@@ -17,7 +21,7 @@ if(isset($_COOKIE["username"])) {
 ?>
 
 <ul class="nav navbar">
-    <li><a href="./index.php"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="<?=LOCALHOST?>index.php"><i class="fas fa-home"></i> Home</a></li>
     <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'"><i class="far fa-address-card"></i> About Us </a></li>
     <li><a href="#"><i class="fas fa-dice"></i> Game Tools</a></li>
 <?php
