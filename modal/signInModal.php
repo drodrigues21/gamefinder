@@ -26,7 +26,7 @@
     <div class = "mediaSignup">
         <div class="msInnertext">or</div>                        
         <div id="kakaoLoginButtonContainer">
-            <a id="kakaoLogin"><img src="../images/kLoginButton.png"/></a>
+            <a id="kakaoLogin"><img src="./images/kLoginButton.png"/></a>
         </div>         
     </div> 
 
