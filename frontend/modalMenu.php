@@ -28,9 +28,9 @@ if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
  echo  '<div class ="dropdown">
             <button onclick= "dropDown()" class ="dropbtn"><i class="far fa-user-circle"></i>Profile</button>
             <div class = "profileMenu" id ="profileMenuContent">
-                <li><a href="#">Favorites</a></li>
-                <li><a href="#">My Games</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="favorites.php">Favorites</a></li>
+                <li><a href="myGames.php">My Games</a></li>
+                <li><a href="frontend/memberAccount.php">Account</a></li>
                 <li><form action="./backend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
             </div>
         </div>';

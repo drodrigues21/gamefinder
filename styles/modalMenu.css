@@ -398,3 +398,11 @@
 #kakaoLoginButtonContainer {
     padding: 10px 0;
 }
+
+/* Account page */
+
+.info{
+    list-style: none; 
+    font-family: 'Montserrat', sans-serif;
+
+}

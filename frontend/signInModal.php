@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET['modal'])AND $_GET['modal'] == 'success'){
+    echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>"; 
+}
+?>
+
 <form id="signIn" class = "myForm" method="POST" action="./backend/signinDbAccess.php"> 
     <div class = "inputIcons">         
         <i class="fa fa-user icon"></i>                        
