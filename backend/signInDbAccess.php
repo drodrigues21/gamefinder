@@ -28,7 +28,7 @@ if (!$passwordVerify){
         $_SESSION['id'] = $result['id'];
         $_SESSION['signinUsername'] = $username;
         $checkBox = $_POST['checkbox']; 
-        if (isset($checkBox) AND $checkBox==1){
+        if (isset($checkBox) AND $checkBox===1){
             setcookie("username", $username, time()+365*24*3600);        
         }
         header('Location: ../index.php');

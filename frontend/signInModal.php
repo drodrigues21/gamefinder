@@ -31,7 +31,7 @@ if(isset($_GET['modal'])AND $_GET['modal'] == 'success'){
     <div class = "mediaSignup">
         <div class="msInnertext">or</div>                        
         <div id="kakaoLoginButtonContainer">
-            <a id="kakaoLogin"><img src="./images/kLoginButton.png"/></a>
+            <a id="kakaoLogin" name="isKakao"><img src="./images/kLoginButton.png"/></a>
         </div>         
     </div> 
 

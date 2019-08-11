@@ -13,6 +13,17 @@ session_start();
             <?php include("modalMenu.php"); ?>
             <h3 class ="userHeader">Account Information</h3>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
+
+            <div id ="imgUpload">
+                <form method ="post" action ="memberAccount.php" enctype="multipart/form-data">
+                    <input type ="hidden" name = "size" value = "1000000">
+                        <div>
+                            <input type ="file" name="profImage">
+                        </div>
+                        <div>
+                            <input type ="submit" name ="upload">
+                        </div>      
+            </div>
             <ul class = "info">
                 <!-- <li> Full Name:  </li> -->
                 <li> Email Address: <?= $user["email"];?> </li>
