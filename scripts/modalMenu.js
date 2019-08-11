@@ -307,7 +307,7 @@ function loginWithKakao() {
                 success: function (res) {
                     // alert(JSON.stringify(res));
                     // redirect the user to member area:
-                    window.location.href="./frontend/loggedIn.php"; 
+                    window.location.href="./index.php"; 
                 },
                 fail: function (error) {
                     alert(JSON.stringify(error));

@@ -236,7 +236,7 @@
     border: 2px solid #007ee5;
 }
 
-.modalbody input:hover {
+.inputIcons input:hover {
     border: 2px solid darkgrey;
 }
 
@@ -245,7 +245,6 @@
 .mediaSignup {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
-    background-image: linear-gradient(lightgrey, lightgrey), linear-gradient(lightgrey, lightgrey);
     background-size: 40% 1px;
     background-position: center left, center right;
     background-repeat: no-repeat;
@@ -259,29 +258,9 @@
     background-repeat: no-repeat;
 }
 
-#msbtn {
-    float: left;
-    width: 98%;
-    border-radius: 8px;
-    background-color: #3b5999;
-    color: white;
+#kakaoLoginButtonContainer{
     border: 2px transparent;
-    margin: 20px 0px;
-    padding: 15px 10px;
     cursor: pointer;
-    font-size: 15px;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-#msbtn:hover {
-    background-color: grey;
-    border: 2px solid grey;
-}
-
-
-#msbtn i {
-    float: left;
-    font-size: 20px;
 }
 
 /*buttons*/
