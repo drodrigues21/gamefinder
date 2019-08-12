@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once("./utils.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +25,22 @@
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("frontend/menuBar.php"); ?>
+            <div class="headerContainer">
+                <div class="catchFraseContainer">
+                    <?php if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
+                        echo '<h3>For all your gaming needs.</h3>';
+                    }else if(isset($_SESSION["id"]) AND isset($_SESSION["signinUsername"])){
+                        echo '<h3>Hello, '. $_SESSION['signinUsername'] . '!</h3>'; 
+                    }
+                    ?>
+                </div>
+                <div class="headerContent">
+                    <div class="logoContainer"><a href="index2.html"><img src="images/10.png" alt=""></a></div>
+                    <nav class="navbarContainer">
+                        <?php include("./frontend/modalMenu.php"); ?>
+                    </nav>
+                </div>
+            </div>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
                 <form action="">

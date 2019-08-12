@@ -1,5 +1,8 @@
 <!-- action to the signintab -->
-<form id = "signUp" class = "myForm hidden" method="POST" action="signUpDbEntry.php"> 
+
+<link rel="stylesheet" href="./styles/modalMenu.css">
+
+<form id = "signUp" class = "myForm hidden" method="POST" action="./backend/signUpDbEntry.php"> 
     <div class = "inputIcons">         
         <i class="fa fa-user icon"></i>                        
         <input type="text" placeholder="Username" name="username" id="username"> 

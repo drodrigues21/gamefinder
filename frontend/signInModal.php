@@ -1,5 +1,10 @@
+<?php
+if(isset($_GET['modal'])AND $_GET['modal'] == 'success'){
+    echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>"; 
+}
+?>
 
-<form id="signIn" class = "myForm" method="POST" action="signinDbAccess.php"> 
+<form id="signIn" class = "myForm" method="POST" action="./backend/signinDbAccess.php"> 
     <div class = "inputIcons">         
         <i class="fa fa-user icon"></i>                        
         <input type="text" placeholder="Username" name="signinUsername" id = "signinusername"> 
@@ -26,7 +31,7 @@
     <div class = "mediaSignup">
         <div class="msInnertext">or</div>                        
         <div id="kakaoLoginButtonContainer">
-            <a id="kakaoLogin"><img src="./images/kLoginButton.png"/></a>
+            <a id="kakaoLogin" name="isKakao"><img src="./images/kLoginButton.png"/></a>
         </div>         
     </div> 
 
