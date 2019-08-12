@@ -8,16 +8,16 @@
     margin: 15px;
 }
 
-.dropbtn{
+.dropbtn {
     padding: 5px 0px;
     margin: 3px 7px;
 }
 
-.dropbtn, 
-#logOutbtn{
-    color:white;
+.dropbtn,
+#logOutbtn {
+    color: white;
     font-family: 'Montserrat', sans-serif;
-    background:transparent; 
+    background: transparent;
     border: none;
     cursor: pointer;
     text-decoration: none;
@@ -27,7 +27,7 @@
     font-size: 0.8rem;
 }
 
-.dropbtn::after{
+.dropbtn::after {
     content: "";
     position: absolute;
     top: 21px;
@@ -40,42 +40,42 @@
     transition: transform 300ms ease-in;
 }
 
-.dropbtn:hover::after{
+.dropbtn:hover::after {
     transform: scaleX(1);
     transform-origin: left;
     background: rgb(0, 133, 143);
 }
 
-.dropdown{
-    position: relative;  
+.dropdown {
+    position: relative;
     display: inline-block;
 }
 
-.profileMenu{
-    overflow-x:hidden; 
+.profileMenu {
+    overflow-x: hidden;
     display: none;
     position: absolute;
-    right:-26px;
+    right: -26px;
     font-family: 'Montserrat', sans-serif;
-    background-color:  #7448b4;
+    background-color: #7448b4;
     min-width: 70px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-.profileMenu li{
-    overflow-x:hidden; 
+.profileMenu li {
+    overflow-x: hidden;
     list-style-type: none;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    margin: 25px 10px; 
+    margin: 25px 10px;
     padding-bottom: 20px;
     border-bottom: 1px solid whitesmoke;
 }
 
 .show {
-    display:block;
+    display: block;
 }
 
 /* --------modals ------- */
@@ -133,9 +133,9 @@
 /*close button*/
 .close {
     position: absolute;
-    right: 330px;
-    top: 90px;
-    color: white; 
+    right: 410px;
+    top: 175px;
+    color: white;
     font-size: 30px;
     font-weight: bold;
 }
@@ -155,8 +155,8 @@
 
 /* -----------about us ----------------- */
 #aboutus .modalContent {
-    overflow: scroll;
-    scroll-behavior: smooth;
+    /* overflow: scroll; */
+    /* scroll-behavior: smooth; */
 }
 
 #aboutus .modalBody {
@@ -182,7 +182,7 @@
 }
 
 #aboutusimg {
-    width: 50%;
+    width: 30%;
     margin-bottom: 30px;
 }
 
@@ -258,7 +258,7 @@
     background-repeat: no-repeat;
 }
 
-#kakaoLoginButtonContainer{
+#kakaoLoginButtonContainer {
     border: 2px transparent;
     cursor: pointer;
 }
@@ -362,14 +362,14 @@
     margin: 50px;
 }
 
-.correct{
-    border:1px solid green; 
-    box-shadow: 0 0 1px 1px green; 
+.correct {
+    border: 1px solid green;
+    box-shadow: 0 0 1px 1px green;
 }
 
-.incorrect{
-    border:1px solid red; 
-    box-shadow: 0 0 1px 1px red; 
+.incorrect {
+    border: 1px solid red;
+    box-shadow: 0 0 1px 1px red;
 }
 
 /* Kakao Login Container */
@@ -379,22 +379,22 @@
 }
 
 /* Account page */
-.mainDiv{
+.mainDiv {
     background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
-    height: 100vh;    
-    margin: 0;  
+    height: 100vh;
+    margin: 0;
 }
 
-.userHeader{
-    margin: 50px; 
-}
-
-.info{
+.userHeader {
     margin: 50px;
-    list-style: none; 
+}
+
+.info {
+    margin: 50px;
+    list-style: none;
     font-family: 'Montserrat', sans-serif;
 }
 
-.info>li{
+.info>li {
     margin: 20px;
 }
