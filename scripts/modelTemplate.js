@@ -53,7 +53,6 @@ function generate_modal(div) {
     modalBg.appendChild(viewCont);
 
     return document.body.appendChild(modalBg);
-
 }
 
 function generate_content_modal(content) {
@@ -67,7 +66,7 @@ function generate_content_modal(content) {
 
     let gameViewImg = document.createElement('img');
     gameViewImg.className = "gameViewImg";
-    gameViewImg.src = content.img;
+    gameViewImg.src = "images/" + content.img;
 
     let gameViewName = document.createElement('h3');
     gameViewName.textContent = content.name;
@@ -90,16 +89,6 @@ function generate_content_modal(content) {
 
     gameView.appendChild(gameViewHeader);
     gameView.appendChild(gameViewContent);
-
-
-    /* <div class="gameViewHeader">
-            <img class="gameViewImg" src="./images/beerpong.jpg" alt="placeholder">
-            <h3>GAME NAME</h3>
-        </div>
-        <div class="gameViewContent">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur temporibus voluptatibus aliquid vel veniam modi perferendis nesciunt cumque quibusdam. Corporis delectus asperiores amet inventore ratione velit sed, neque adipisci nobis alias nam magnam laudantium aperiam quo vitae, cumque quas necessitatibus porro enim officiis, aspernatur modi saepe. Ipsum quis nulla omnis ex numquam ab aliquam ducimus officia quia alias suscipit quod reprehenderit voluptatum magni fugit, facilis asperiores vero labore porro cupiditate maxime quae dicta explicabo? Itaque suscipit aliquid voluptates voluptatum officia!</p>
-            <p>Min Player - Max Player -- Rating</p>
-        </div> */
 
     return gameView;
 }
