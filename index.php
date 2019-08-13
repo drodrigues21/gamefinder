@@ -12,7 +12,7 @@ require_once("./utils.php");
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
@@ -63,11 +63,9 @@ require_once("./utils.php");
                     include("backend/getTopFive.php");
                     $count = 0;
                     while ($data = $response->fetch()) {
-                        // echo "Game: " . $data['name'] . ' ---- Rating: ' . $data['rating'] . '<br>';
                         include("frontend/smallcardgame.php");
                         $count++;
                     }
-                    // $response->closeCursor();
                     ?>
                 </div>
             </div>
@@ -81,17 +79,10 @@ require_once("./utils.php");
             <div id="filterCatContainer">
                 <?php include("frontend/subSecFilterCat.php"); ?>
             </div>
-            <div class="footer_container">
-                <nav class="footerNav">
-                    <ul class="footerNavLinks">
-                        <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'">About Us</a></li>
-                        <li><a href="#">Contact US</a></li>
-                        <li><a href="https://wcoding.com/" target="_blank">Wcoding</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <?php include("frontend/footer.php"); ?>
         </section>
     </div>
+<<<<<<< HEAD
     <?php
         if (isset($_GET["modal"]) AND $_GET["modal"] == "success"){
     ?>
@@ -119,6 +110,9 @@ require_once("./utils.php");
     <?php
         }
     ?>
+=======
+    <script src="scripts/modelTemplate.js"></script>
+>>>>>>> 65604a6048b0f3b5fb540bd7c478c1b8c07cd3af
 </body>
 
 </html>
