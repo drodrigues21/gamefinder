@@ -10,7 +10,7 @@ session_start();
 
 <body>
     <div class = "mainDiv">
-            <?php include("modalMenu.php"); ?>
+            <?php include("menuBar.php"); ?>
             <h3 class ="userHeader">Account Information</h3>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
         <div id = accountForm>
@@ -35,6 +35,9 @@ session_start();
         </div>
     </div> 
 
+    <?php 
+    include("footer.php"); 
+    ?>
 </body>
 
 <script src="../scripts/modalMenu.js"></script>
