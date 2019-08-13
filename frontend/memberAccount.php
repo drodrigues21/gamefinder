@@ -13,7 +13,7 @@ session_start();
             <?php include("../backend/loadInfosUserConnected.php"); ?>
         <div id = accountForm>
             <div id ="imgUpload">
-                <form method ="post" action ="memberAccount.php" enctype="multipart/form-data">
+                <form method ="post" action ="../backend/upload.php" enctype="multipart/form-data">
                     <input type ="hidden" name = "size" value = "1000000">
                         <div>
                             <input type ="file" name="profImage">

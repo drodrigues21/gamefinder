@@ -300,7 +300,6 @@ function removeMsgs(){
     let spans = document.querySelectorAll('.error');
     for (var i = 0; i < spans.length; i++) {
         spans[i].textContent = "";
-        
     }
 }
 // Kakao login
@@ -322,14 +321,14 @@ function loginWithKakao() {
                 success: function (res) {
                     // alert(JSON.stringify(res));
                     //into database 
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST','../backend/signInDbAccess.php?=res', true);
-                    xhr.addEventListener('readystatechange', function(e){
-                        if(e.target.readyState === 4 && e.target.status === 200){
-                         console.log(xhr.responseText); 
-                        }
-                    }); 
-                    xhr.send(); 
+                    // var xhr = new XMLHttpRequest();
+                    // xhr.open('POST','../backend/signInDbAccess.php?=res', true);
+                    // xhr.addEventListener('readystatechange', function(e){
+                    //     if(e.target.readyState === 4 && e.target.status === 200){
+                    //      console.log(xhr.responseText); 
+                    //     }
+                    // }); 
+                    // xhr.send(); 
                     // redirect the user to member area:
                     window.location.href="./index.php"; 
                 },

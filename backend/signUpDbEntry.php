@@ -14,8 +14,9 @@
             $params = array(
                 'username' => $username,
                 'password' => $password_hash,
+                // 'profImage' => 1,
                 'email' =>$email);
-            $req = $db->prepare("INSERT INTO members(username, password, email, registrationDate) VALUES (:username, :password, :email, NOW())");
+            $req = $db->prepare("INSERT INTO members(username, password, email, profImage, registrationDate) VALUES (:username, :password, :email, 1, NOW())");
             $req->execute($params);
             
             header("Location: ../index.php?modal=success"); 
