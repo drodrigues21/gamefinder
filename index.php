@@ -18,6 +18,7 @@ require_once("./utils.php");
 
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
@@ -35,7 +36,7 @@ require_once("./utils.php");
                     ?>
                 </div>
                 <div class="headerContent">
-                    <div class="logoContainer"><a href="index2.html"><img src="images/10.png" alt=""></a></div>
+                    <div class="logoContainer"><a href="index.html"><img src="images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
                         <?php include("./frontend/modalMenu.php"); ?>
                     </nav>
@@ -51,6 +52,9 @@ require_once("./utils.php");
                     <button type="submit" class="btn surpriseButton">Surprise me!</button>
                     <!-- <button type="submit" class="btn otherButton">What?</button> -->
                 </form>
+            </div>
+            <div class="saturnAnimation">
+                <?php include("frontend/saturnAnimation.php") ?>
             </div>
             <div class="topFiveContainer">
                 <div class="topFiveHeader">

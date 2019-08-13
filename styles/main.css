@@ -176,6 +176,16 @@ body {
 
 /* End of Search bar section */
 
+/* Saturn Animation */
+
+.saturnAnimation {
+    width: 500px;
+    position: absolute;
+    top: 300px;
+    right: 60px;
+    transform: scale(0.5);
+}
+
 
 /* Start of Top Five section */
 .topFiveContainer {
@@ -366,7 +376,7 @@ body {
     color: rgb(7, 93, 114);
     background-color: #fff;
     width: 55%;
-    height: 55%;
+    min-height: 55%;
     padding: 2em;
     border-radius: 5px;
     position: relative;
