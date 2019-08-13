@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="./styles/modalMenu.css">
+    <link rel="stylesheet" href="../styles/modalMenu.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
