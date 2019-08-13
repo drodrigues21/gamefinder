@@ -1,3 +1,4 @@
+
 <div class="headerContainer">
     <div class="catchFraseContainer">
         <?php if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
