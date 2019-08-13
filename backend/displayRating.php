@@ -4,7 +4,7 @@ $game_id = $_GET["game_id"];
 $query = "SELECT * FROM ratings WHERE game_id = $game_id";
 $response = $db->query($query);
 
-// need to add a join for user id and game id
+// need to update games.rating from $rate_bg !!
 
 while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
     $rate_db[] = $data;

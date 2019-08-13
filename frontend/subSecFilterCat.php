@@ -8,7 +8,17 @@
                 <!-- <p>Location</p> -->
                 <fieldset class="placesFieldset checkBoxStyle">
                     <legend class="placesLegend">
-                        <input type="checkbox" name="indoor" value="1" id="indoor" />
+                        <input type="checkbox" name="location[]" value="indoor" id="indoor" <?php
+                                                                                            if (isset($locLength)) {
+                                                                                                for ($i = 0; $i < $locLength; $i++) {
+                                                                                                    if ($checks[$locations[$i]] == 'indoor') {
+                                                                                                        echo 'checked';
+                                                                                                    } else {
+                                                                                                        echo '';
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                            ?> />
                         <label for="indoor"><span></span>Indoor</label>
                     </legend>
                     <div class="placesCheckboxes">
@@ -72,7 +82,17 @@
                 </fieldset>
                 <fieldset class="placesFieldset checkBoxStyle">
                     <legend class="placesLegend">
-                        <input type="checkbox" name="outDoor" value="1" id="outdoor" />
+                        <input type="checkbox" name="location[]" value="outdoor" id="outdoor" <?php
+                                                                                                if (isset($locLength)) {
+                                                                                                    for ($i = 0; $i < $locLength; $i++) {
+                                                                                                        if ($checks[$locations[$i]] == 'outdoor') {
+                                                                                                            echo 'checked';
+                                                                                                        } else {
+                                                                                                            echo '';
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                                ?> />
                         <label for="outdoor"><span></span>Outdoor</label>
                     </legend>
                     <div class="placesCheckboxes">
