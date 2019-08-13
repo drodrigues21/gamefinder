@@ -1,5 +1,4 @@
 <?php
-// include('./frontend/metaInfo.php'); 
 setcookie('username', ($_POST['signinUsername']), time()+365 * 24 * 3600, null, null, false, true);
 setcookie('passwordHash',  password_hash(($_POST['signinpsw']), PASSWORD_DEFAULT), time()+365 * 24 * 3600, null, null, false, true);
 
@@ -17,12 +16,8 @@ $result = $req->fetch();
 $passwordVerify = password_verify($_POST['signinpsw'], $result['password']);
 
 if (!$passwordVerify){
-    // echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
     header("Location: ../index.php?modal=phperror"); 
-?>
-    <!-- <meta http-equiv="refresh" content="5;url=../index.php">  -->
 
-<?php
 }else {
     if ($passwordVerify){
         session_start(); 

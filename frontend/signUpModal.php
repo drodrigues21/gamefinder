@@ -1,4 +1,3 @@
-<!-- action to the signintab -->
 
 <link rel="stylesheet" href="./styles/modalMenu.css">
 

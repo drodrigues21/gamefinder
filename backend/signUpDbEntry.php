@@ -19,21 +19,9 @@
             $req->execute($params);
             
             header("Location: ../index.php?modal=success"); 
-            // echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>"; 
-            ?>
-            <!-- <meta http-equiv="refresh" content="5;url=../index.php">  -->
-
-            <?php
-
         }catch (Exception $ex){
             
             header("Location: ../index.php?modal=signuperror"); 
-
-            // echo "<p class = 'error'>login or email already exists</p>"; //on the signup tab 
-        ?>
-                    <!-- <meta http-equiv="refresh" content="5;url=../index.php">  -->
-
-<?php
         }catch (Exception $exc) {
             echo $exc->getMessage();
         }
