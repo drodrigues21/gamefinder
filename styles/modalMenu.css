@@ -389,7 +389,9 @@
     background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
     width:100%; 
     height: 100%; 
-    margin: 0;
+    /* margin: 0; */
+    scroll-behavior: smooth;
+    /* margin-bottom: 0.2em; */
 }
 
 #accountForm{
@@ -397,10 +399,11 @@
     padding: 30px; 
     margin: 30px;
     border-radius: 10px; 
-    background:white; 
+    background:white;
 }
+
 .userHeader{
-    margin: 50px; 
+    margin: 20px; 
 }
 
 .info {
@@ -415,5 +418,5 @@
 
 #imgUpload{
     margin: 60px;
-
 }
+

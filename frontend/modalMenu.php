@@ -11,13 +11,10 @@ if(!@include("./utils.php")) {
 if(isset($_SESSION['signinUsername'])) {
     $username = $_SESSION['signinUsername'];
 }
-// print_r($username); 
-
 
 if(isset($_COOKIE["username"])) {
     $username = $_COOKIE['username'];
 }
-// print_r($_COOKIE); 
 ?>
 
 <ul class="nav navbar">

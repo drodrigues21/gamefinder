@@ -4,9 +4,6 @@ session_start();
 
 <link rel="stylesheet" href="../styles/modalMenu.css">
 <link rel="stylesheet" href="../styles/main.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
-    rel="stylesheet">
-<script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 <body>
     <div class = "mainDiv">
@@ -21,7 +18,7 @@ session_start();
                             <input type ="file" name="profImage">
                         </div>
                         <div>
-                            <input type ="submit" name ="upload" value="upload">
+                            <input type ="submit" name ="upload" value="Upload">
                         </div>      
             </div>
             <ul class = "info">
