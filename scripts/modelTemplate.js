@@ -33,6 +33,7 @@ for (let i = 0; i < topFiveDivs.length; i++) {
                 var content = JSON.parse(xhr.responseText);
                 var div_generated = generate_content_modal(content);
                 modalBg.firstElementChild.firstElementChild.appendChild(div_generated);
+                var rating = generate_rating_System(game_id);
             }
         };
 
@@ -90,11 +91,14 @@ function generate_content_modal(content) {
     gameViewText.textContent = content.fullTxt;
 
     let gameViewinfo = document.createElement('p');
-    gameViewinfo.textContent = content.minP + " - " + content.maxP + ' Players | ' + content.minT + " - " + content.maxT + " Minutes | Rating: " + content.rating;
+    gameViewinfo.textContent =
+        content.minP + " - " + content.maxP + ' Players | ' + content.minT + " - " + content.maxT + " Minutes";
 
+    let rating = document.createElement('div');
+    rating.id = "rating";
     gameViewContent.appendChild(gameViewText);
     gameViewContent.appendChild(gameViewinfo);
-
+    gameViewContent.appendChild(rating);
 
     gameView.appendChild(gameViewHeader);
     gameView.appendChild(gameViewContent);
@@ -110,4 +114,19 @@ function generate_content_modal(content) {
         </div> */
 
     return gameView;
+}
+
+function generate_rating_System(game_id) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", localhost + "frontend/ratingFrontEnd.php?" + game_id, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var content = xhr.responseText;
+            console.log(content);
+            let container = document.querySelector("#rating");
+            container.innerHTML = content;
+        }
+    };
+
+    xhr.send();
 }

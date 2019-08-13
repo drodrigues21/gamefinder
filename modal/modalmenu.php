@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!@include_once('../utils.php')) {
+    require_once("./utils.php");
+}
 ?>
 
 <head>
@@ -18,7 +21,7 @@ session_start();
 
 <!-- About us modal -->
 <?php
-include("aboutusModal.php");
+include(LOCALHOST . "modal/aboutusModal.php");
 ?>
 
 <!-- signup/registration modal -->
@@ -31,10 +34,10 @@ include("aboutusModal.php");
         </div>
         <div class="modalBody">
             <?php
-            include("signInModal.php");
-            include("signUpModal.php");
+            include(LOCALHOST . "modal/signInModal.php");
+            include(LOCALHOST . "modal/signUpModal.php");
             ?>
         </div>
     </div>
 </div>
-<script src="../gamefinder/modal/modalmenu.js"></script>
+<script src="<?= LOCALHOST ?>modal/modalmenu.js"></script>

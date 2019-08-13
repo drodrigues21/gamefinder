@@ -2,7 +2,7 @@
     display: inline-block;
     border: white solid 10px ;
     width: 300px;
-    height: 400px;
+    min-height: 55%;
     margin: 10px;
     /* z-index: 5; */
 }

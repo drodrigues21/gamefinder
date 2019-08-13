@@ -350,7 +350,8 @@
                                                                                         echo "checked";
                                                                                     } else {
                                                                                         echo "";
-                                                                                    } ?>>Any amount of time </label>
+                                                                                    } ?>>Any amount of time
+                    </label>
                 </div>
             </div>
         </div>

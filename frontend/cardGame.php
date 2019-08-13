@@ -7,7 +7,7 @@
             <div id='descriptionShort'>
                 <?= $data['shortTxt'] ?>
             </div>
-            <p id='bottomtxt'> <?= $data['minP'] ?> - <?= $data['maxP'] ?> players | Rating: <?= $data['rating'] ?> </p>
+            <p id='bottomtxt'> <?= $data['minP'] ?> - <?= $data['maxP'] ?> players</p>
 
         </div>
     </div>

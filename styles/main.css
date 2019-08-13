@@ -366,7 +366,7 @@ body {
     color: rgb(7, 93, 114);
     background-color: #fff;
     width: 55%;
-    height: 55%;
+    min-height: 55%;
     padding: 2em;
     border-radius: 5px;
     position: relative;

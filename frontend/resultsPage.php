@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/cardGame.css">
     <script defer src="../scripts/playerslider.js"></script>
+    <link type="text/css" rel="stylesheet" href="../styles/rating.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <title>Results</title>
 </head>
 <?php
@@ -30,7 +33,7 @@ if (empty($_POST["filterCat"])) {
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("../frontend/menuBar.php"); ?>
+            <?php include(LOCALHOST . "frontend/menuBar.php"); ?>
         </section>
 
         <section class="secondSectionContainer">
