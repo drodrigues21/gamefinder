@@ -11,7 +11,7 @@ session_start();
 <body>
     <div class = "mainDiv">
             <?php include("menuBar.php"); ?>
-            <h3 class ="userHeader">Account Information</h3>
+            <h3 class ="userHeader">My Account</h3>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
         <div id = accountForm>
             <div id ="imgUpload">
