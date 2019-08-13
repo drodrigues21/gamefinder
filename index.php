@@ -16,7 +16,6 @@ require_once("./utils.php");
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
-
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>

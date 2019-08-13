@@ -4,11 +4,12 @@ session_start();
 
 <link rel="stylesheet" href="../styles/modalMenu.css">
 <link rel="stylesheet" href="../styles/main.css">
+<script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 <body>
-    <div class = "mainDiv">
+    <div class = "mainContainerAccount">
             <?php include("menuBar.php"); ?>
-            <h3 class ="userHeader">My Account</h3>
+            <h2 class ="userHeader">My Account</h2>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
         <div id = accountForm>
             <div id ="imgUpload">
@@ -21,14 +22,14 @@ session_start();
                             <input type ="submit" name ="upload" value="Upload">
                         </div>      
             </div>
-            <ul class = "info">
+            <div class = "info">
                 <!-- <li> Full Name:  </li> -->
                 <li> Email Address: <?= $user["email"];?> </li>
                 <li> User Name: <?= $user["username"];?></li>
                 <li> Password: </li>
                 <li> Date of Birth: </li>
                 <li> Country: </li>
-            </ul>
+            </div>
         </div>
     </div> 
 
