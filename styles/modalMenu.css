@@ -391,6 +391,13 @@
     margin: 0;  
 }
 
+#accountForm{
+    width: 90%; 
+    padding: 30px; 
+    margin: 30px;
+    border-radius: 5%; 
+    background:white; 
+}
 .userHeader{
     margin: 50px; 
 }

@@ -116,7 +116,7 @@ function usernameInput() {
         username.classList.add("incorrect");
         username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
     }else{
-        username.classList.add("incorrect");
+        username.classList.add("incorrect"); 
         username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
     }
 }
