@@ -2,6 +2,10 @@
 session_start();
 
 require('../backend/dbconnect.php');
+
+// need to update games.rating from $rate_bg !!
+
+
 if ($_POST['act'] == 'rate') {
     $userID = $_SESSION['id'];
     $gameID = $data['id'];
