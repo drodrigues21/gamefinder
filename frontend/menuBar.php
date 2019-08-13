@@ -8,7 +8,7 @@
         ?>
     </div>
     <div class="headerContent">
-        <div class="logoContainer"><a href="index2.html"><img src="./images/10.png" alt=""></a></div>
+        <div class="logoContainer"><a href="index2.html"><img src="../images/10.png" alt=""></a></div>
         <nav class="navbarContainer">
             <?php include("modalmenu.php"); ?>
         </nav>
