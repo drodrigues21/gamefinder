@@ -1,4 +1,14 @@
-<form id="signIn" class="myForm" method="POST" action="signinDbAccess.php">
+<?php
+if (isset($_GET['modal']) and $_GET['modal'] == 'success') {
+    echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>";
+} else if (isset($_GET['modal']) and $_GET['modal'] == 'phperror') {
+    echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
+} else if (isset($_GET['modal']) and $_GET['modal'] == 'signuperror') {
+    echo "<p class = 'error'>Username or email already exists.</p>";
+}
+?>
+
+<form id="signIn" class="myForm" method="POST" action="./backend/signinDbAccess.php">
     <div class="inputIcons">
         <i class="fa fa-user icon"></i>
         <input type="text" placeholder="Username" name="signinUsername" id="signinusername">
@@ -26,11 +36,16 @@
     <div class="mediaSignup">
         <div class="msInnertext">or</div>
         <div id="kakaoLoginButtonContainer">
-            <a id="kakaoLogin"><img src="./images/kLoginButton.png" /></a>
+            <a id="kakaoLogin" name="isKakao"><img src="./images/kLoginButton.png" /></a>
         </div>
     </div>
 
     <div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
             up</a>.</div>
+
+</form>
+
+<div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
+        up</a>.</div>
 
 </form>

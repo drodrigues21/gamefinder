@@ -1,4 +1,7 @@
-<?php require_once("./utils.php"); ?>
+<?php
+session_start();
+require_once("./utils.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +18,7 @@
 
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>
     <title>Gamefinder</title>
 </head>
@@ -22,7 +26,22 @@
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include("frontend/menuBar.php"); ?>
+            <div class="headerContainer">
+                <div class="catchFraseContainer">
+                    <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
+                        echo '<h3>For all your gaming needs.</h3>';
+                    } else if (isset($_SESSION["id"]) and isset($_SESSION["signinUsername"])) {
+                        echo '<h3>Hello, ' . $_SESSION['signinUsername'] . '!</h3>';
+                    }
+                    ?>
+                </div>
+                <div class="headerContent">
+                    <div class="logoContainer"><a href="index.html"><img src="images/10.png" alt=""></a></div>
+                    <nav class="navbarContainer">
+                        <?php include("./frontend/modalMenu.php"); ?>
+                    </nav>
+                </div>
+            </div>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
                 <form action="./frontend/resultsPage.php" method="POST">
@@ -33,6 +52,9 @@
                     <button type="submit" name="randomGame" class="btn surpriseButton">Surprise me!</button>
                     <!-- <button type="submit" class="btn otherButton">What?</button> -->
                 </form>
+            </div>
+            <div class="saturnAnimation">
+                <?php include("frontend/saturnAnimation.php") ?>
             </div>
             <div class="topFiveContainer">
                 <div class="topFiveHeader">
@@ -64,6 +86,33 @@
             <?php include("frontend/footer.php"); ?>
         </section>
     </div>
+    <?php
+    if (isset($_GET["modal"]) and $_GET["modal"] == "success") {
+        ?>
+    <script>
+    var openAgain = document.querySelector("ul.navbar");
+    let anchorTag = openAgain.lastElementChild.firstElementChild;
+    anchorTag.click();
+    </script>
+    <?php
+    } else if (isset($_GET["modal"]) and $_GET["modal"] == "phperror") {
+        ?>
+    <script>
+    var openAgainError = document.querySelector("ul.navbar");
+    let anchorTagError = openAgainError.lastElementChild.firstElementChild;
+    anchorTagError.click();
+    </script>
+    <?php
+    } else if (isset($_GET["modal"]) and $_GET["modal"] == "signuperror") {
+        ?>
+    <script>
+    var openAgainSignUpError = document.querySelector("ul.navbar");
+    let anchorTagSignUpError = openAgainSignUpError.lastElementChild.firstElementChild;
+    anchorTagSignUpError.click();
+    </script>
+    <?php
+    }
+    ?>
     <script src="scripts/modelTemplate.js"></script>
 </body>
 

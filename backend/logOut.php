@@ -6,5 +6,5 @@ session_destroy();
 setcookie('username', '');
 setcookie('passwordHash', '');
 
-header('Location: modalmenu.php');
+header('Location: ../index.php');
 ?>

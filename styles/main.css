@@ -176,6 +176,16 @@ body {
 
 /* End of Search bar section */
 
+/* Saturn Animation */
+
+.saturnAnimation {
+    width: 500px;
+    position: absolute;
+    top: 300px;
+    right: 60px;
+    transform: scale(0.5);
+}
+
 
 /* Start of Top Five section */
 .topFiveContainer {
@@ -458,7 +468,7 @@ body {
 
 /* Start of second main section */
 .secondSectionContainer {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -467,54 +477,50 @@ body {
 
 /* Start of filter catagories section */
 #filterCatContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 55%;
-    margin: 2em auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    width: 50%;
+    margin: 4em auto 0em auto;
+    padding: 3em 0em;
     border-radius: 5px;
     box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.75);
     background-color: rgba(255, 255, 255, 0.959);
-    /* border: 1px solid red; */
 }
 
-#filterCatContainer h3 {
+#filterForm {
+    margin: 0 auto;
+}
+
+#filterForm h3 {
     font-size: 1.7rem;
     color: rgb(0, 133, 143);
     letter-spacing: 1px;
     margin-top: 0;
     text-transform: uppercase;
-    /* text-align: center; */
+    text-align: center;
 }
 
 #filterFormContainer {
-    /* border: 1px solid blue; */
-    width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5em;
-}
-
-.leftSideForm p,
-.rightSideForm p {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    color: rgb(0, 133, 143);
-}
-
-.rightSideForm {
-    /* width: 30%; */
+    padding-right: 65px;
 }
 
 .leftSideForm {
     border-right: 1px dashed rgba(128, 128, 128, 0.3);
-    padding-left: 45px;
 }
 
 .rightSideForm {
-    padding-left: 55px;
+    padding-left: 60px;
+}
+
+.leftSideForm p,
+.rightSideForm p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgb(0, 133, 143);
+}
+
+.placesContainer {
+    margin-bottom: 50px;
 }
 
 .placesContainer,
@@ -530,10 +536,6 @@ body {
     color: rgb(0, 133, 143);
     margin: 0;
     padding-right: 2em;
-}
-
-.settingContainer p {
-    width: 20%;
 }
 
 .placesFieldset,
@@ -562,8 +564,8 @@ body {
     display: inline-block;
     position: relative;
     background-color: transparent;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     transform-origin: center;
     border: 2px solid rgb(34, 175, 185);
     border-radius: 50%;
@@ -580,8 +582,8 @@ body {
     background: rgb(34, 175, 185);
     position: absolute;
     transform: rotate(45deg);
-    top: 13px;
-    left: 9px;
+    top: 10px;
+    left: 7px;
     transition: width 50ms ease 50ms;
     transform-origin: 0% 0%;
 }
@@ -594,8 +596,8 @@ body {
     background: rgb(34, 175, 185);
     position: absolute;
     transform: rotate(305deg);
-    top: 16px;
-    left: 10px;
+    top: 13px;
+    left: 8px;
     transition: width 50ms ease;
     transform-origin: 0% 0%;
 }
@@ -648,8 +650,10 @@ body {
     transition: width 150ms ease 100ms;
 }
 
-.test {
-    padding-left: 15px;
+.sliderCheckbox {
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 0.9rem;
 }
 
 /* End of checkboxes style */
@@ -683,15 +687,8 @@ body {
 }
 
 .isDrink {
-    margin-top: 40px;
-}
-
-.prepAmount {
-    margin-top: 106px;
-}
-
-.timeRange {
-    margin-left: 15px;
+    margin-top: 35px;
+    margin-bottom: 25px;
 }
 
 #timeSlider {
@@ -726,7 +723,6 @@ body {
 .radioGroup {
     border: solid rgb(0, 133, 143);
     display: inline-block;
-    /* margin-left: 145px; */
     border-radius: 10px;
     overflow: hidden;
 }
@@ -742,25 +738,20 @@ body {
 
 .playerBoxMinmax {
     margin-top: 5px;
-    margin-left: 15px;
-    width: 280px;
+    margin-left: 5px;
+    width: 270px;
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
     color: rgb(34, 175, 185);
 }
 
-.playerBoxMinmax span:first-child {
-    margin-left: 10px;
-}
-
 .rangeSlider {
-    margin-top: 40px;
-    padding-left: 20px;
+    margin-top: 30px;
 }
 
 .slider {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 260px;
     height: 8px;
     -webkit-appearance: none;
@@ -776,27 +767,27 @@ body {
     position: relative;
     transform-origin: center center;
     display: block;
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     background: transparent;
     border-radius: 50%;
     text-align: center;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 8px;
     box-sizing: border-box;
     border: 2px solid rgb(34, 175, 185);
-    margin-left: -10px;
+    margin-left: -18px;
     color: rgb(34, 175, 185);
     font-style: normal;
     font-weight: normal;
     line-height: normal;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .playerSliderLabel::after {
     content: "Players";
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
 /* End of players slider */
@@ -820,13 +811,17 @@ body {
 .timeSliderLabel::after {
     content: "Minutes";
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
 /* End of time slider */
 
+/* Start of Form buttons */
+
 .FromButton {
     text-align: center;
+    margin-left: 30px;
+    padding-top: 30px;
 }
 
 #subscribe {
@@ -852,6 +847,7 @@ body {
     background: #0a555a;
 }
 
+/* End of Form buttons */
 /* End of filter catagories section */
 
 
