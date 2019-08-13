@@ -17,9 +17,10 @@ $result = $req->fetch();
 $passwordVerify = password_verify($_POST['signinpsw'], $result['password']);
 
 if (!$passwordVerify){
-    echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
+    // echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
+    header("Location: ../index.php?modal=phperror"); 
 ?>
-    <meta http-equiv="refresh" content="5;url=../index.php"> 
+    <!-- <meta http-equiv="refresh" content="5;url=../index.php">  -->
 
 <?php
 }else {
@@ -33,8 +34,13 @@ if (!$passwordVerify){
         }
         header('Location: ../index.php');
     }else{
-        echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
+        header('Location: ../index.php?modal=phperror');
     };
 };
-
 ?> 
+
+
+<!-- if($kakaoLogin){
+    session_start();
+    $_SESSION['isKakao'] = ;
+} -->

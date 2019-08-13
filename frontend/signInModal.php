@@ -1,7 +1,11 @@
 <?php
 if(isset($_GET['modal'])AND $_GET['modal'] == 'success'){
     echo "<p class = 'success'> Your registration was successful. Now Sign in! </p>"; 
-}
+}else if(isset($_GET['modal']) AND $_GET['modal'] == 'phperror'){
+    echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
+}else if(isset($_GET['modal']) AND $_GET['modal'] == 'signuperror'){
+    echo "<p class = 'error'>Username or email already exists.</p>";
+} 
 ?>
 
 <form id="signIn" class = "myForm" method="POST" action="./backend/signinDbAccess.php"> 

@@ -86,6 +86,33 @@ require_once("./utils.php");
             <?php include("frontend/footer.php"); ?>
         </section>
     </div>
+    <?php
+        if (isset($_GET["modal"]) AND $_GET["modal"] == "success"){
+    ?>
+    <script>
+            var openAgain = document.querySelector("ul.navbar");
+            let anchorTag = openAgain.lastElementChild.firstElementChild;
+            anchorTag.click();
+    </script>
+    <?php
+        }else if(isset($_GET["modal"]) AND $_GET["modal"] == "phperror"){
+    ?>
+    <script>
+            var openAgainError = document.querySelector("ul.navbar");
+            let anchorTagError = openAgainError.lastElementChild.firstElementChild;
+            anchorTagError.click();
+    </script>
+    <?php
+        }else if(isset($_GET["modal"]) AND $_GET["modal"] == "signuperror"){
+    ?>
+    <script>
+            var openAgainSignUpError = document.querySelector("ul.navbar");
+            let anchorTagSignUpError = openAgainSignUpError.lastElementChild.firstElementChild;
+            anchorTagSignUpError.click();
+    </script>
+    <?php
+        }
+    ?>
     <script src="scripts/modelTemplate.js"></script>
 </body>
 

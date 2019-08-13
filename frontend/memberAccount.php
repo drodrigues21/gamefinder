@@ -10,10 +10,10 @@ session_start();
 
 <body>
     <div class = "mainDiv">
-            <?php include("modalMenu.php"); ?>
-            <h3 class ="userHeader">Account Information</h3>
+            <?php include("menuBar.php"); ?>
+            <h3 class ="userHeader">My Account</h3>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
-
+        <div id = accountForm>
             <div id ="imgUpload">
                 <form method ="post" action ="memberAccount.php" enctype="multipart/form-data">
                     <input type ="hidden" name = "size" value = "1000000">
@@ -21,7 +21,7 @@ session_start();
                             <input type ="file" name="profImage">
                         </div>
                         <div>
-                            <input type ="submit" name ="upload">
+                            <input type ="submit" name ="upload" value="upload">
                         </div>      
             </div>
             <ul class = "info">
@@ -32,8 +32,12 @@ session_start();
                 <li> Date of Birth: </li>
                 <li> Country: </li>
             </ul>
+        </div>
     </div> 
 
+    <?php 
+    include("footer.php"); 
+    ?>
 </body>
 
 <script src="../scripts/modalMenu.js"></script>
