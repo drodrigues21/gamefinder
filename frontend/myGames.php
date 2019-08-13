@@ -87,10 +87,10 @@
 
                     switch ($data["gameStatus"]) {
                         case "Evaluation" :
-                        array_push($user_games["Evaluation"], $data);
+                        array_push($user_games["Validated"], $data);
                         break;
                         case "Validated" :
-                        array_push($user_games["Validated"], $data);
+                        array_push($user_games["Evaluation"], $data);
                         break;
                         case "Rejected" :
                         array_push($user_games["Rejected"], $data);
