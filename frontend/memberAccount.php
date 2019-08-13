@@ -21,7 +21,7 @@ session_start();
                             <input type ="file" name="profImage">
                         </div>
                         <div>
-                            <input type ="submit" name ="upload">
+                            <input type ="submit" name ="upload" value="upload">
                         </div>      
             </div>
             <ul class = "info">
