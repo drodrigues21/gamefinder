@@ -82,7 +82,6 @@ require_once("./utils.php");
             <?php include("frontend/footer.php"); ?>
         </section>
     </div>
-<<<<<<< HEAD
     <?php
         if (isset($_GET["modal"]) AND $_GET["modal"] == "success"){
     ?>
@@ -110,9 +109,7 @@ require_once("./utils.php");
     <?php
         }
     ?>
-=======
     <script src="scripts/modelTemplate.js"></script>
->>>>>>> 65604a6048b0f3b5fb540bd7c478c1b8c07cd3af
 </body>
 
 </html>

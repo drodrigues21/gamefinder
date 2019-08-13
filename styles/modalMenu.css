@@ -391,7 +391,6 @@
     margin: 0;
 }
 
-<<<<<<< HEAD
 #accountForm{
     width: 90%; 
     padding: 30px; 
@@ -401,10 +400,6 @@
 }
 .userHeader{
     margin: 50px; 
-=======
-.userHeader {
-    margin: 50px;
->>>>>>> 65604a6048b0f3b5fb540bd7c478c1b8c07cd3af
 }
 
 .info {
