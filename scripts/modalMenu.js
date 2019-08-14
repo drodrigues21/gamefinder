@@ -300,10 +300,6 @@ function removeMsgs() {
     let spans = document.querySelectorAll('.error');
     for (var i = 0; i < spans.length; i++) {
         spans[i].textContent = "";
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
     }
 }
 // Kakao login

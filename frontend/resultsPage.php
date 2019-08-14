@@ -1,4 +1,6 @@
-<?php require_once("../utils.php"); ?>
+<?php 
+session_start();
+require_once("../utils.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +35,7 @@ if (empty($_POST["filterCat"])) {
 <body>
     <div class="mainContainer">
         <section class="firstSectionContainer">
-            <?php include(LOCALHOST . "frontend/menuBar.php"); ?>
+            <?php include("menuBar.php"); ?>
         </section>
 
         <section class="secondSectionContainer">

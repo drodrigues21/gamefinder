@@ -1,9 +1,5 @@
-<head>
-    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-</head>
-
 <?php
+
 if (!@include("./utils.php")) {
     require_once("../utils.php");
 }
@@ -11,13 +7,19 @@ if (!@include("./utils.php")) {
 if (isset($_SESSION['signinUsername'])) {
     $username = $_SESSION['signinUsername'];
 }
-// print_r($_SESSION); 
-
+ 
+// print_r($_SESSION);
 if (isset($_COOKIE["username"])) {
     $username = $_COOKIE['username'];
 }
 // print_r($_COOKIE);
 ?>
+<head>
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+
 
 <ul class="nav navbar">
     <li><a href="<?= LOCALHOST ?>index.php"><i class="fas fa-home"></i> Home</a></li>
@@ -25,10 +27,10 @@ if (isset($_COOKIE["username"])) {
                 class="far fa-address-card"></i> About Us </a></li>
     <li><a href="#"><i class="fas fa-dice"></i> Game Tools</a></li>
     <?php
-    if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
+    if (!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])) {
         echo
             '<li><a href="#" onclick="document.getElementById(`signUpAndIn`).style.display=`block`"><i class="fas fa-user-lock"></i> Sign In</a></li>';
-    } else if (isset($_SESSION["signinUsername"]) and isset($_SESSION["id"])) {
+    } else if(isset($_SESSION["signinUsername"]) AND isset($_SESSION["id"])) {
         echo  '<div class ="dropdown">
             <button onclick= "dropDown()" class ="dropbtn"><i class="far fa-user-circle"></i>Profile</button>
             <div class = "profileMenu" id ="profileMenuContent">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 setcookie('username', ($_POST['signinUsername']), time()+365 * 24 * 3600, null, null, false, true);
 setcookie('passwordHash',  password_hash(($_POST['signinpsw']), PASSWORD_DEFAULT), time()+365 * 24 * 3600, null, null, false, true);
 
@@ -16,20 +17,19 @@ $result = $req->fetch();
 $passwordVerify = password_verify($_POST['signinpsw'], $result['password']);
 
 if (!$passwordVerify){
-    header("Location: ../index.php?modal=phperror"); 
+    header("Location:".LOCALHOST."index.php?modal=phperror"); 
 
 }else {
-    if ($passwordVerify){
-        session_start(); 
+    if ($passwordVerify){ 
         $_SESSION['id'] = $result['id'];
         $_SESSION['signinUsername'] = $username;
-        $checkBox = $_POST['checkbox']; 
-        if (isset($checkBox) AND $checkBox===1){
+        $checkBox = isset($_POST['checkbox'])? $_POST['checkbox'] : 0; 
+        if ($checkBox===1){
             setcookie("username", $username, time()+365*24*3600);   
         }
-        header('Location: ../index.php');
+        header("Location:".LOCALHOST."index.php");
     }else{
-        header('Location: ../index.php?modal=phperror');
+        header("Location:".LOCALHOST."index.php?modal=phperror");
     };
 };
 ?> 
