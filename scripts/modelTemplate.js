@@ -1,7 +1,9 @@
-var topFiveDivs = document.querySelectorAll(".topFive");
+const localhost = "http://localhost:8888/Sites/gamefinder/";
 
-for (let i = 0; i < topFiveDivs.length; i++) {
-    topFiveDivs[i].addEventListener('click', function (e) {
+var divs = document.querySelectorAll("div[modal=game]");
+
+for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', function (e) {
         var modalBg = generate_modal();
         var closeModal = document.querySelector(".closeModal");
         closeModal.addEventListener('click', function () {
@@ -9,22 +11,17 @@ for (let i = 0; i < topFiveDivs.length; i++) {
             document.body.removeChild(modalBg);
         });
 
-        // get back content from backend
-
-        var topFiveContainer = e.target.parentNode;
-        if (topFiveContainer.className == "topFiveContent") {
-            topFiveContainer = e.target;
-        }
-        var game_id = "game_id=" + topFiveContainer.getAttribute("game-id");
+        var game_id = "game_id=" + e.currentTarget.getAttribute("game-id");
 
         //AJAX
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost/Sites/gamefinder/backend/gameView.php?" + game_id, true);
+        xhr.open("GET", localhost + "backend/gameView.php?" + game_id, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var content = JSON.parse(xhr.responseText);
                 var div_generated = generate_content_modal(content);
                 modalBg.firstElementChild.firstElementChild.appendChild(div_generated);
+                generate_rating_System(game_id);
             }
         };
 
@@ -56,7 +53,6 @@ function generate_modal(div) {
 }
 
 function generate_content_modal(content) {
-    console.log(content.img);
 
     let gameView = document.createElement('div');
     gameView.className = "gameView";
@@ -66,7 +62,7 @@ function generate_content_modal(content) {
 
     let gameViewImg = document.createElement('img');
     gameViewImg.className = "gameViewImg";
-    gameViewImg.src = "images/" + content.img;
+    gameViewImg.src = "http://localhost:8888/Sites/gamefinder/images/" + content.img;
 
     let gameViewName = document.createElement('h3');
     gameViewName.textContent = content.name;
@@ -81,14 +77,32 @@ function generate_content_modal(content) {
     gameViewText.textContent = content.fullTxt;
 
     let gameViewinfo = document.createElement('p');
-    gameViewinfo.textContent = "Min Players: " + content.minP + " - Max Players: " + content.maxP + " / Min Time: " + content.minT + " - Max Time: " + content.maxT + " / Rating: " + content.rating;
+    gameViewinfo.textContent =
+        content.minP + " - " + content.maxP + ' Players | ' + content.minT + " - " + content.maxT + " Minutes";
 
+    let rating = document.createElement('div');
+    rating.id = "rating";
     gameViewContent.appendChild(gameViewText);
     gameViewContent.appendChild(gameViewinfo);
-
+    gameViewContent.appendChild(rating);
 
     gameView.appendChild(gameViewHeader);
     gameView.appendChild(gameViewContent);
 
     return gameView;
+}
+
+function generate_rating_System(game_id) {
+    console.log(game_id);
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", localhost + "frontend/ratingFrontEnd.php?" + game_id, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var content = xhr.responseText;
+            let container = document.querySelector("#rating");
+            container.innerHTML = content;
+        }
+    };
+
+    xhr.send();
 }

@@ -19,6 +19,10 @@ require_once("./utils.php");
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <title>Gamefinder</title>
 </head>
 
@@ -27,28 +31,28 @@ require_once("./utils.php");
         <section class="firstSectionContainer">
             <div class="headerContainer">
                 <div class="catchFraseContainer">
-                    <?php if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
+                    <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
                         echo '<h3>For all your gaming needs.</h3>';
-                    }else if(isset($_SESSION["id"]) AND isset($_SESSION["signinUsername"])){
-                        echo '<h3>Hello, '. $_SESSION['signinUsername'] . '!</h3>'; 
+                    } else if (isset($_SESSION["id"]) and isset($_SESSION["signinUsername"])) {
+                        echo '<h3>Hello, ' . $_SESSION['signinUsername'] . '!</h3>';
                     }
                     ?>
                 </div>
                 <div class="headerContent">
                     <div class="logoContainer"><a href="index.html"><img src="images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
-                        <?php include("./frontend/modalMenu.php"); ?>
+                        <?php include(LOCALHOST . "frontend/modalMenu.php"); ?>
                     </nav>
                 </div>
             </div>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
-                <form action="">
+                <form action="./frontend/resultsPage.php" method="POST">
                     <div class="searchField">
-                        <input type="text" class="searchBox" placeholder="What are you looking for?">
+                        <input type="text" class="searchBox" name="search" placeholder="What are you looking for?">
                         <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
                     </div>
-                    <button type="submit" class="btn surpriseButton">Surprise me!</button>
+                    <button type="submit" name="randomGame" class="btn surpriseButton">Surprise me!</button>
                     <!-- <button type="submit" class="btn otherButton">What?</button> -->
                 </form>
             </div>
@@ -86,33 +90,33 @@ require_once("./utils.php");
         </section>
     </div>
     <?php
-        if (isset($_GET["modal"]) AND $_GET["modal"] == "success"){
-    ?>
+    if (isset($_GET["modal"]) and $_GET["modal"] == "success") {
+        ?>
     <script>
-            var openAgain = document.querySelector("ul.navbar");
-            let anchorTag = openAgain.lastElementChild.firstElementChild;
-            anchorTag.click();
+    var openAgain = document.querySelector("ul.navbar");
+    let anchorTag = openAgain.lastElementChild.firstElementChild;
+    anchorTag.click();
     </script>
     <?php
-        }else if(isset($_GET["modal"]) AND $_GET["modal"] == "phperror"){
-    ?>
+    } else if (isset($_GET["modal"]) and $_GET["modal"] == "phperror") {
+        ?>
     <script>
-            var openAgainError = document.querySelector("ul.navbar");
-            let anchorTagError = openAgainError.lastElementChild.firstElementChild;
-            anchorTagError.click();
+    var openAgainError = document.querySelector("ul.navbar");
+    let anchorTagError = openAgainError.lastElementChild.firstElementChild;
+    anchorTagError.click();
     </script>
     <?php
-        }else if(isset($_GET["modal"]) AND $_GET["modal"] == "signuperror"){
-    ?>
+    } else if (isset($_GET["modal"]) and $_GET["modal"] == "signuperror") {
+        ?>
     <script>
-            var openAgainSignUpError = document.querySelector("ul.navbar");
-            let anchorTagSignUpError = openAgainSignUpError.lastElementChild.firstElementChild;
-            anchorTagSignUpError.click();
+    var openAgainSignUpError = document.querySelector("ul.navbar");
+    let anchorTagSignUpError = openAgainSignUpError.lastElementChild.firstElementChild;
+    anchorTagSignUpError.click();
     </script>
     <?php
-        }
+    }
     ?>
-    <script src="scripts/modelTemplate.js"></script>
+    <script src="<?= LOCALHOST ?>scripts/modelTemplate.js"></script>
 </body>
 
 </html>

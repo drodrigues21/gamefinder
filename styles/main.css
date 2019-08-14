@@ -13,9 +13,9 @@ body {
     /* background-image: linear-gradient(to right bottom, #592c59, #4f2c5f, #432e64, #322f69, #17316d); */
     /* background-image: linear-gradient(to right top, #1f1f1f, #313131, #575757, #585858, #464646); */
     /* background-image: linear-gradient(to right bottom, #1040ae, #006ccd, #0091d4, #00b1cc, #1ecfc0); */
-    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
+    /* background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb); */
     /* background-image: linear-gradient(to right bottom, #176fb3, #0087c0, #009dbe, #00b1af, #1cc298); */
-    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Start of first main section */
@@ -384,7 +384,7 @@ body {
 
 .gameViewHeader {
     display: flex;
-    justify-content: ;
+    justify-content: column;
     align-items: center;
     padding: 0.5em 2em;
 }
@@ -691,7 +691,7 @@ body {
 }
 
 #timeSlider {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 /* Start of radio buttons */
