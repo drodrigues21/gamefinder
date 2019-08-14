@@ -208,8 +208,9 @@ body {
 }
 
 .topFive {
-    width: 210px;
-    height: 200px;
+    width: 10%;
+    /* height: 200px; */
+    padding: 2em 1em;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
@@ -264,7 +265,7 @@ body {
 }
 
 .topFive:hover {
-    height: 225px;
+    height: 85%;
 }
 
 .topFive:hover .topFiveText {
@@ -468,7 +469,7 @@ body {
 
 /* Start of second main section */
 .secondSectionContainer {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -477,8 +478,8 @@ body {
 
 /* Start of filter catagories section */
 #filterCatContainer {
-    width: 50%;
-    margin: 4em auto 0em auto;
+    min-width: 50%;
+    margin: 3em auto 3em auto;
     padding: 3em 0em;
     border-radius: 5px;
     box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.75);

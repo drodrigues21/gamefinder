@@ -1,7 +1,7 @@
 // Add Game Modal
 
 var addGameBtn = document.querySelector(".addGameBtn");
-var addGameForm = document.querySelector(".addGameForm");
+var addGameForm = document.querySelector(".addGameFormContainer");
 var closeAddGame = document.querySelector(".closeAddGame");
 
 

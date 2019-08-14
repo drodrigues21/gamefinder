@@ -35,7 +35,7 @@ if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
                 <li><a href="'.LOCALHOST.'frontend/favorites.php">Favorites</a></li>
                 <li><a href="'.LOCALHOST.'frontend/myGames.php">My Games</a></li>
                 <li><a href="'.LOCALHOST.'frontend/memberAccount.php">Account</a></li>
-                <li><form action="'.LOCALHOST.'frontend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
+                <li><form action="'.LOCALHOST.'backend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
             </div>
         </div>';
 }
