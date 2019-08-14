@@ -326,17 +326,10 @@ function loginWithKakao() {
                     // alert(JSON.stringify(res));
                     //into database 
                     var xhr = new XMLHttpRequest();
-<<<<<<< HEAD
                     xhr.open("POST","../backend/signInDbAccess.php?=".res, true);
                     xhr.addEventListener("readystatechange", function(e){
                         if(e.target.readyState === 4 && e.target.status === 200){
                          console.log(xhr.responseText); 
-=======
-                    xhr.open('POST', '../backend/signInDbAccess.php?=res', true);
-                    xhr.addEventListener('readystatechange', function (e) {
-                        if (e.target.readyState === 4 && e.target.status === 200) {
-                            console.log(xhr.responseText);
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
                         }
                     });
                     xhr.send();

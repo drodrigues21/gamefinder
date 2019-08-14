@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-
-=======
 <?php
 if (!@include_once('../utils.php')) {
     require_once("./utils.php");
 }
 ?>
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
 <div class="headerContainer">
     <div class="catchFraseContainer">
         <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {

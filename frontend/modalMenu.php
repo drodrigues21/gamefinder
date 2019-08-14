@@ -1,9 +1,5 @@
 <head>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../styles/modalMenu.css">
-=======
     <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
@@ -17,13 +13,8 @@ if (isset($_SESSION['signinUsername'])) {
 }
 // print_r($_SESSION); 
 
-<<<<<<< HEAD
-if(isset($_COOKIE["username"])) {
-    $username = $_COOKIE["username"];
-=======
 if (isset($_COOKIE["username"])) {
     $username = $_COOKIE['username'];
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
 }
 // print_r($_COOKIE);
 ?>
@@ -41,17 +32,10 @@ if (isset($_COOKIE["username"])) {
         echo  '<div class ="dropdown">
             <button onclick= "dropDown()" class ="dropbtn"><i class="far fa-user-circle"></i>Profile</button>
             <div class = "profileMenu" id ="profileMenuContent">
-<<<<<<< HEAD
                 <li><a href="'.LOCALHOST.'frontend/favorites.php">Favorites</a></li>
                 <li><a href="'.LOCALHOST.'frontend/myGames.php">My Games</a></li>
                 <li><a href="'.LOCALHOST.'frontend/memberAccount.php">Account</a></li>
                 <li><form action="'.LOCALHOST.'backend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
-=======
-                <li><a href="' . LOCALHOST . 'frontend/favorites.php">Favorites</a></li>
-                <li><a href="' . LOCALHOST . 'frontend/myGames.php">My Games</a></li>
-                <li><a href="' . LOCALHOST . 'frontend/memberAccount.php">Account</a></li>
-                <li><form action="' . LOCALHOST . 'frontend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
->>>>>>> 0e17bdc855d97385e10ab26748953e5a0c5af24f
             </div>
         </div>';
     }
