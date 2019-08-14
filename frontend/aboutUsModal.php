@@ -5,7 +5,7 @@
             <p>About us</p>
         </div>
         <div class="modalBody">
-            <img id="aboutusimg" src="./images/aboutus.jpg">
+            <img id="aboutusimg" src="<?= LOCALHOST ?>/images/aboutus.jpg">
             <!-- ../images/aboutus.jpg for the loggedIn.php -->
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

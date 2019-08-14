@@ -2,9 +2,9 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/modalMenu.css">
-    <link rel="stylesheet" href="../styles/myGames.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/main.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/myGames.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 </head>
@@ -13,10 +13,10 @@
     <div class="myGamesContainer">
         <div class="headerContainer">
             <div class="catchFraseContainer">
-                <?php if(!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])){
+                <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
                     echo '<h3>For all your gaming needs.</h3>';
-                }else if(isset($_SESSION["id"]) AND isset($_SESSION["signinUsername"])){
-                    echo '<h3>Hello, '. $_SESSION['signinUsername'] . '!</h3>'; 
+                } else if (isset($_SESSION["id"]) and isset($_SESSION["signinUsername"])) {
+                    echo '<h3>Hello, ' . $_SESSION['signinUsername'] . '!</h3>';
                 }
                 ?>
             </div>
@@ -48,19 +48,19 @@
                         <div>
                             <label for="time">Time:</label>
                             <div id="timeSlider" class="range-slider ">
-                            <input id="timeRange" type="range" min="5" max="60" value="0" class="slider"
-                            name="timeRange" onchange="show_value(this.value);">
+                                <input id="timeRange" type="range" min="5" max="60" value="0" class="slider"
+                                    name="timeRange" onchange="show_value(this.value);">
                             </div>
                             <div class="timeBoxMinmax">
                                 <span>5</span>
                                 <span>60+</span>
                             </div>
                         </div>
-                        <div>   
-                            <label for="time">Players:</label>                     
+                        <div>
+                            <label for="time">Players:</label>
                             <div class="rangeSlider">
-                                <input id="playerRange" class="slider" name="playerRange" type="range" value="2"
-                                    min="2" max="20">
+                                <input id="playerRange" class="slider" name="playerRange" type="range" value="2" min="2"
+                                    max="20">
                             </div>
                             <div class="playerBoxMinmax">
                                 <span>2</span>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="myGames">
-            <?php 
+                <?php
                 include("../backend/dbconnect.php");
                 $userId = $_SESSION["id"];
                 $user_games["Evaluation"] = array();
@@ -86,27 +86,28 @@
                 while ($data = $req->fetch()) {
 
                     switch ($data["gameStatus"]) {
-                        case "Evaluation" :
-                        array_push($user_games["Validated"], $data);
-                        break;
-                        case "Validated" :
-                        array_push($user_games["Evaluation"], $data);
-                        break;
-                        case "Rejected" :
-                        array_push($user_games["Rejected"], $data);
-                        break;
-                        default : break;
+                        case "Evaluation":
+                            array_push($user_games["Validated"], $data);
+                            break;
+                        case "Validated":
+                            array_push($user_games["Evaluation"], $data);
+                            break;
+                        case "Rejected":
+                            array_push($user_games["Rejected"], $data);
+                            break;
+                        default:
+                            break;
                     }
                 }
 
-                foreach($user_games as $key =>$state) {
+                foreach ($user_games as $key => $state) {
                     echo " <div class='statusContainer $key'> ";
-                    foreach($state as $data) {
+                    foreach ($state as $data) {
                         include("statusGame.php");
                     }
                     echo "</div>";
                 }
-            ?>   
+                ?>
             </div>
         </div>
         <div class="footerContainer">
@@ -116,5 +117,3 @@
     <script src="../scripts/addGame.js"></script>
     <script src="../scripts/modalMenu.js"></script>
 </body>
-
-

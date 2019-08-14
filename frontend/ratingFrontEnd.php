@@ -10,7 +10,8 @@
     <div class="box-result">
 
         <?php include('../backend/displayRating.php'); ?>
-        <?php include('../backend/updateRating.php'); ?>
+        <!-- <?php //include('../backend/updateRating.php'); 
+                ?> -->
 
         <div class="result-container">
             <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>

@@ -1,9 +1,9 @@
 const localhost = "http://localhost:8888/Sites/gamefinder/";
 
-var topFiveDivs = document.querySelectorAll("div[modal=game]");
+var divs = document.querySelectorAll("div[modal=game]");
 
-for (let i = 0; i < topFiveDivs.length; i++) {
-    topFiveDivs[i].addEventListener('click', function (e) {
+for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', function (e) {
         var modalBg = generate_modal();
         var closeModal = document.querySelector(".closeModal");
         closeModal.addEventListener('click', function () {
@@ -11,19 +11,7 @@ for (let i = 0; i < topFiveDivs.length; i++) {
             document.body.removeChild(modalBg);
         });
 
-        // get back content from backend
-
-        var topFiveContainer = e.target.parentNode;
-
-        if (topFiveContainer.className == "topFiveContent" || topFiveContainer.className == "sectionCont") {
-            topFiveContainer = e.target;
-        }
-        // cardgame handle
-        console.log(topFiveContainer);
-        while (topFiveContainer.className != "cardCont") {
-            topFiveContainer = topFiveContainer.parentNode;
-        }
-        var game_id = "game_id=" + topFiveContainer.getAttribute("game-id");
+        var game_id = "game_id=" + e.currentTarget.getAttribute("game-id");
 
         //AJAX
         var xhr = new XMLHttpRequest();
@@ -33,7 +21,7 @@ for (let i = 0; i < topFiveDivs.length; i++) {
                 var content = JSON.parse(xhr.responseText);
                 var div_generated = generate_content_modal(content);
                 modalBg.firstElementChild.firstElementChild.appendChild(div_generated);
-                var rating = generate_rating_System(game_id);
+                generate_rating_System(game_id);
             }
         };
 
@@ -65,7 +53,6 @@ function generate_modal(div) {
 }
 
 function generate_content_modal(content) {
-    console.log(content.img);
 
     let gameView = document.createElement('div');
     gameView.className = "gameView";
@@ -106,12 +93,12 @@ function generate_content_modal(content) {
 }
 
 function generate_rating_System(game_id) {
+    console.log(game_id);
     var xhr = new XMLHttpRequest();
     xhr.open("GET", localhost + "frontend/ratingFrontEnd.php?" + game_id, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var content = xhr.responseText;
-            console.log(content);
             let container = document.querySelector("#rating");
             container.innerHTML = content;
         }

@@ -14,10 +14,10 @@
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/cardGame.css">
-    <script defer src="../scripts/playerslider.js"></script>
-    <link type="text/css" rel="stylesheet" href="../styles/rating.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/main.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/cardGame.css">
+    <script defer src="<?= LOCALHOST ?>scripts/playerslider.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <title>Results</title>

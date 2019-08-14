@@ -20,6 +20,10 @@ require_once("./utils.php");
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <title>Gamefinder</title>
 </head>
 
@@ -38,7 +42,7 @@ require_once("./utils.php");
                 <div class="headerContent">
                     <div class="logoContainer"><a href="index.html"><img src="images/10.png" alt=""></a></div>
                     <nav class="navbarContainer">
-                        <?php include("./frontend/modalMenu.php"); ?>
+                        <?php include(LOCALHOST . "frontend/modalMenu.php"); ?>
                     </nav>
                 </div>
             </div>
@@ -113,7 +117,7 @@ require_once("./utils.php");
     <?php
     }
     ?>
-    <script src="scripts/modelTemplate.js"></script>
+    <script src="<?= LOCALHOST ?>scripts/modelTemplate.js"></script>
 </body>
 
 </html>
