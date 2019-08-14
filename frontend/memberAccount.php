@@ -2,7 +2,6 @@
 session_start();
 ?>
 
-<link rel="stylesheet" href="../styles/modalMenu.css">
 <link rel="stylesheet" href="../styles/main.css">
 <link rel = "stylesheet" href="../styles/memberAccount.css">
 <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
