@@ -1,3 +1,6 @@
+<?php 
+session_start();
+require_once("../utils.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +16,21 @@
     <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/cardGame.css">
-    <script defer src="../scripts/playerslider.js"></script>
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/main.css">
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/cardGame.css">
+    <script defer src="<?= LOCALHOST ?>scripts/playerslider.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <title>Results</title>
 </head>
+<?php
+if (empty($_POST["filterCat"])) {
+    include("../backend/searchBackend.php");
+} else {
+    include("../backend/getResultsFromCat.php");
+}
+?>
 
 <body>
     <div class="mainContainer">
@@ -31,7 +44,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="sectionCont">
             <?php
             while ($data = $response->fetch()) {
                 include('../frontend/cardGame.php');
@@ -42,5 +55,5 @@
             <?php include("footer.php"); ?>
         </section>
     </div>
-
+    <script src="../scripts/modelTemplate.js"></script>
 </body>

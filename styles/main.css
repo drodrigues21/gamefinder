@@ -13,9 +13,9 @@ body {
     /* background-image: linear-gradient(to right bottom, #592c59, #4f2c5f, #432e64, #322f69, #17316d); */
     /* background-image: linear-gradient(to right top, #1f1f1f, #313131, #575757, #585858, #464646); */
     /* background-image: linear-gradient(to right bottom, #1040ae, #006ccd, #0091d4, #00b1cc, #1ecfc0); */
-    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
+    /* background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb); */
     /* background-image: linear-gradient(to right bottom, #176fb3, #0087c0, #009dbe, #00b1af, #1cc298); */
-    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Start of first main section */
@@ -23,7 +23,6 @@ body {
     height: 100%;
     margin-bottom: 0.2em;
 }
-
 
 /* Start of header section */
 .headerContainer {
@@ -90,11 +89,11 @@ body {
 }
 
 .logoContainer {
-    margin: -55px 400px 0px 0px;
+    margin: -55px 400px 0px -50px;
 }
 
 .logoContainer img {
-    transform: scale(0.7);
+    transform: scale(0.5);
 }
 
 /* End of header section */
@@ -247,10 +246,10 @@ body {
     text-align: center;
     margin-top: 20px;
     color: rgb(0, 133, 143);
-    font-size: 1rem;
+    font-size: 0.7em;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .topFiveText {
@@ -385,7 +384,7 @@ body {
 
 .gameViewHeader {
     display: flex;
-    justify-content: ;
+    justify-content: column;
     align-items: center;
     padding: 0.5em 2em;
 }
@@ -465,7 +464,6 @@ body {
 
 /* End of scroll down arrow section */
 /* End of first main section */
-
 
 /* Start of second main section */
 .secondSectionContainer {
@@ -693,7 +691,7 @@ body {
 }
 
 #timeSlider {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 /* Start of radio buttons */
@@ -872,7 +870,6 @@ body {
 
 .footerNavLinks li a {
     text-decoration: none;
-    /* padding: 2em; */
     color: #fff;
     font-size: 0.8rem;
     text-transform: uppercase;

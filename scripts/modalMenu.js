@@ -34,11 +34,11 @@ for (let i = 0; i < tabs.length; i++) {
         let target = e.target;
         if (target.id == "signInTab") {
             toggleTabs("block", "none", "transparent ", "lightgrey ");
-            removeMsgs(); 
+            removeMsgs();
 
         } else if (target.id == "signUpTab") {
             toggleTabs("none", "block", "lightgrey ", "transparent ");
-            removeMsgs(); 
+            removeMsgs();
         }
     });
 }
@@ -107,16 +107,16 @@ eyepwConfSU.addEventListener("click", function () {
 function usernameInput() {
 
     if (username.value.length >= 4) {
-        username.classList.add("correct"); 
+        username.classList.add("correct");
         username.nextElementSibling.textContent = '';
     } else if (username.value === '') {
         username.classList.add("incorrect");
         username.nextElementSibling.textContent = 'The username is required';
-    } else if (username.value < 4){
+    } else if (username.value < 4) {
         username.classList.add("incorrect");
         username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
-    }else{
-        username.classList.add("incorrect"); 
+    } else {
+        username.classList.add("incorrect");
         username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
     }
 }
@@ -126,16 +126,16 @@ username.addEventListener('blur', usernameInput);
 
 function emailInput() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) { //trim 
-        email.classList.add("correct"); 
+        email.classList.add("correct");
         email.nextElementSibling.textContent = '';
-    }else if (email.value === '') {
+    } else if (email.value === '') {
         email.classList.add("incorrect");
         email.nextElementSibling.textContent = 'Email is required';
-    }else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))){
+    } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
         email.classList.add("incorrect");
         email.nextElementSibling.textContent = 'please type a valid email: email@address.com';
-    }else{
-        email.classList.add("correct"); 
+    } else {
+        email.classList.add("correct");
         email.nextElementSibling.textContent = '';
     }
 }
@@ -145,7 +145,7 @@ email.addEventListener('blur', emailInput);
 function passwordInput() {
 
     if (password.value.length >= 6) {
-        password.classList.add("correct"); 
+        password.classList.add("correct");
         password.nextElementSibling.textContent = '';
     } else if (password.value === '') {
         password.classList.add("incorrect");
@@ -154,7 +154,7 @@ function passwordInput() {
         password.classList.add("incorrect");
         password.nextElementSibling.textContent = 'The password cannot be less than 6 characters';
     } else {
-        password.classList.add("correct"); 
+        password.classList.add("correct");
         password.nextElementSibling.textContent = '';
     }
 }
@@ -164,16 +164,16 @@ password.addEventListener('blur', passwordInput);
 function confirmPasswordInput() {
 
     if (confirmPassword.value == password.value && confirmPassword.value != '') {
-        confirmPassword.classList.add("correct"); 
+        confirmPassword.classList.add("correct");
         confirmPassword.nextElementSibling.textContent = '';
-    }else if (confirmPassword.value == "") {
+    } else if (confirmPassword.value == "") {
         confirmPassword.classList.add("incorrect");
         confirmPassword.nextElementSibling.textContent = 'Passwords must be confirmed';
-    }else if (confirmPassword.value !== password.value){
+    } else if (confirmPassword.value !== password.value) {
         confirmPassword.classList.add("incorrect");
         confirmPassword.nextElementSibling.textContent = 'Password must match';
-    }else {
-        confirmPassword.classList.add("correct"); 
+    } else {
+        confirmPassword.classList.add("correct");
         confirmPassword.nextElementSibling.textContent = '';
     }
 }
@@ -207,12 +207,12 @@ submitBtn.addEventListener('click', function (e) {
     if (check) {
         signUpForm.submit();
     } else {
-        removeMsgs(); 
+        removeMsgs();
     }
 });
 
 cancelBtn.addEventListener('click', function (e) {
-    removeMsgs(); 
+    removeMsgs();
 });
 
 
@@ -221,35 +221,35 @@ cancelBtn.addEventListener('click', function (e) {
 function usernameSigninInput() {
 
     if (signinUsername.value.length >= 4) {
-        signinUsername.classList.add("correct"); 
+        signinUsername.classList.add("correct");
         signinUsername.nextElementSibling.textContent = '';
     } else if (signinUsername.value === '') {
-        signinUsername.classList.add("incorrect"); 
+        signinUsername.classList.add("incorrect");
         signinUsername.nextElementSibling.textContent = 'The username is required';
-    } else if(signinUsername.value.length < 4) {
-        signinUsername.classList.add("incorrect"); 
+    } else if (signinUsername.value.length < 4) {
+        signinUsername.classList.add("incorrect");
         signinUsername.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
-    }else{
-        signinUsername.classList.add("correct"); 
+    } else {
+        signinUsername.classList.add("correct");
         signinUsername.nextElementSibling.textContent = '';
     }
 }
 
-signinUsername.addEventListener('blur', usernameSigninInput); 
+signinUsername.addEventListener('blur', usernameSigninInput);
 
 function passwordSigninInput() {
 
     if (signinPassword.value.length >= 6) {
-        signinPassword.classList.add("correct"); 
+        signinPassword.classList.add("correct");
         signinPassword.nextElementSibling.textContent = '';
-    } else if (signinPassword.value === '') {        
-        signinPassword.classList.add("incorrect"); 
+    } else if (signinPassword.value === '') {
+        signinPassword.classList.add("incorrect");
         signinPassword.nextElementSibling.textContent = 'The password is required';
     } else if (signinPassword.value.length < 6) {
-        signinPassword.classList.add("incorrect"); 
+        signinPassword.classList.add("incorrect");
         signinPassword.nextElementSibling.textContent = 'The password cannot be less than 6 characters';
-    }else{
-        signinPassword.classList.add("correct"); 
+    } else {
+        signinPassword.classList.add("correct");
         signinPassword.nextElementSibling.textContent = '';
     }
 }
@@ -273,15 +273,15 @@ signinBtn.addEventListener('click', function (e) {
     if (check) {
         signinForm.submit();
     } else {
-        removeMsgs(); 
+        removeMsgs();
     }
 });
 
 signinCancel.addEventListener('click', function (e) {
-    removeMsgs(); 
+    removeMsgs();
 });
 
-function removeMsgs(){
+function removeMsgs() {
     signUpForm.reset();
     signinForm.reset();
     username.classList.remove("incorrect");
@@ -295,12 +295,11 @@ function removeMsgs(){
     signinPassword.classList.remove("incorrect");
     signinPassword.classList.remove("correct");
     signinUsername.classList.remove("incorrect");
-    signinUsername.classList.remove("correct"); 
+    signinUsername.classList.remove("correct");
 
     let spans = document.querySelectorAll('.error');
     for (var i = 0; i < spans.length; i++) {
         spans[i].textContent = "";
-        
     }
 }
 // Kakao login
@@ -308,7 +307,7 @@ function removeMsgs(){
 // initialization
 Kakao.init('cd42352d6849f53b69a61e4f63da5fa4');
 console.log('is init :' + Kakao.isInitialized());
-console.log(Kakao.Auth.getStatus(function(statusObj){
+console.log(Kakao.Auth.getStatus(function (statusObj) {
     console.log(statusObj)
 }));
 
@@ -323,15 +322,15 @@ function loginWithKakao() {
                     // alert(JSON.stringify(res));
                     //into database 
                     var xhr = new XMLHttpRequest();
-                    xhr.open('POST','../backend/signInDbAccess.php?=res', true);
-                    xhr.addEventListener('readystatechange', function(e){
+                    xhr.open("POST","../backend/signInDbAccess.php?=".res, true);
+                    xhr.addEventListener("readystatechange", function(e){
                         if(e.target.readyState === 4 && e.target.status === 200){
                          console.log(xhr.responseText); 
                         }
-                    }); 
-                    xhr.send(); 
+                    });
+                    xhr.send();
                     // redirect the user to member area:
-                    window.location.href="./index.php"; 
+                    window.location.href = "./index.php";
                 },
                 fail: function (error) {
                     alert(JSON.stringify(error));
@@ -350,26 +349,29 @@ kakaoLogin.addEventListener('click', function () {
     console.log('You clicked!');
 });
 
-logOutbtn.addEventListener("click", function(){
-    Kakao.Auth.logout(console.log("You've been logged out")); 
-});
+if (logOutbtn) {
+    logOutbtn.addEventListener("click", function () {
+        Kakao.Auth.logout(console.log("You've been logged out"));
+    });
+}
+
 
 // Member Area 
 
 // Menu
-function dropDown(){
+function dropDown() {
     document.getElementById("profileMenuContent").classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-      let dropdowns = document.getElementsByClassName("profileMenu");
-      for (var i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+        let dropdowns = document.getElementsByClassName("profileMenu");
+        for (var i = 0; i < dropdowns.length; i++) {
+            let openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
         }
-      }
     }
-  }
+}
 
