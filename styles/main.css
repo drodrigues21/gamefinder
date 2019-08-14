@@ -89,11 +89,11 @@ body {
 }
 
 .logoContainer {
-    margin: -55px 400px 0px 0px;
+    margin: -55px 400px 0px -50px;
 }
 
 .logoContainer img {
-    transform: scale(0.7);
+    transform: scale(0.5);
 }
 
 /* End of header section */

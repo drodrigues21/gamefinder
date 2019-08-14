@@ -3,7 +3,10 @@ session_start();
 include("dbconnect.php");
 $userId = $_SESSION["id"];
 
-if(isset($_POST["submit"])){
+// Check the file if it is allowed for upload or not
+// Place the file in required directory and then give necessary file permission
+
+if(isset($_POST["upload"])){
     $file = $_FILES["profImage"];
     $fileName = $_FILES["profImage"]["tmp_name"]; 
     $fileTmpName = $_FILES["profImage"]["name"]; 
@@ -11,26 +14,37 @@ if(isset($_POST["submit"])){
     $fileError = $_FILES["profImage"]["error"];
     $fileType = $_FILES["profImage"]["type"];
 
-    $fileExt = explode('.',$fileName); 
+    // to set what file types are allowed and where the file is stored 
+    $fileExt = explode(".",$fileName); 
     $fileActualExt = strtolower(end($fileExt));
-    $allowed = array('jpg', 'jpeg', 'png'); 
+    $allowed = array("jpg", "jpeg", "png"); 
+    // print_r($fileExt);
+    // print_r($fileActualExt);
 
     if(in_array($fileActualExt, $allowed)){
         if($fileError === 0){
             if($fileSize <500000){
-                $fileNameNew = "profile".$userId.”.”.$fileActualExt;
-                $fileDestination = "../images/uploads/".$fileNameNew; 
+                $fileNameNew = "profile".$userId.".".$fileActualExt;
+                print_r($fileNameNew);
+                $fileDestination = "../images/uploads".$fileNameNew; 
                 move_uploaded_file($fileTmpName, $fileDestination); 
-                $userUpload = "UPDATE members SET profImage = 0 WHERE id = '$userId'"; 
+                $userUpload = "UPDATE members SET profImage = 0 WHERE id ='$userId'"; 
+                // print_r($userUpload);
                 $req = $db->query($userUpload); 
-                header("Location: ../frontend/memberAccount.php?uploadsuccess"); 
+
+                header("Location: ../frontend/memberAccount.php?upload=uploadsuccess"); 
             }else{
-                echo "Your file is too big";
+                header("Location: ../frontend/memberAccount.php?upload=sizeerror"); 
+                // echo "Maximum file size is 250 KB.";
+                // $fileUploadFlag = "false"; 
             }
         }else{
-            echo "There was an error uploading your file."; 
+            header("Location: ../frontend/memberAccount.php?upload=uploaderror"); 
+            // echo "Error: failed to upload."; 
         }
     }else{
-        echo "You cannot upload the files of this type."; 
+        header("Location: ../frontend/memberAccount.php?upload=typeerror"); 
+        // echo "You cannot upload files of this type."; 
     }
 }
+

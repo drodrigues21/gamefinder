@@ -1,0 +1,54 @@
+/* Account page */
+.mainContainerAccount {
+    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
+    width:100%; 
+    height: 90%; 
+    scroll-behavior: smooth;
+    /* overflow:hidden;  */
+}
+
+#accountForm{
+    width: 90%; 
+    padding: 30px; 
+    margin: 0px 0px 0px 35px;
+    border-radius: 10px; 
+    background:white;
+    position:relative; 
+}
+
+.userHeader{
+    margin: -40px 40px 30px 40px; 
+}
+
+#imgResult{
+    margin: -50px; 
+}
+
+.info {
+    position:absolute; 
+    top:30px;
+    left: 350px;
+    border-radius: 10px; 
+    border-color: 2px solid #5d4fb8; 
+    padding:10px;
+    margin: 0px;
+    list-style: none;
+    font-size: 16px;
+    color:black; 
+}
+
+.profileImg{
+    margin: 70px 0px 0px 100px;
+    width:16%; 
+    border-radius: 97px; 
+}
+
+.info>li {
+    margin: 30px;
+}
+
+#uploadImgForm{
+    margin: 70px 0px 30px 70px; 
+}
+
+
