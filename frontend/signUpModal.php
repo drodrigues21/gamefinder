@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
 
-<form id="signUp" class="myForm hidden" method="POST" action="../backend/signUpDbEntry.php">
+<form id="signUp" class="myForm hidden" method="POST" action="<?= LOCALHOST ?>backend/signUpDbEntry.php">
     <div class="inputIcons">
         <i class="fa fa-user icon"></i>
         <input type="text" placeholder="Username" name="username" id="username">

@@ -1,7 +1,6 @@
 <?php
 require('../backend/dbconnect.php');
 $game_id = $_GET["game_id"];
-echo "hello", $game_id;
 $query = "SELECT * FROM ratings WHERE game_id = $game_id";
 $response = $db->query($query);
 
