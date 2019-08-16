@@ -1,5 +1,7 @@
 <?php
    include("dbconnect.php");
+
+//    delete isset email to allow kakao authentification 
    
     if (isset($_POST['username']) AND isset($_POST['psw']) AND isset($_POST['email']) AND isset($_POST['pswconfirm']) AND preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$_POST['email'])){
         $username = addslashes(htmlspecialchars(htmlentities(trim($_POST['username']))));
@@ -16,12 +18,12 @@
                 'password' => $password_hash,
                 // 'profImage' => 1,
                 'email' =>$email);
-            $req = $db->prepare("INSERT INTO members(username, password, email, profImage, registrationDate) VALUES (:username, :password, :email, 1, NOW())");
+            $query = "INSERT INTO members(username, password, email, profImage, registrationDate) VALUES (:username, :password, :email, 1, NOW())";
+            $req = $db->prepare($query);
             $req->execute($params);
             
             header("Location: ../index.php?modal=success"); 
         }catch (Exception $ex){
-            
             header("Location: ../index.php?modal=signuperror"); 
         }catch (Exception $exc) {
             echo $exc->getMessage();

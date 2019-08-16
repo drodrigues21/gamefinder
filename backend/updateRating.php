@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('../backend/dbconnect.php');
+require('dbconnect.php');
 
 // need to update games.rating from $rate_bg !!
 

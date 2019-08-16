@@ -23,7 +23,7 @@ document.addEventListener("click", function (e) {
     }
 
     if (e.target == modalSignUp) {
-        modalSignUp.style.display = "none";
+        modalSignUp.style.display = "none";            
     }
 });
 
@@ -58,12 +58,12 @@ function toggleTabs(formLoginDisplay, formSignupDisplay, formLoginTabDisplay, fo
 
 // --------------password toggle ---------------// FIX!!!!
 
-const eye = document.querySelector("#pwsignin");
-const input = document.querySelector("#pwSignin");
-const eyepwSU = document.querySelector("#pwtoggleSU");
-const inputSU = document.querySelector("#psw");
-const eyepwConfSU = document.querySelector("#pwtoggleConf");
-const inputConfSU = document.querySelector("#pswConfirm");
+let eye = document.querySelector("#pwsignin");
+let input = document.querySelector("#pwSignin");
+let eyepwSU = document.querySelector("#pwtoggleSU");
+let inputSU = document.querySelector("#psw");
+let eyepwConfSU = document.querySelector("#pwtoggleConf");
+let inputConfSU = document.querySelector("#pswConfirm");
 var pwInput = true;
 
 eye.addEventListener("click", function () {
@@ -284,6 +284,12 @@ signinCancel.addEventListener('click', function (e) {
 function removeMsgs() {
     signUpForm.reset();
     signinForm.reset();
+    // signinForm.classList.remove("success");
+    // signinForm.classList.remove("phperror");
+    // signinForm.classList.remove("signuperror");
+    // signUpForm.classList.remove("phperror");
+    // signUpForm.classList.remove("success");
+    // signUpForm.classList.remove("signuperror");
     username.classList.remove("incorrect");
     username.classList.remove("correct");
     password.classList.remove("incorrect");
@@ -319,20 +325,26 @@ function loginWithKakao() {
             Kakao.API.request({
                 url: '/v2/user/me',
                 success: function (res) {
-                    // alert(JSON.stringify(res));
+                    console.log(res);
                     //into database 
+                    var data = new FormData();
+                    data.append('signinUsername', res.properties.nickname);
+                    data.append('signinpsw', res.id);
+                    data.append('profImage', res.properties.thumbnail_image);
+                    data.append('isKakao', 1);
+
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST","../backend/signInDbAccess.php?=".res, true);
+                    xhr.open("POST",localhost+"backend/signInDbAccess.php", true);
                     xhr.addEventListener("readystatechange", function(e){
+                        
                         if(e.target.readyState === 4 && e.target.status === 200){
-                         console.log(xhr.responseText); 
+                             window.location.href =  localhost+"index.php";
                         }
                     });
-                    xhr.send();
+                    xhr.send(data);
                     // redirect the user to member area:
-                    window.location.href = "./index.php";
-                },
-                fail: function (error) {
+                    },
+                fail: function (error){
                     alert(JSON.stringify(error));
                 }
             });
@@ -347,7 +359,7 @@ function loginWithKakao() {
 kakaoLogin.addEventListener('click', function () {
     loginWithKakao();
     console.log('You clicked!');
-});
+}); 
 
 if (logOutbtn) {
     logOutbtn.addEventListener("click", function () {
@@ -374,4 +386,3 @@ window.onclick = function (event) {
         }
     }
 }
-

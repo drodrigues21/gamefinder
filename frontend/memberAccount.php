@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once("../utils.php");
+
 ?>
 
 <link rel="stylesheet" href="../styles/main.css">

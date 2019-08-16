@@ -30,11 +30,11 @@ require_once("./utils.php");
     <div class="mainContainer">
         <section class="firstSectionContainer">
             <div class="headerContainer">
-            <?php include("./frontend/menuBar.php"); ?>
+            <?php include("frontend/menuBar.php"); ?>
             </div>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>
-                <form action="./frontend/resultsPage.php" method="POST">
+                <form action="frontend/resultsPage.php" method="POST">
                     <div class="searchField">
                         <input type="text" class="searchBox" name="search" placeholder="What are you looking for?">
                         <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
