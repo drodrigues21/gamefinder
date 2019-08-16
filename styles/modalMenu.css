@@ -133,8 +133,8 @@
 /*close button*/
 .close {
     position: absolute;
-    right: 410px;
-    top: 175px;
+    right: 350px;
+    top: 55px;
     color: white;
     font-size: 30px;
     font-weight: bold;
@@ -154,11 +154,6 @@
 }
 
 /* -----------about us ----------------- */
-#aboutus .modalContent {
-    /* overflow: scroll; */
-    /* scroll-behavior: smooth; */
-}
-
 #aboutus .modalBody {
     position: relative;
     text-align: center;
@@ -346,20 +341,26 @@
 /* error message + success message style */
 
 .error {
-    font-size: 12px;
-    color: red;
+    font-size: 13px; 
+    color:red;  
+}
+
+.signuperror{
+    font-size: 13px;
+    color: lightcoral;
+    margin: 10px;
 }
 
 .phperror {
-    font-size: 40px;
+    font-size: 13px;
     color: lightcoral;
-    margin: 50px;
+    margin: 10px;
 }
 
 .success {
-    font-size: 40px;
+    font-size: 13px;
     color: lightseagreen;
-    margin: 50px;
+    margin: 5px;
 }
 
 .correct {
@@ -378,23 +379,3 @@
     padding: 10px 0;
 }
 
-/* Account page */
-.mainDiv {
-    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
-    height: 100vh;
-    margin: 0;
-}
-
-.userHeader {
-    margin: 50px;
-}
-
-.info {
-    margin: 50px;
-    list-style: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.info>li {
-    margin: 20px;
-}

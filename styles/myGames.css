@@ -10,7 +10,9 @@ body {
     justify-content: space-between;
 }
 
-.addGameForm {
+/* Add game form start */
+
+.addGameFormContainer {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -30,19 +32,41 @@ body {
     opacity: 1;
 }
 
-.addGameForm form {
+.addGameFormContainer form {
     position: relative;
-    width: 40%;
-    /* height: 80%; */
-    display: flex;
-    flex-direction: column;
+    min-width: 70%;
     background-color: rgb(250, 250, 250);
-    padding: 20px 50px;
+    padding: 2em 4em;
     border-radius: 10px;
 }
 
-.addGameForm form div {
-    padding: 5px;
+.addGameFormContainer form h3 {
+    text-align: center;
+}
+
+#addGameFormContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSideAddGame {
+    padding: 2em;
+}
+
+.nameAddGame,
+.descriptionAddGame,
+.rulesAddGame {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3em;
+}
+
+.centerAddGame {
+    padding: 1em;
+}
+
+.rightSideAddGame {
+    padding: 1em;
 }
 
 .closeAddGame {
@@ -53,6 +77,10 @@ body {
     cursor: pointer;
 }
 
+/* Add game form end */
+
+
+/* My games section start */
 
 .myGamesContent {
     flex: 2;

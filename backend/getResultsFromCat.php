@@ -1,36 +1,67 @@
 <?php
 require('dbconnect.php');
+
 $locations = isset($_POST['location']) ? $_POST['location'] : null;
 $socials = isset($_POST['social']) ? $_POST['social'] : null;
-$drink = isset($_POST['radiogroup1']) ? $_POST['radiogroup1'] : 2; // show all results
+$drink = isset($_POST['drink']) ? $_POST['drink'] : null; // show all results
 $players = isset($_POST['anyP']) ? 'anyP' : htmlentities($_POST['playerRange']);
 $time = isset($_POST['anyT']) ? 'anyT' : htmlentities($_POST['timeRange']);
-$prep = isset($_POST['radiogroup2']) ? $_POST['radiogroup2'] : null;
+$prep = isset($_POST['prepSelector']) ? $_POST['prepSelector'] : null;
+// prefill checks
+$checks['drink'] = $drink;
+$checks['prep'] = $prep;
+$checks['players'] = $players;
+$checks['time'] = $time;
+
+// print_r($_POST);
 // Creation of the query
-$query = "SELECT DISTINCT(name), isDrink, minP, maxP, shortTxt, fullTxt, minT, maxT, img, prep, rating FROM games g WHERE 1";
+$query = "SELECT DISTINCT(name),id,  isDrink, minP, maxP, shortTxt, fullTxt, minT, maxT, img, prep, rating FROM games g WHERE 1";
+
 $subquery = "";
-// Location (Need to add IN or ( OR ))
+// Location
 if ($locations and count($locations) >= 1) {
-    $subquery = " AND ";
+    $checks[$locations[0]] = $locations[0];
+    $subquery = " AND  (";
     $locLength = count($locations);
     $subquery .= "$locations[0] = 1";
+
+    if ($locLength == 1) {
+        $subquery .= " )";
+    }
+
     for ($i = 1; $i < $locLength; $i++) {
+        $checks[$locations[$i]] = $locations[$i];
         $subquery .= " OR  $locations[$i] = 1";
     }
-}
-// Social (Need to add IN or ( OR ))
-if ($socials and count($socials) >= 1) {
-    $subquery .= " AND ";
-    $socLength = count($socials);
-    $subquery .= "$socials[0] = 1";
-    for ($i = 1; $i < $socLength; $i++) {
-        $subquery .= " OR  $socials[$i] = 1";
+    if ($locLength > 1) {
+        $subquery .= " )";
     }
 }
+// Social
+if ($socials and count($socials) >= 1) {
+    $checks[$socials[0]] = $socials[0];
+    $subquery .= " AND (";
+    $socLength = count($socials);
+    $subquery .= "$socials[0] = 1";
+
+    if ($socLength == 1) {
+        $subquery .= " )";
+    }
+
+    for ($i = 1; $i < $socLength; $i++) {
+        $checks[$socials[$i]] = $socials[$i];
+        $subquery .= " OR  $socials[$i] = 1";
+    }
+    if ($socLength > 1) {
+        $subquery .= " )";
+    }
+}
+
+
 // Drinking
-if ($drink == 1) {
-    $subquery .= " AND g.isDrink = $drink";
-} else if ($drink == 'NULL') {
+if ($drink == "drink") {
+    $subquery .= " AND g.isDrink = 1";
+} else if ($drink == "nodrink") {
     $subquery .= " AND g.isDrink IS NULL";
 }
 // Players
@@ -62,7 +93,12 @@ if ($prep == 'min') {
 $query .= $subquery;
 
 // echo "</br>$query</br>";
+// echo $checks['time'];
+// echo $checks['players'];
+// if ($checks['time'] == "anyT") {
+//     echo $checks['time'];
+// }
 $response = $db->query($query);
+$count = 0;
 
-require_once("displayResults.php");
-//header('Location: displayResults.php');
+// print_r($query);

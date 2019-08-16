@@ -2,38 +2,63 @@
 session_start();
 ?>
 
-<link rel="stylesheet" href="../styles/modalMenu.css">
 <link rel="stylesheet" href="../styles/main.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
-    rel="stylesheet">
+<link rel = "stylesheet" href="../styles/memberAccount.css">
 <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
 
 <body>
-    <div class = "mainDiv">
-            <?php include("modalMenu.php"); ?>
-            <h3 class ="userHeader">Account Information</h3>
+    <div class = "mainContainerAccount">
+            <?php include("menuBar.php"); ?>
+            <h2 class ="userHeader">My Account</h2>
             <?php include("../backend/loadInfosUserConnected.php"); ?>
-
+        <div id = accountForm>
             <div id ="imgUpload">
-                <form method ="post" action ="memberAccount.php" enctype="multipart/form-data">
+            <?php
+                // while($user){
+                    echo "<div id = 'imgResult'>"; 
+                        if($user['profImage'] = 0){
+                            echo "<img class = 'profileImg' src = '../images/uploads/profile".$userId.".png'>"; 
+                        }else{
+                            echo "<img class = 'profileImg' src = '../images/uploads/profiledefault.jpg'>"; 
+                        }
+                    echo "</div>"; 
+                // }
+            ?>
+                <form id = "uploadImgForm" method ="POST" action ="../backend/upload.php" enctype='multipart/form-data'>
+                <!-- ^ add file permission to the directory (upload.php) where we plan to store the files after uploading it -->
                     <input type ="hidden" name = "size" value = "1000000">
                         <div>
                             <input type ="file" name="profImage">
                         </div>
                         <div>
-                            <input type ="submit" name ="upload">
+                            <input type ="submit" name ="upload" value="Upload">
                         </div>      
-            </div>
-            <ul class = "info">
-                <!-- <li> Full Name:  </li> -->
-                <li> Email Address: <?= $user["email"];?> </li>
-                <li> User Name: <?= $user["username"];?></li>
-                <li> Password: </li>
-                <li> Date of Birth: </li>
-                <li> Country: </li>
-            </ul>
-    </div> 
+                </form>
 
+                <?php
+                if(isset($_GET["upload"]) AND $_GET["upload"] == "sizeerror"){
+                    echo "Maximum file size is 250 KB.";
+                }else if(isset($_GET["upload"]) AND $_GET["upload"] == "uploaderror"){
+                    echo "Error: failed to upload."; 
+                }else if(isset($_GET["upload"]) AND $_GET["upload"] == "typeerror"){
+                    echo "You cannot upload files of this type."; 
+                }
+                ?>
+            </div>
+            <div class = "info">
+                <!-- <li> Full Name:  </li> -->
+                <li><b>Email Address</b>: <?= $user["email"];?> <a href = "#" > Edit </a> </li>
+                <li><b>User Name</b>: <?= $user["username"];?><a href = "#" > Edit </a> </li>
+                <li><b>Password</b>: <?=$user["password"];?> <a href = "#" > Edit </a> </li>
+                <li><b>Date of Birth</b>: </li>
+                <li><b>Country</b>: </li>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
 <script src="../scripts/modalMenu.js"></script>
