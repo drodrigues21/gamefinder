@@ -30,7 +30,20 @@ require_once("./utils.php");
     <div class="mainContainer">
         <section class="firstSectionContainer">
             <div class="headerContainer">
-            <?php include("./frontend/menuBar.php"); ?>
+                <div class="catchFraseContainer">
+                    <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
+                        echo '<h3>For all your gaming needs.</h3>';
+                    } else if (isset($_SESSION["id"]) and isset($_SESSION["signinUsername"])) {
+                        echo '<h3>Hello, ' . $_SESSION['signinUsername'] . '!</h3>';
+                    }
+                    ?>
+                </div>
+                <div class="headerContent">
+                    <div class="logoContainer"><a href="index.html"><img src="images/10.png" alt=""></a></div>
+                    <nav class="navbarContainer">
+                        <?php include(LOCALHOST . "frontend/modalMenu.php"); ?>
+                    </nav>
+                </div>
             </div>
             <div class="searchBarContainer">
                 <h2>Search for a game and have fun!</h2>

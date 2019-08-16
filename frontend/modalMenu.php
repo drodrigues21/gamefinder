@@ -1,5 +1,9 @@
-<?php
+<head>
+    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
 
+<?php
 if (!@include("./utils.php")) {
     require_once("../utils.php");
 }
@@ -7,8 +11,9 @@ if (!@include("./utils.php")) {
 if (isset($_SESSION['signinUsername'])) {
     $username = $_SESSION['signinUsername'];
 }
- 
-// print_r($_SESSION);
+// print_r($username); 
+
+
 if (isset($_COOKIE["username"])) {
     $username = $_COOKIE['username'];
 }
@@ -27,17 +32,17 @@ if (isset($_COOKIE["username"])) {
                 class="far fa-address-card"></i> About Us </a></li>
     <li><a href="#"><i class="fas fa-dice"></i> Game Tools</a></li>
     <?php
-    if (!isset($_SESSION["id"]) AND !isset($_SESSION["signinUsername"])) {
+    if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {
         echo
             '<li><a href="#" onclick="document.getElementById(`signUpAndIn`).style.display=`block`"><i class="fas fa-user-lock"></i> Sign In</a></li>';
-    } else if(isset($_SESSION["signinUsername"]) AND isset($_SESSION["id"])) {
+    } else if (isset($_SESSION["signinUsername"]) and isset($_SESSION["id"])) {
         echo  '<div class ="dropdown">
             <button onclick= "dropDown()" class ="dropbtn"><i class="far fa-user-circle"></i>Profile</button>
             <div class = "profileMenu" id ="profileMenuContent">
-                <li><a href="'.LOCALHOST.'frontend/favorites.php">Favorites</a></li>
-                <li><a href="'.LOCALHOST.'frontend/myGames.php">My Games</a></li>
-                <li><a href="'.LOCALHOST.'frontend/memberAccount.php">Account</a></li>
-                <li><form action="'.LOCALHOST.'backend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
+                <li><a href="' . LOCALHOST . 'frontend/favorites.php">Favorites</a></li>
+                <li><a href="' . LOCALHOST . 'frontend/myGames.php">My Games</a></li>
+                <li><a href="' . LOCALHOST . 'frontend/memberAccount.php">Account</a></li>
+                <li><form action="' . LOCALHOST . 'frontend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
             </div>
         </div>';
     }

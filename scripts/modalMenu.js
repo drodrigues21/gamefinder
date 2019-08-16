@@ -315,62 +315,66 @@ var kakaoLogin = document.querySelector('#kakaoLogin');
 
 function loginWithKakao() {
     Kakao.Auth.loginForm({
-        success: function (authObj) {
-            Kakao.API.request({
-                url: '/v2/user/me',
-                success: function (res) {
-                    // alert(JSON.stringify(res));
-                    //into database 
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "../backend/signInDbAccess.php?=".res, true);
-                    xhr.addEventListener("readystatechange", function (e) {
-                        if (e.target.readyState === 4 && e.target.status === 200) {
-                            console.log(xhr.responseText);
-                        }
+                success: function (authObj) {
+                    Kakao.API.request({
+                            url: '/v2/user/me',
+                            success: function (res) {
+                                // alert(JSON.stringify(res));
+                                //into database 
+                                var xhr = new XMLHttpRequest();
+                                xhr.open("POST", "../backend/signInDbAccess.php?=".res, true);
+                                xhr.addEventListener("readystatechange", function (e) {
+
+                                        xhr.open('POST', '../backend/signInDbAccess.php?=res', true);
+                                        xhr.addEventListener('readystatechange', function (e) {
+
+                                            if (e.target.readyState === 4 && e.target.status === 200) {
+                                                console.log(xhr.responseText);
+                                            }
+                                        });
+                                        xhr.send();
+                                        // redirect the user to member area:
+                                        window.location.href = "./index.php";
+                                    },
+                                    fail: function (error) {
+                                        alert(JSON.stringify(error));
+                                    }
+                                });
+                        },
+                        fail: function (err) {
+                            alert(JSON.stringify(err));
+                        },
+                        persistAccessToken: false
                     });
-                    xhr.send();
-                    // redirect the user to member area:
-                    window.location.href = "./index.php";
-                },
-                fail: function (error) {
-                    alert(JSON.stringify(error));
-                }
-            });
-        },
-        fail: function (err) {
-            alert(JSON.stringify(err));
-        },
-        persistAccessToken: false
-    });
-}
-
-kakaoLogin.addEventListener('click', function () {
-    loginWithKakao();
-    console.log('You clicked!');
-});
-
-if (logOutbtn) {
-    logOutbtn.addEventListener("click", function () {
-        Kakao.Auth.logout(console.log("You've been logged out"));
-    });
-}
-
-
-// Member Area 
-
-// Menu
-function dropDown() {
-    document.getElementById("profileMenuContent").classList.toggle("show");
-}
-
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        let dropdowns = document.getElementsByClassName("profileMenu");
-        for (var i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
             }
-        }
-    }
-}
+
+            kakaoLogin.addEventListener('click', function () {
+                loginWithKakao();
+                console.log('You clicked!');
+            });
+
+            if (logOutbtn) {
+                logOutbtn.addEventListener("click", function () {
+                    Kakao.Auth.logout(console.log("You've been logged out"));
+                });
+            }
+
+
+            // Member Area 
+
+            // Menu
+            function dropDown() {
+                document.getElementById("profileMenuContent").classList.toggle("show");
+            }
+
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    let dropdowns = document.getElementsByClassName("profileMenu");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        let openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
