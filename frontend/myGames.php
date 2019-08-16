@@ -1,4 +1,6 @@
-<?php session_start();
+<?php 
+session_start();
+require('../backend/dbconnect.php');
 ?>
 
 <head>
@@ -32,6 +34,7 @@
                 <button class="addGameBtn">Add a Game</button>
                 <div class="addGameFormContainer">
                     <form action="../backend/addGameForm.php" method="POST" id="addGameForm">
+                        <input type="hidden" name="userId" value="<?=$_SESSION['id'];?>"/>
                         <h3>Add your game</h3>
                         <div id="addGameFormContent">
                             <div class="leftSideAddGame">
@@ -170,18 +173,18 @@
                                 <div class="isDrink">
                                     <p>Drinking game? </p>
                                     <div class="radioGroup">
-                                        <input type="radio" id="yes" name="playerSelector"><label
-                                            for="yes">Yes</label><input type="radio" id="no" name="playerSelector"
-                                            checked><label for="no">No</label>
+                                        <input type="radio" id="yes" value="1" name="isDrink"><label
+                                            for="yes">Yes</label><input type="radio" id="no" name="isDrink"
+                                            ><label for="no">No</label>
                                     </div>
                                 </div>
                                 <div class="prepAmount">
                                     <p>Amount of preparation:</p>
                                     <div class="radioGroup">
-                                        <input type="radio" id="min" name="prepSelector" checked><label
-                                            for="min">Min</label><input type="radio" id="medium" name="prepSelector"><label
+                                        <input type="radio" id="min"  value="min" name="prepSelector" checked><label
+                                            for="min">Min</label><input type="radio" id="medium"  value="med" name="prepSelector"><label
                                             for="medium">Medium</label><input type="radio" id="max"
-                                            name="prepSelector"><label for="max">Max</label>
+                                            value="max" name="prepSelector"><label for="max">Max</label>
                                     </div>
                                 </div>
                             </div>
