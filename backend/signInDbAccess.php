@@ -17,10 +17,7 @@ $result = $req->fetch();
 $passwordVerify = password_verify($_POST['signinpsw'], $result['password']);
 
 if (!$passwordVerify){
-    // echo "<p class='phperror'> Incorrect ID or password : Please try again.</p>";
-    header("Location: ../index.php?modal=phperror"); 
-?>
-    <!-- <meta http-equiv="refresh" content="5;url=../index.php">  -->
+    header("Location:".LOCALHOST."index.php?modal=phperror"); 
 
 }else {
     if ($passwordVerify){ 
@@ -32,7 +29,7 @@ if (!$passwordVerify){
         }
         header("Location:".LOCALHOST."index.php");
     }else{
-        header('Location: ../index.php?modal=phperror');
+        header("Location:".LOCALHOST."index.php?modal=phperror");
     };
 };
 ?> 

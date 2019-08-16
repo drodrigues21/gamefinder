@@ -1,5 +1,5 @@
 <?php
-define("DB_LOGIN", "root");
-define("DB_PWD", "root");
-define("DB", "gameFinder");
-define("LOCALHOST", "http://localhost:8888/Sites/gamefinder/");
+define("LOGIN", "root");
+define("PWD", "");
+define("DB", "gamefinder");
+define("LOCALHOST", "http://localhost/Sites/gamefinder/");

@@ -3,10 +3,8 @@ session_start();
 
 require('../backend/dbconnect.php');
 
-// 0 this is the ajax (lol?
-// 1  need to update games.rating from $rate_bg !!
-// 2 need to make it on click
-// 3 need to make update only available when logged in ($_SESSION)
+// need to update games.rating from $rate_bg !!
+
 
 if ($_POST['act'] == 'rate') {
     $userID = $_SESSION['id'];

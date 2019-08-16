@@ -42,4 +42,10 @@ if (isset($_GET['modal']) and $_GET['modal'] == 'success') {
 
     <div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
             up</a>.</div>
+
+</form>
+
+<div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
+        up</a>.</div>
+
 </form>

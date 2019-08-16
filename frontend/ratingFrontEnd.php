@@ -1,16 +1,11 @@
 <div class="container">
-    <?php
-    if (isset($_SESSION['id'])) {
-        echo '
     <div class="rate">
         <div id="1" class="btn-1 rate-btn"></div>
         <div id="2" class="btn-2 rate-btn"></div>
         <div id="3" class="btn-3 rate-btn"></div>
         <div id="4" class="btn-4 rate-btn"></div>
         <div id="5" class="btn-5 rate-btn"></div>
-    </div>';
-    }
-    ?>
+    </div>
     <br>
     <div class="box-result">
 

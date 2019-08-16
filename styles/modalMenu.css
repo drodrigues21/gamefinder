@@ -341,11 +341,11 @@
 /* error message + success message style */
 
 .error {
-    font-size: 13px;
-    color: red;
+    font-size: 13px; 
+    color:red;  
 }
 
-.signuperror {
+.signuperror{
     font-size: 13px;
     color: lightcoral;
     margin: 10px;
@@ -379,37 +379,3 @@
     padding: 10px 0;
 }
 
-/* Account page */
-.mainDiv {
-    background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
-#accountForm {
-    width: 90%;
-    padding: 30px;
-    margin: 30px;
-    border-radius: 10px;
-    background: white;
-}
-
-.userHeader {
-    margin: 50px;
-}
-
-.info {
-    margin: 50px;
-    list-style: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.info>li {
-    margin: 20px;
-}
-
-#imgUpload {
-    margin: 60px;
-
-}
