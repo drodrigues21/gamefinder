@@ -342,7 +342,6 @@ function loginWithKakao() {
                         }
                     });
                     xhr.send(data);
-                    // redirect the user to member area:
                     },
                 fail: function (error){
                     alert(JSON.stringify(error));
