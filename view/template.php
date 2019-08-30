@@ -1,6 +1,3 @@
-<?php
-require_once("./utils.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +16,7 @@ require_once("./utils.php");
     <link rel="stylesheet" href="styles/saturnAnimation.css">
     <script defer src="scripts/playerslider.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
+    <link type="text/css" rel="stylesheet" href="styles/rating.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <?= $head ?>
     <title>Gamefinder</title>
@@ -57,7 +54,7 @@ require_once("./utils.php");
     <?php
     }
     ?>
-    <script src="<?= LOCALHOST ?>scripts/modelTemplate.js"></script>
+    <script src="scripts/modelTemplate.js"></script>
 </body>
 
 </html>

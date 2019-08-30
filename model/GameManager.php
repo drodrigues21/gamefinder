@@ -138,8 +138,6 @@ class GameManager extends Manager
             $query = "SELECT * FROM games g ORDER BY rating DESC LIMIT 25";
         }
 
-
-
         return $db->query($query);
     }
     public function getUserGames ($userId){

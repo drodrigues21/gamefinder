@@ -58,12 +58,12 @@ function toggleTabs(formLoginDisplay, formSignupDisplay, formLoginTabDisplay, fo
 
 // --------------password toggle ---------------// FIX!!!!
 
-const eye = document.querySelector("#pwsignin");
-const input = document.querySelector("#pwSignin");
-const eyepwSU = document.querySelector("#pwtoggleSU");
-const inputSU = document.querySelector("#psw");
-const eyepwConfSU = document.querySelector("#pwtoggleConf");
-const inputConfSU = document.querySelector("#pswConfirm");
+let eye = document.querySelector("#pwsignin");
+let input = document.querySelector("#pwSignin");
+let eyepwSU = document.querySelector("#pwtoggleSU");
+let inputSU = document.querySelector("#psw");
+let eyepwConfSU = document.querySelector("#pwtoggleConf");
+let inputConfSU = document.querySelector("#pswConfirm");
 var pwInput = true;
 
 eye.addEventListener("click", function () {
@@ -322,10 +322,10 @@ function loginWithKakao() {
                     // alert(JSON.stringify(res));
                     //into database 
                     var xhr = new XMLHttpRequest();
-                    xhr.open("POST","../backend/signInDbAccess.php?=".res, true);
-                    xhr.addEventListener("readystatechange", function(e){
-                        if(e.target.readyState === 4 && e.target.status === 200){
-                         console.log(xhr.responseText); 
+                    xhr.open("POST", "../backend/signInDbAccess.php?=".res, true);
+                    xhr.addEventListener("readystatechange", function (e) {
+                        if (e.target.readyState === 4 && e.target.status === 200) {
+                            console.log(xhr.responseText);
                         }
                     });
                     xhr.send();
@@ -374,4 +374,3 @@ window.onclick = function (event) {
         }
     }
 }
-

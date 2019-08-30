@@ -2,15 +2,17 @@
 
 class Manager
 {
+    CONST DB = "gamefinder";
+    CONST PWD = "";
+    CONST LOGIN = "root";
     protected function dbConnect()
     {
-        if (!@include_once('../utils.php')) {
-            require_once("./utils.php");
-        }
         try {
-            return  new PDO('mysql:host=localhost;dbname=' . DB . ';charset=utf8', LOGIN, PWD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            return  new PDO('mysql:host=localhost;dbname=' . self::DB . ';charset=utf8', self::LOGIN, self::PWD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         } catch (Exception $e) {
             die('Error : ' . $e->getMessage());
         }
     }
+
+
 }

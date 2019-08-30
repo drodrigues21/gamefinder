@@ -1,8 +1,3 @@
-<?php
-if (!@include_once('../utils.php')) {
-    require_once("./utils.php");
-}
-?>
 <div class="headerContainer">
     <div class="catchFraseContainer">
         <?php if (!isset($_SESSION["id"]) and !isset($_SESSION["signinUsername"])) {

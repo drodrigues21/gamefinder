@@ -1,9 +1,5 @@
 <?php
 
-if (!@include("./utils.php")) {
-    require_once("../utils.php");
-}
-
 if (isset($_SESSION['signinUsername'])) {
     $username = $_SESSION['signinUsername'];
 }

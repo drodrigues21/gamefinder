@@ -1,5 +1,3 @@
-const localhost = "http://localhost:8888/Sites/gamefinder/";
-
 var divs = document.querySelectorAll("div[modal=game]");
 
 for (let i = 0; i < divs.length; i++) {
@@ -95,7 +93,7 @@ function generate_content_modal(content) {
 function generate_rating_System(game_id) {
     console.log(game_id);
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", localhost + "frontend/ratingFrontEnd.php?" + game_id, true);
+    xhr.open("GET", "frontend/ratingFrontEnd.php?" + game_id, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var content = xhr.responseText;

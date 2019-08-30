@@ -191,7 +191,7 @@ ob_start();
         </div>
     </div>
     <script src="./scripts/addGame.js"></script>
-    <script src="   ./scripts/modalMenu.js"></script>
+   
 
 <?php $content = ob_get_clean(); ?>
 <?php require("template.php") ?>

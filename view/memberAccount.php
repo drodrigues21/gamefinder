@@ -47,6 +47,6 @@ ob_start();
         </div>
     </div>
 </section>
-<script src="../scripts/modalMenu.js"></script>
+<script src="./scripts/modalMenu.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require("template.php") ?>

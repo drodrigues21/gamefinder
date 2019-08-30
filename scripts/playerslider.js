@@ -1,36 +1,40 @@
-//Player Range Slider 
-var playerSliderRange = document.getElementById("playerRange");
-var playerBulletRange = document.getElementById("playerBullet");
-var anyAmountPlayer = document.getElementById("anyP");
-var anyAmountTime = document.getElementById("anyT");
-
-playerSliderRange.addEventListener("input", playerSliderValue, false);
-
 function playerSliderValue() {
-    playerBulletRange.innerHTML = playerSliderRange.value;
-    var bulletPosition = ((playerSliderRange.value - 2) / playerSliderRange.max);
-    playerBulletRange.style.left = (bulletPosition * 250) + "px";
-    // anyAmountPlayer.removeAttribute("checked"); This breaks my code
-    if (playerSliderRange.value != 2) {
-        anyAmountPlayer.removeAttribute("checked");
+    var playerBulletRange = document.getElementById("playerBullet");
+    var playerSliderRange = document.getElementById("playerRange");
+
+
+    if (playerBulletRange && playerSliderRange) {
+        var anyAmountPlayer = document.getElementById("anyP");
+        playerSliderRange.addEventListener("input", playerSliderValue, false);
+        playerBulletRange.innerHTML = playerSliderRange.value;
+        var bulletPosition = ((playerSliderRange.value - 2) / playerSliderRange.max);
+        playerBulletRange.style.left = (bulletPosition * 250) + "px";
+        // anyAmountPlayer.removeAttribute("checked"); This breaks my code
+        if (playerSliderRange.value != 2) {
+            anyAmountPlayer.removeAttribute("checked");
+        }
     }
 }
-
-// Time Range Slider
-var timeSliderRange = document.getElementById("timeRange");
-var timeBulletRange = document.getElementById("timeBullet");
-
-timeSliderRange.addEventListener("input", timeSliderValue, false);
 
 function timeSliderValue() {
-    timeBulletRange.innerHTML = timeSliderRange.value;
-    var bulletPosition = ((timeSliderRange.value - 5) / timeSliderRange.max);
-    timeBulletRange.style.left = (bulletPosition * 250) + "px";
+    var timeSliderRange = document.getElementById("timeRange");
+    var timeBulletRange = document.getElementById("timeBullet");
 
-    if (timeSliderRange.value != 5) {
-        anyAmountTime.removeAttribute("checked");
+    if (timeSliderRange && timeBulletRange) {
+        var anyAmountTime = document.getElementById("anyT");
+        timeSliderRange.addEventListener("input", timeSliderValue, false);
+        timeBulletRange.innerHTML = timeSliderRange.value;
+        var bulletPosition = ((timeSliderRange.value - 5) / timeSliderRange.max);
+        timeBulletRange.style.left = (bulletPosition * 250) + "px";
+
+        if (timeSliderRange.value != 5) {
+            anyAmountTime.removeAttribute("checked");
+        }
     }
+
 }
 
-timeSliderValue();
-playerSliderValue();
+{
+    timeSliderValue();
+    playerSliderValue();
+}
