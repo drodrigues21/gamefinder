@@ -2,108 +2,45 @@
 session_start();
 require_once("./utils.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<?php
+require("controller/controller.php");
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7fdeb94f09.js"></script>
-
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/saturnAnimation.css">
-    <script defer src="scripts/playerslider.js"></script>
-
-    <link type="text/css" rel="stylesheet" href="<?= LOCALHOST ?>styles/rating.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-    <title>Gamefinder</title>
-</head>
-
-<body>
-    <div class="mainContainer">
-        <section class="firstSectionContainer">
-            <div class="headerContainer">
-            <?php include("./frontend/menuBar.php"); ?>
-            </div>
-            <div class="searchBarContainer">
-                <h2>Search for a game and have fun!</h2>
-                <form action="./frontend/resultsPage.php" method="POST">
-                    <div class="searchField">
-                        <input type="text" class="searchBox" name="search" placeholder="What are you looking for?">
-                        <button type="submit" class=" btn searchButton"><i class="fas fa-search"></i></button>
-                    </div>
-                    <button type="submit" name="randomGame" class="btn surpriseButton">Surprise me!</button>
-                    <!-- <button type="submit" class="btn otherButton">What?</button> -->
-                </form>
-            </div>
-            <div class="saturnAnimation">
-                <?php include("frontend/saturnAnimation.php") ?>
-            </div>
-            <div class="topFiveContainer">
-                <div class="topFiveHeader">
-                    <h3>Top 5 games</h3>
-                </div>
-                <!-- include file of backend +
-            do the while and include once-->
-                <div class="topFiveContent">
-                    <?php
-                    include("backend/getTopFive.php");
-                    $count = 0;
-                    while ($data = $response->fetch()) {
-                        include("frontend/smallcardgame.php");
-                        $count++;
-                    }
-                    ?>
-                </div>
-            </div>
-            <div class="arrowsContainer">
-                <div class="arrows">
-                    <a href="index.php#filterCatContainer"><span></span></a>
-                </div>
-            </div>
-        </section>
-        <section class="secondSectionContainer">
-            <div id="filterCatContainer">
-                <?php include("frontend/subSecFilterCat.php"); ?>
-            </div>
-            <?php include("frontend/footer.php"); ?>
-        </section>
-    </div>
-    <?php
-    if (isset($_GET["modal"]) and $_GET["modal"] == "success") {
-        ?>
-    <script>
-    var openAgain = document.querySelector("ul.navbar");
-    let anchorTag = openAgain.lastElementChild.firstElementChild;
-    anchorTag.click();
-    </script>
-    <?php
-    } else if (isset($_GET["modal"]) and $_GET["modal"] == "phperror") {
-        ?>
-    <script>
-    var openAgainError = document.querySelector("ul.navbar");
-    let anchorTagError = openAgainError.lastElementChild.firstElementChild;
-    anchorTagError.click();
-    </script>
-    <?php
-    } else if (isset($_GET["modal"]) and $_GET["modal"] == "signuperror") {
-        ?>
-    <script>
-    var openAgainSignUpError = document.querySelector("ul.navbar");
-    let anchorTagSignUpError = openAgainSignUpError.lastElementChild.firstElementChild;
-    anchorTagSignUpError.click();
-    </script>
-    <?php
+try {
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'mainPage') {
+            mainPage();
+        } 
+        elseif ($_GET['action'] == 'searchResults') {
+            searchResults($_POST);
+        }  elseif ($_GET['action'] == 'myGames') {
+                loadUserGames( $_SESSION["id"]);
+        } 
+        elseif ($_GET['action'] == 'addGame') {
+            addGame($_POST);
+        }elseif ($_GET['action'] == 'logout') {
+            logOut();
+        } 
+        elseif ($_GET['action'] == 'signinDbAccess') {
+            signIn($_POST);
+        }
+        elseif ($_GET['action'] == 'signUpDbEntry') {
+            signUp($_POST);
+        }
+        elseif ($_GET['action'] == 'memberAccount') {
+            loadUserInfos($_SESSION["id"]);
+        }
+        elseif ($_GET['action'] == 'uploadImgUser') {
+            uploadImgUser($_SESSION["id"], $_POST, $_FILES);
+        }
+        elseif ($_GET['action'] == 'gameView') {
+            gameView($_GET);
+        }
+    } else {
+        mainPage();
     }
-    ?>
-    <script src="<?= LOCALHOST ?>scripts/modelTemplate.js"></script>
-</body>
-
-</html>
+} catch (Exception $e) {
+    $errorMessage = $e->getMessage();
+    print_r($errorMessage);
+    // require('view/errorView.php');
+}

@@ -8,7 +8,7 @@ if (isset($_GET['modal']) and $_GET['modal'] == 'success') {
 }
 ?>
 
-<form id="signIn" class="myForm" method="POST" action="<?= LOCALHOST ?>backend/signinDbAccess.php">
+<form id="signIn" class="myForm" method="POST" action="index.php?action=signinDbAccess">
     <div class="inputIcons">
         <i class="fa fa-user icon"></i>
         <input type="text" placeholder="Username" name="signinUsername" id="signinusername">
@@ -36,16 +36,11 @@ if (isset($_GET['modal']) and $_GET['modal'] == 'success') {
     <div class="mediaSignup">
         <div class="msInnertext">or</div>
         <div id="kakaoLoginButtonContainer">
-            <a id="kakaoLogin" name="isKakao"><img src="<?= LOCALHOST ?>images/kLoginButton.png" /></a>
+            <a id="kakaoLogin" name="isKakao"><img src="./images/kLoginButton.png" /></a>
         </div>
     </div>
 
     <div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
             up</a>.</div>
-
-</form>
-
-<div id="signupLink">Don't have an account? <a href="#" onclick="document.querySelector('#signUpTab').click();">Sign
-        up</a>.</div>
 
 </form>

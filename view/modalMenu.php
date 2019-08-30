@@ -15,14 +15,14 @@ if (isset($_COOKIE["username"])) {
 // print_r($_COOKIE);
 ?>
 <head>
-    <link rel="stylesheet" href="<?= LOCALHOST ?>styles/modalMenu.css">
+    <link rel="stylesheet" href="./styles/modalMenu.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
 
 
 <ul class="nav navbar">
-    <li><a href="<?= LOCALHOST ?>index.php"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
     <li><a href="#" onclick="document.getElementById('aboutus').style.display='block'"><i
                 class="far fa-address-card"></i> About Us </a></li>
     <li><a href="#"><i class="fas fa-dice"></i> Game Tools</a></li>
@@ -34,10 +34,10 @@ if (isset($_COOKIE["username"])) {
         echo  '<div class ="dropdown">
             <button onclick= "dropDown()" class ="dropbtn"><i class="far fa-user-circle"></i>Profile</button>
             <div class = "profileMenu" id ="profileMenuContent">
-                <li><a href="'.LOCALHOST.'frontend/favorites.php">Favorites</a></li>
-                <li><a href="'.LOCALHOST.'frontend/myGames.php">My Games</a></li>
-                <li><a href="'.LOCALHOST.'frontend/memberAccount.php">Account</a></li>
-                <li><form action="'.LOCALHOST.'backend/logOut.php" method="post"><input type = "submit" id ="logOutbtn" name ="logOut" value = "LOG OUT"></form></li>
+                <li><a href="#">Favorites</a></li>
+                <li><a href="index.php?action=myGames">My Games</a></li>
+                <li><a href="index.php?action=memberAccount">Account</a></li>
+                <li><a href="index.php?action=logout"/>LogOut</a></li>
             </div>
         </div>';
     }
@@ -46,7 +46,7 @@ if (isset($_COOKIE["username"])) {
 
 <!-- About us modal -->
 <?php
-include("aboutUsModal.php");
+include("./view/aboutUsModal.php");
 ?>
 
 <!-- signup/registration modal -->
@@ -60,11 +60,11 @@ include("aboutUsModal.php");
         </div>
         <div class="modalBody">
             <?php
-            include("signInModal.php");
-            include("signUpModal.php");
+            include("./view/signInModal.php");
+            include("./view/signUpModal.php");
             ?>
         </div>
     </div>
 </div>
 
-<script src="<?= LOCALHOST ?>scripts/modalMenu.js"></script>
+<script src="./scripts/modalMenu.js"></script>

@@ -15,7 +15,7 @@ for (let i = 0; i < divs.length; i++) {
 
         //AJAX
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", localhost + "backend/gameView.php?" + game_id, true);
+        xhr.open("GET", "index.php?action=gameView&" + game_id, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var content = JSON.parse(xhr.responseText);
@@ -62,7 +62,7 @@ function generate_content_modal(content) {
 
     let gameViewImg = document.createElement('img');
     gameViewImg.className = "gameViewImg";
-    gameViewImg.src = "http://localhost:8888/Sites/gamefinder/images/" + content.img;
+    gameViewImg.src = "./images/" + content.img;
 
     let gameViewName = document.createElement('h3');
     gameViewName.textContent = content.name;
