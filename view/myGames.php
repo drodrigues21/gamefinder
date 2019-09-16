@@ -190,7 +190,23 @@ ob_start();
             ?>
         </div>
     </div>
-    <script src="./scripts/addGame.js"></script>
+    <script>
+        // Add Game Modal
+        {
+            let addGameBtn = document.querySelector(".addGameBtn");
+            let closeAddGame = document.querySelector(".closeAddGame");
+            let addGameForm = addGameBtn.nextElementSibling;
+
+            addGameBtn.addEventListener('click', () =>{
+                addGameForm.classList.add("addGameFormActive");
+            });
+
+            closeAddGame.addEventListener('click', () =>{
+                addGameForm.classList.remove("addGameFormActive");
+            });
+
+        }
+    </script>
    
 
 <?php $content = ob_get_clean(); ?>

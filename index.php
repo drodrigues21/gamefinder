@@ -35,6 +35,12 @@ try {
         elseif ($_GET['action'] == 'gameView') {
             gameView($_GET);
         }
+        elseif ($_GET['action'] == 'rating') {
+            ratingSystem($_GET);
+        }
+        elseif ($_GET['action'] == 'updateRating') {
+            updateRatingGame($_GET);
+        }
     } else {
         mainPage();
     }

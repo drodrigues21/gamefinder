@@ -78,25 +78,18 @@ function gameView($getParams){
     $gameManager->loadGame($getParams);
 }
 
+function ratingSystem($getParams){
+    $gameManager = new GameManager();
+    $ratings = $gameManager->getRatingsGame($getParams);
 
-// function post($postId)
-// {
-//     $postManager = new PostManager();
-//     $commentManager = new CommentManager();
-//     $post = $postManager->getPost($postId);
-//     $comments = $commentManager->getComments($postId);
-
-//     require("view/postView.php");
-// }
-
-// function addComment($postId, $author, $comment)
-// {
-//     $commentManager = new CommentManager();
-//     $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-//     if ($affectedLines === false) {
-//         throw new Exception("Impossible to add comments!");
-//     } else {
-//         header('Location: index.php?action=post&article_id=' . $postId);
-//     }
-// }
+    $rate_bg    = $ratings['rate_bg'];
+    $rate_value = $ratings['rate_value'];
+    $rate_times = $ratings['rate_times'];
+    $userRating = $ratings['userRating'];
+    require("view/ratingView.php");
+}
+function  updateRatingGame($getParams) {
+    $gameManager = new GameManager();
+    $gameManager->updateRating($getParams);
+    ratingSystem($getParams);
+}

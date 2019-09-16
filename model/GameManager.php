@@ -1,5 +1,6 @@
 <?php
 require_once("Manager.php");
+
 class GameManager extends Manager
 {
     public function getTopFive()
@@ -214,7 +215,77 @@ class GameManager extends Manager
         $response = $db->query("SELECT name, fullTxt, minP, maxP, minT, maxT, img, rating FROM games WHERE id=$game_id");
         echo json_encode($response->fetch());
     }
+    public function getRatingsGame($getParams) {
+        // Connexion to the database
+        $db = $this->dbConnect();
+        $game_id = $getParams["game_id"];
+        $query = "SELECT * FROM ratings WHERE game_id = $game_id";
+        $response = $db->query($query);
 
+        // need to update games.rating from $rate_bg !!
+
+        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
+            $rate_db[] = $data;
+            $sum_rates[] = $data['rating'];
+        }
+
+        if (@count($rate_db)) {
+            $rate_times = count($rate_db);
+            $sum_rates = array_sum($sum_rates);
+            $rate_value = $sum_rates / $rate_times;
+            $rate_bg = (($rate_value) / 5) * 100;
+        } else {
+            $rate_times = 0;
+            $rate_value = 0;
+            $rate_bg = 0;
+        }
+
+        // current user logged rating 
+        $userID = $_SESSION['id'];
+        $query = "SELECT * FROM ratings WHERE game_id = $game_id AND user_id = $userID";
+        $response = $db->query($query);
+        $userRating = null;
+        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
+            $userRating = $data['rating'];
+        }
+
+
+        $object['rate_bg']    =  $rate_bg;
+        $object['rate_value'] =  $rate_value;
+        $object['rate_times'] =  $rate_times;
+        $object['userRating'] =  $userRating;
+    
+        return $object;
+    }
+
+    public function updateRating($getParams) {
+        // Connexion to the database
+        $db = $this->dbConnect();
+        $userID = $_SESSION['id'];
+        $gameID = $getParams['game_id'];
+        $rating = $getParams['rate'];
+        $rate_db = array();
+        print_r($getParams);
+        $query = "SELECT * FROM ratings WHERE game_id=$gameID AND user_id = $userID";
+        $response = $db->query($query);
+        $db_rating_user = $response->fetch();
+        if ($db_rating_user and $userID == $db_rating_user["user_id"]) {
+            $query = "UPDATE ratings SET rating= $rating WHERE game_id=$gameID AND user_id = $userID";
+            $response = $db->query($query);
+        } else {
+            $query = "INSERT INTO ratings (game_id, user_id, rating) VALUES ($gameID, $userID, $rating)";
+            $response = $db->query($query);
+        }
+
+        // update of GAME DB
+        $query = "SELECT AVG(rating) AS avg_rating FROM ratings WHERE game_id=$gameID";
+        $response = $db->query($query);
+        $data = $response->fetch();
+        $db_rating_games = $data["avg_rating"];
+
+        $query = "UPDATE games SET rating= '$db_rating_games' WHERE id=$gameID";
+        $response = $db->query($query);
+    }
 } // end of the class
 
 

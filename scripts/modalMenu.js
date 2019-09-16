@@ -1,49 +1,22 @@
-var username = document.getElementById('username');
-var email = document.getElementById('email');
-var password = document.getElementById('psw');
-var confirmPassword = document.getElementById('pswConfirm');
-var submitBtn = document.getElementById('register');
-var cancelBtn = document.querySelector('#signupCancel');
-var signUpForm = document.getElementById('signUp');
-var signinUsername = document.getElementById('signinusername');
-var signinPassword = document.getElementById('pwSignin');
-var signinForm = document.getElementById('signIn');
-var signinBtn = document.getElementById('signinBtn');
-var signinCancel = document.getElementById('signinCancel');
-var modalAboutUs = document.querySelector('#aboutus');
-var modalSignUp = document.querySelector('#signUpAndIn');
-var tabs = document.querySelectorAll(".head div");
-var logOutbtn = document.getElementById("logOutbtn");
+function toggleTabs() {
+    let tabs = document.querySelectorAll(".head div");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            let target = e.target;
+            if (target.id == "signInTab") {
+                toggleTabsStyle("block", "none", "transparent ", "lightgrey ");
+                removeMsgs();
 
-// -----------close modal ----------//
-
-document.addEventListener("click", function (e) {
-    if (e.target == modalAboutUs) {
-        modalAboutUs.style.display = "none";
+            } else if (target.id == "signUpTab") {
+                toggleTabsStyle("none", "block", "lightgrey ", "transparent ");
+                removeMsgs();
+            }
+        });
     }
-
-    if (e.target == modalSignUp) {
-        modalSignUp.style.display = "none";
-    }
-});
-
-// ------------tabs -------------//
-for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener("click", function (e) {
-        e.preventDefault();
-        let target = e.target;
-        if (target.id == "signInTab") {
-            toggleTabs("block", "none", "transparent ", "lightgrey ");
-            removeMsgs();
-
-        } else if (target.id == "signUpTab") {
-            toggleTabs("none", "block", "lightgrey ", "transparent ");
-            removeMsgs();
-        }
-    });
 }
 
-function toggleTabs(formLoginDisplay, formSignupDisplay, formLoginTabDisplay, formSignupTabDisplay) {
+function toggleTabsStyle(formLoginDisplay, formSignupDisplay, formLoginTabDisplay, formSignupTabDisplay) {
     let formLogin = document.querySelector("#signIn");
     let formLoginTab = document.querySelector("#signInTab");
     let formSignup = document.querySelector("#signUp");
@@ -56,262 +29,94 @@ function toggleTabs(formLoginDisplay, formSignupDisplay, formLoginTabDisplay, fo
     formSignupTab.style.background = formSignupTabDisplay;
 }
 
-// --------------password toggle ---------------// FIX!!!!
-
-let eye = document.querySelector("#pwsignin");
-let input = document.querySelector("#pwSignin");
-let eyepwSU = document.querySelector("#pwtoggleSU");
-let inputSU = document.querySelector("#psw");
-let eyepwConfSU = document.querySelector("#pwtoggleConf");
-let inputConfSU = document.querySelector("#pswConfirm");
-var pwInput = true;
-
-eye.addEventListener("click", function () {
-    if (pwInput) {
-        input.setAttribute('type', 'text');
-        eye.innerHTML = '<i class="far fa-eye-slash"></i>';
+function usernameInput(name) {
+    if (name.value.length >= 4) {
+        name.classList.add("correct");
+        name.nextElementSibling.textContent = '';
+    } else if (name.value === '') {
+        name.classList.add("incorrect");
+        name.nextElementSibling.textContent = 'The username is required';
+    } else if (name.value < 4) {
+        name.classList.add("incorrect");
+        name.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
     } else {
-        input.setAttribute('type', 'password');
-        eye.innerHTML = '<i class="far fa-eye"></i>';
-
-    }
-    pwInput = !pwInput;
-});
-
-eyepwSU.addEventListener("click", function () {
-    if (pwInput) {
-        inputSU.setAttribute('type', 'text');
-        eyepwSU.innerHTML = '<i class="far fa-eye-slash"></i>';
-    } else {
-        inputSU.setAttribute('type', 'password');
-        eyepwSU.innerHTML = '<i class="far fa-eye"></i>';
-
-    }
-    pwInput = !pwInput;
-});
-
-eyepwConfSU.addEventListener("click", function () {
-    if (pwInput) {
-        inputConfSU.setAttribute('type', 'text');
-        eyepwConfSU.innerHTML = '<i class="far fa-eye-slash"></i>';
-    } else {
-        inputConfSU.setAttribute('type', 'password');
-        eyepwConfSU.innerHTML = '<i class="far fa-eye"></i>';
-
-    }
-    pwInput = !pwInput;
-});
-
-// ----------error message check for signup form--------------// 
-
-function usernameInput() {
-
-    if (username.value.length >= 4) {
-        username.classList.add("correct");
-        username.nextElementSibling.textContent = '';
-    } else if (username.value === '') {
-        username.classList.add("incorrect");
-        username.nextElementSibling.textContent = 'The username is required';
-    } else if (username.value < 4) {
-        username.classList.add("incorrect");
-        username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
-    } else {
-        username.classList.add("incorrect");
-        username.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
+        name.classList.add("incorrect");
+        name.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
     }
 }
 
-username.addEventListener('blur', usernameInput);
-
-
-function emailInput() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) { //trim 
-        email.classList.add("correct");
-        email.nextElementSibling.textContent = '';
-    } else if (email.value === '') {
-        email.classList.add("incorrect");
-        email.nextElementSibling.textContent = 'Email is required';
-    } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
-        email.classList.add("incorrect");
-        email.nextElementSibling.textContent = 'please type a valid email: email@address.com';
+function emailInput(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value)) { //trim 
+        mail.classList.add("correct");
+        mail.nextElementSibling.textContent = '';
+    } else if (mail.value === '') {
+        mail.classList.add("incorrect");
+        mail.nextElementSibling.textContent = 'Email is required';
+    } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value))) {
+        mail.classList.add("incorrect");
+        mail.nextElementSibling.textContent = 'please type a valid email: email@address.com';
     } else {
-        email.classList.add("correct");
-        email.nextElementSibling.textContent = '';
+        mail.classList.add("correct");
+        mail.nextElementSibling.textContent = '';
     }
 }
 
-email.addEventListener('blur', emailInput);
+function passwordInput(pwd) {
 
-function passwordInput() {
-
-    if (password.value.length >= 6) {
-        password.classList.add("correct");
-        password.nextElementSibling.textContent = '';
-    } else if (password.value === '') {
-        password.classList.add("incorrect");
-        password.nextElementSibling.textContent = 'The password is required';
-    } else if (password.value.length < 6) {
-        password.classList.add("incorrect");
-        password.nextElementSibling.textContent = 'The password cannot be less than 6 characters';
+    if (pwd.value.length >= 6) {
+        pwd.classList.add("correct");
+        pwd.nextElementSibling.textContent = '';
+    } else if (pwd.value === '') {
+        pwd.classList.add("incorrect");
+        pwd.nextElementSibling.textContent = 'The password is required';
+    } else if (pwd.value.length < 6) {
+        pwd.classList.add("incorrect");
+        pwd.nextElementSibling.textContent = 'The password cannot be less than 6 characters';
     } else {
-        password.classList.add("correct");
-        password.nextElementSibling.textContent = '';
+        pwd.classList.add("correct");
+        pwd.nextElementSibling.textContent = '';
     }
 }
 
-password.addEventListener('blur', passwordInput);
+function confirmPasswordInput(conf_pwd) {
 
-function confirmPasswordInput() {
-
-    if (confirmPassword.value == password.value && confirmPassword.value != '') {
-        confirmPassword.classList.add("correct");
-        confirmPassword.nextElementSibling.textContent = '';
-    } else if (confirmPassword.value == "") {
-        confirmPassword.classList.add("incorrect");
-        confirmPassword.nextElementSibling.textContent = 'Passwords must be confirmed';
-    } else if (confirmPassword.value !== password.value) {
-        confirmPassword.classList.add("incorrect");
-        confirmPassword.nextElementSibling.textContent = 'Password must match';
+    if (conf_pwd.value == password.value && conf_pwd.value != '') {
+        conf_pwd.classList.add("correct");
+        conf_pwd.nextElementSibling.textContent = '';
+    } else if (conf_pwd.value == "") {
+        conf_pwd.classList.add("incorrect");
+        conf_pwd.nextElementSibling.textContent = 'Passwords must be confirmed';
+    } else if (conf_pwd.value !== password.value) {
+        conf_pwd.classList.add("incorrect");
+        conf_pwd.nextElementSibling.textContent = 'Password must match';
     } else {
-        confirmPassword.classList.add("correct");
-        confirmPassword.nextElementSibling.textContent = '';
+        conf_pwd.classList.add("correct");
+        conf_pwd.nextElementSibling.textContent = '';
     }
 }
 
-confirmPassword.addEventListener('blur', confirmPasswordInput);
+function removeMsgs(form_signUp = document.getElementById('signUp'), form_signIn = document.getElementById('signIn')) {
+    let inputs = [
+        document.getElementById('username'),
+        document.getElementById('email'),
+        document.getElementById('psw'),
+        document.getElementById('pswConfirm'),
+    ];
 
-submitBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    let check = true;
+    form_signUp.reset();
+    form_signIn.reset();
 
-    if (username.value.length < 4) {
-        username.nextElementSibling.textContent = "The username cannot be less than 4 characters";
-        check = false;
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove("incorrect");
+        inputs[i].classList.remove("correct");
     }
-
-    if (email.value == "") {
-        email.nextElementSibling.textContent = "Email is required";
-        check = false;
-    }
-
-    if (password.value.length < 6 || password.value == "") {
-        password.nextElementSibling.textContent = "The password cannot be less than 6 characters";
-        check = false;
-    }
-
-    if (confirmPassword.value != password.value || confirmPassword.value == "") {
-        confirmPassword.nextElementSibling.textContent = "Passwords must match";
-        check = false;
-    }
-
-    if (check) {
-        signUpForm.submit();
-    } else {
-        removeMsgs();
-    }
-});
-
-cancelBtn.addEventListener('click', function (e) {
-    removeMsgs();
-});
-
-
-// -------- error message for signin ------- // 
-
-function usernameSigninInput() {
-
-    if (signinUsername.value.length >= 4) {
-        signinUsername.classList.add("correct");
-        signinUsername.nextElementSibling.textContent = '';
-    } else if (signinUsername.value === '') {
-        signinUsername.classList.add("incorrect");
-        signinUsername.nextElementSibling.textContent = 'The username is required';
-    } else if (signinUsername.value.length < 4) {
-        signinUsername.classList.add("incorrect");
-        signinUsername.nextElementSibling.textContent = 'The username cannot be less than 4 characters';
-    } else {
-        signinUsername.classList.add("correct");
-        signinUsername.nextElementSibling.textContent = '';
-    }
-}
-
-signinUsername.addEventListener('blur', usernameSigninInput);
-
-function passwordSigninInput() {
-
-    if (signinPassword.value.length >= 6) {
-        signinPassword.classList.add("correct");
-        signinPassword.nextElementSibling.textContent = '';
-    } else if (signinPassword.value === '') {
-        signinPassword.classList.add("incorrect");
-        signinPassword.nextElementSibling.textContent = 'The password is required';
-    } else if (signinPassword.value.length < 6) {
-        signinPassword.classList.add("incorrect");
-        signinPassword.nextElementSibling.textContent = 'The password cannot be less than 6 characters';
-    } else {
-        signinPassword.classList.add("correct");
-        signinPassword.nextElementSibling.textContent = '';
-    }
-}
-
-signinPassword.addEventListener('blur', passwordSigninInput);
-
-signinBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    let check = true;
-
-    if (signinUsername.value.length < 4) {
-        signinUsername.nextElementSibling.textContent = "The username cannot be less than 4 characters";
-        check = false;
-    }
-
-    if (signinPassword.value.length < 6 || signinPassword.value == "") {
-        signinPassword.nextElementSibling.textContent = "The password cannot be less than 6 characters";
-        check = false;
-    }
-
-    if (check) {
-        signinForm.submit();
-    } else {
-        removeMsgs();
-    }
-});
-
-signinCancel.addEventListener('click', function (e) {
-    removeMsgs();
-});
-
-function removeMsgs() {
-    signUpForm.reset();
-    signinForm.reset();
-    username.classList.remove("incorrect");
-    username.classList.remove("correct");
-    password.classList.remove("incorrect");
-    password.classList.remove("correct");
-    confirmPassword.classList.remove("incorrect");
-    confirmPassword.classList.remove("correct");
-    email.classList.remove("incorrect");
-    email.classList.remove("correct");
-    signinPassword.classList.remove("incorrect");
-    signinPassword.classList.remove("correct");
-    signinUsername.classList.remove("incorrect");
-    signinUsername.classList.remove("correct");
 
     let spans = document.querySelectorAll('.error');
-    for (var i = 0; i < spans.length; i++) {
+    for (let i = 0; i < spans.length; i++) {
         spans[i].textContent = "";
     }
 }
-// Kakao login
 
-// initialization
-Kakao.init('cd42352d6849f53b69a61e4f63da5fa4');
-console.log('is init :' + Kakao.isInitialized());
-console.log(Kakao.Auth.getStatus(function (statusObj) {
-    console.log(statusObj)
-}));
-
-var kakaoLogin = document.querySelector('#kakaoLogin');
 
 function loginWithKakao() {
     Kakao.Auth.loginForm({
@@ -344,18 +149,6 @@ function loginWithKakao() {
     });
 }
 
-kakaoLogin.addEventListener('click', function () {
-    loginWithKakao();
-    console.log('You clicked!');
-});
-
-if (logOutbtn) {
-    logOutbtn.addEventListener("click", function () {
-        Kakao.Auth.logout(console.log("You've been logged out"));
-    });
-}
-
-
 // Member Area 
 
 // Menu
@@ -363,14 +156,252 @@ function dropDown() {
     document.getElementById("profileMenuContent").classList.toggle("show");
 }
 
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        let dropdowns = document.getElementsByClassName("profileMenu");
-        for (var i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+/**
+ * 
+ * @param {*} inputList 
+ * @param {*} sbmtButton 
+ * @param {*} form 
+ */
+function checkFormSignUp(inputList, sbmtButton, form) {
+
+    for (var i in inputList) {
+        let input = inputList[i];
+        input["input"].addEventListener(input["event"], input["func_to_call"]);
+    }
+
+    // error messages and checks
+    sbmtButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        let check = true;
+
+        for (var i in inputList) {
+            let input = inputList[i];
+            if (input.value && input.value.length < input["condition"]) {
+                input.nextElementSibling.textContent = input["textcontent"];
+                check = false;
+            }
+        }
+
+        if (inputList[2] != inputList[3]) {
+            inputList[3].nextElementSibling.textContent = "Passwords must match";
+            check = false;
+        }
+
+        (check) ? form.submit(): removeMsgs(form);
+    });
+
+}
+
+function checkFormSignIn(inputs, submitBtn, form) {
+    for (let i in inputs) {
+        let input = inputs[i];
+
+        input["input"].addEventListener(input["event"], function (e) {
+            let target = e.target;
+            target.classList.add("correct");
+            target.classList.remove("incorrect");
+            target.nextElementSibling.textContent = '';
+            if (target.value === '' || target.value.length < input["condition"]) {
+                target.classList.add("incorrect");
+                target.classList.remove("correct");
+                target.nextElementSibling.textContent = (target.value === '') ? input["textcontent_required"] : input["textcontent"];
+            }
+        });
+    }
+
+    submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        let check = true;
+        for (var i in inputs) {
+            let input = inputs[i];
+            if (input.value && input.value.length < input["condition"]) {
+                input.nextElementSibling.textContent = input["textcontent"];
+                check = false;
+            }
+        }
+        (check) ? form.submit(): removeMsgs(null, form);
+    });
+}
+
+/**
+ * 
+ */
+function closeModal() {
+    let modalAboutUs = document.querySelector('#aboutus');
+    let modalSignUp = document.querySelector('#signUpAndIn');
+    let signupCancel = document.querySelector('#signupCancel');
+    let signinCancel = document.getElementById('signinCancel');
+
+    document.addEventListener("click", function (e) {
+        if (e.target == modalAboutUs) {
+            modalAboutUs.style.display = "none";
+        }
+
+        if (e.target == modalSignUp) {
+            modalSignUp.style.display = "none";
+        }
+    });
+
+    signupCancel.addEventListener('click', function (e) {
+        removeMsgs();
+    });
+
+    signinCancel.addEventListener('click', function (e) {
+        removeMsgs();
+    });
+}
+
+/**
+ * 
+ */
+function pwd_visibility() {
+    let inputs = [{
+            "eye_visibility": document.querySelector("#pwsignin"),
+            "related_input": document.querySelector("#pwSignin"),
+            "event": "click",
+        },
+        {
+            "eye_visibility": document.querySelector("#pwtoggleSU"),
+            "related_input": document.querySelector("#psw"),
+            "event": "click",
+        },
+        {
+            "eye_visibility": document.querySelector("#pwtoggleConf"),
+            "related_input": document.querySelector("#pswConfirm"),
+            "event": "click",
+        },
+    ];
+
+    var pwInput = true;
+
+    for (let i in inputs) {
+        let input = inputs[i];
+        input["eye_visibility"].addEventListener(input["event"], function (e) {
+            let target = e.target;
+            if (pwInput) {
+                input["related_input"].setAttribute('type', 'text');
+                target.innerHTML = '<i class="far fa-eye-slash"></i>';
+            } else {
+                input["related_input"].setAttribute('type', 'password');
+                target.innerHTML = '<i class="far fa-eye"></i>';
+
+            }
+            pwInput = !pwInput;
+        });
+    }
+}
+// Kakao login
+
+// initialization
+function kakao_init() {
+    Kakao.init('cd42352d6849f53b69a61e4f63da5fa4');
+    console.log('is init :' + Kakao.isInitialized());
+    console.log(Kakao.Auth.getStatus(function (statusObj) {
+        console.log(statusObj)
+    }));
+
+    var kakaoLogin = document.querySelector('#kakaoLogin');
+
+
+    kakaoLogin.addEventListener('click', function () {
+        loginWithKakao();
+    });
+    var logOutbtn = document.getElementById("logOutbtn");
+    if (logOutbtn) {
+        logOutbtn.addEventListener("click", function () {
+            Kakao.Auth.logout(console.log("You've been logged out"));
+        });
+    }
+}
+
+function show_dropDown() {
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdowns = document.getElementsByClassName("profileMenu");
+            for (var i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
             }
         }
     }
+}
+
+
+
+/** EXECUTION */
+function modal_init(inputs_to_check_signUp, inputs_to_check_signIn) {
+
+    checkFormSignUp(inputs_to_check_signUp, document.getElementById('register'), document.getElementById('signUp'));
+    checkFormSignIn(inputs_to_check_signIn, document.getElementById('signinBtn'), document.getElementById('signIn'));
+    closeModal();
+    toggleTabs();
+    pwd_visibility();
+    kakao_init();
+    show_dropDown();
+}
+
+{
+    // check the form 
+    const inputs_to_check_signUp = [{
+                "input": document.getElementById('username'),
+                "event": "blur",
+                "func_to_call": function (e) {
+                    usernameInput(e.target);
+                },
+                "textcontent": "The username cannot be less than 4 characters",
+                "condition": 4
+
+            },
+            {
+                "input": document.getElementById('email'),
+                "event": "blur",
+                "func_to_call": function (e) {
+                    emailInput(e.target);
+                },
+                "textcontent": "Email is required",
+                "condition": ""
+            },
+            {
+                "input": document.getElementById('psw'),
+                "event": "blur",
+                "func_to_call": function (e) {
+                    passwordInput(e.target);
+                },
+                "textcontent": "The password cannot be less than 6 characters",
+                "condition": 6
+            },
+            {
+                "input": document.getElementById('pswConfirm'),
+                "event": "blur",
+                "func_to_call": function (e) {
+                    confirmPasswordInput(e.target);
+                },
+                "textcontent": "Passwords must match",
+                "condition": ""
+            },
+
+        ],
+
+        inputs_to_check_signIn = [{
+                "input": document.getElementById('signinusername'),
+                "event": "blur",
+                "func_to_call": "",
+                "textcontent": "The username cannot be less than 4 characters",
+                "textcontent_required": "The username is required",
+                "condition": 4
+
+            },
+            {
+                "input": document.getElementById('pwSignin'),
+                "event": "blur",
+                "func_to_call": "",
+                "textcontent": "The password cannot be less than 6 characters",
+                "textcontent_required": "The password is required",
+                "condition": 6
+            },
+        ];
+
+    modal_init(inputs_to_check_signUp, inputs_to_check_signIn);
 }

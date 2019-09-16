@@ -59,29 +59,6 @@
                     </div>
                 </fieldset>
             </div>
-            <div class="isDrink">
-                <p>Drinking game? </p>
-                <div class="radioGroup">
-                    <input type="radio" id="yes" name="drink" value="drink" <?= (isset($checks['drink']) and $checks['drink'] == "drink") ? "checked": "";?>/><label for="yes">Yes</label>
-                    <input type="radio" id="no" name="drink" value="nodrink" <?= (isset($checks['drink']) and $checks['drink'] == "nodrink") ? "checked": "";?>/><label for="no">No</label>
-                </div>
-            </div>
-            <div class="playerRangeContainer">
-                <!-- <p>Number of players:</p> -->
-                <div class="rangeSlider">
-                    <span id="playerBullet" class="playerSliderLabel"><?= (isset($checks['players']) and $checks['players'] != 'anyP') ? $checks['players']:'2';?></span>
-                    <input id="playerRange" class="slider" name="playerRange" type="range" value=<?=(isset($checks['players']) and $checks['players'] != 'anyP') ? $checks['players']:'2';?> min="2" max="20"/>
-                </div>
-                <div class="playerBoxMinmax">
-                    <span>2</span>
-                    <span>20+</span>
-                </div>
-                <div>
-                    <label><input type="checkbox" name="anyP" id="anyP" value="1" <?= (isset($checks['players']) and $checks['players'] == 'anyP') ? "checked": "";?> /> Any amount of players</label>
-                </div>
-            </div>
-        </div>
-        <div class="rightSideForm">
             <p>Social Setting:</p>
             <div class="settingContainer">
                 <!-- <p>Social Setting:</p> -->
@@ -121,6 +98,8 @@
                     </div>
                 </fieldset>
             </div>
+        </div>
+        <div class="rightSideForm">
             <div class="prepAmount">
                 <p>Amount of preparation:</p>
                 <div class="radioGroup">
@@ -130,6 +109,28 @@
                     <label for="medium">Medium</label>
                     <input type="radio" id="max" name="prepSelector" value="max" <?= (isset($checks['prep']) and $checks['prep'] == "max") ? "checked" : "";?>/>      
                     <label for="max">Max</label>
+                </div>
+            </div>
+            <div class="isDrink">
+                <p>Drinking game? </p>
+                <div class="radioGroup">
+                    <input type="radio" id="yes" name="drink" value="drink" <?= (isset($checks['drink']) and $checks['drink'] == "drink") ? "checked": "";?>/><label for="yes">Yes</label>
+                    <input type="radio" id="no" name="drink" value="nodrink" <?= (isset($checks['drink']) and $checks['drink'] == "nodrink") ? "checked": "";?>/><label for="no">No</label>
+                </div>
+            </div>
+            <div class="playerRangeContainer">
+                <!-- <p>Number of players:</p> -->
+                <div class="rangeSlider">
+                    <span id="playerBullet" class="playerSliderLabel"><?= (isset($checks['players']) and $checks['players'] != 'anyP') ? $checks['players']:'2';?></span>
+                    <input id="playerRange" class="slider" name="playerRange" type="range" value=<?=(isset($checks['players']) and $checks['players'] != 'anyP') ? $checks['players']:'2';?> min="2" max="20"/>
+                </div>
+                <div class="playerBoxMinmax">
+                    <span>2</span>
+                    <span>20+</span>
+                </div>
+                <div class="checkBoxStyle">
+                    <input type="checkbox" name="anyP" id="anyP" value="1" <?= (isset($checks['players']) and $checks['players'] == 'anyP') ? "checked": "";?> />
+                    <label><span></span>Any amount of players</label>
                 </div>
             </div>
             <div class="timeRange">
@@ -142,8 +143,9 @@
                     <span>5</span>
                     <span>60+</span>
                 </div>
-                <div>
-                    <label><input type="checkbox" name="anyT" value="1" id="anyT" <?= (isset($checks['time']) and $checks['time'] == "anyT") ? "checked": "";?>/>Any amount of time</label>
+                <div class="checkBoxStyle">
+                    <input type="checkbox" name="anyT" value="1" id="anyT" <?= (isset($checks['time']) and $checks['time'] == "anyT") ? "checked": "";?>/>
+                    <label><span></span>Any amount of time</label>
                 </div>
             </div>
         </div>

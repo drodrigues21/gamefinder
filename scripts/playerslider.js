@@ -1,40 +1,44 @@
-function playerSliderValue() {
-    var playerBulletRange = document.getElementById("playerBullet");
-    var playerSliderRange = document.getElementById("playerRange");
-
-
-    if (playerBulletRange && playerSliderRange) {
-        var anyAmountPlayer = document.getElementById("anyP");
-        playerSliderRange.addEventListener("input", playerSliderValue, false);
-        playerBulletRange.innerHTML = playerSliderRange.value;
-        var bulletPosition = ((playerSliderRange.value - 2) / playerSliderRange.max);
-        playerBulletRange.style.left = (bulletPosition * 250) + "px";
-        // anyAmountPlayer.removeAttribute("checked"); This breaks my code
-        if (playerSliderRange.value != 2) {
-            anyAmountPlayer.removeAttribute("checked");
+/**
+ * Initialization of the filtering sliders
+ * 
+ * @param {[HTMLElement]} sliders The array containing the elements
+ * @return void
+ */
+function slidersInit(sliders) {
+    if (sliders) {
+        for (let i = 0; i < sliders.length; i++) {
+            sliders[i].addEventListener("input", (e) => {
+                let target = e.target;
+                let input_any = target.parentElement.parentElement.querySelector("input[type=checkbox]");
+                sliderValue(target, input_any);
+            }, false);
         }
     }
 }
 
-function timeSliderValue() {
-    var timeSliderRange = document.getElementById("timeRange");
-    var timeBulletRange = document.getElementById("timeBullet");
-
-    if (timeSliderRange && timeBulletRange) {
-        var anyAmountTime = document.getElementById("anyT");
-        timeSliderRange.addEventListener("input", timeSliderValue, false);
-        timeBulletRange.innerHTML = timeSliderRange.value;
-        var bulletPosition = ((timeSliderRange.value - 5) / timeSliderRange.max);
-        timeBulletRange.style.left = (bulletPosition * 250) + "px";
-
-        if (timeSliderRange.value != 5) {
-            anyAmountTime.removeAttribute("checked");
-        }
+/**
+ * 
+ * Set the consistency of the value in the range and the bullet
+ * 
+ * @param {HTMLElement} slider The slider Element
+ * @param {HTMLElement} input_any The any amount input checkbox
+ * @return void
+ */
+function sliderValue(slider, input_any) {
+    let bulletRange = slider.previousElementSibling;
+    bulletRange.innerHTML = slider.value;
+    let min_value = slider.getAttribute("min");
+    let bulletPosition = ((slider.value - min_value) / slider.max);
+    bulletRange.style.left = (bulletPosition * 250) + "px";
+    if (slider.value != min_value) {
+        input_any.removeAttribute("checked");
     }
-
 }
 
 {
-    timeSliderValue();
-    playerSliderValue();
+    let slidersToInit = [document.getElementById("playerRange"),
+        document.getElementById("timeRange")
+    ];
+
+    slidersInit(slidersToInit);
 }

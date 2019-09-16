@@ -15,7 +15,7 @@ body {
     /* background-image: linear-gradient(to right bottom, #1040ae, #006ccd, #0091d4, #00b1cc, #1ecfc0); */
     background-image: linear-gradient(to right bottom, #8740ae, #7448b4, #5d4fb8, #4354bb, #1859bb);
     /* background-image: linear-gradient(to right bottom, #176fb3, #0087c0, #009dbe, #00b1af, #1cc298); */
-    /* background-color: rgba(0, 0, 0, 0.8); */
+    /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 /* Start of first main section */
@@ -468,27 +468,23 @@ body {
 /* Start of second main section */
 .secondSectionContainer {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    margin-top: 2em;
+    padding-top: 2em;
+    /* justify-content: space-between; */
 }
 
 
 /* Start of filter catagories section */
 #filterCatContainer {
-    min-width: 50%;
-    margin: 3em auto 3em auto;
-    padding: 3em 0em;
+    width: 55%;
+    margin: 0em auto 4em auto;
+    padding: 2em 0em 2em 2em;
     border-radius: 5px;
     box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.75);
     background-color: rgba(255, 255, 255, 0.959);
 }
 
-#filterForm {
-    margin: 0 auto;
-}
-
-#filterForm h3 {
+#filterCatContainer h3 {
     font-size: 1.7rem;
     color: rgb(0, 133, 143);
     letter-spacing: 1px;
@@ -819,7 +815,7 @@ body {
 
 .FromButton {
     text-align: center;
-    margin-left: 30px;
+    margin-left: 15px;
     padding-top: 30px;
 }
 
@@ -852,13 +848,16 @@ body {
 
 /* Start of footer section */
 .footer_container {
-    height: 80px;
+    height: 70px;
     background-color: rgba(126, 126, 126, 0.527);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .footerNavLinks {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     list-style: none;
     padding-top: 0.5em;
     margin-right: 80px;

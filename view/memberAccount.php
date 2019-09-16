@@ -4,20 +4,17 @@
 $head = ob_get_clean(); 
 ob_start(); 
 ?>
-<section class="firstSectionContainer">
-    <div class="headerContainer">
-        <?php include("menuBar.php"); ?>
-    </div>
+
+<?php include("menuBar.php"); ?>
+<div class="user_acc_container">
     <h2 class ="userHeader">My Account</h2>
-</section>
-<section class="secondSectionContainer">
     <div id = accountForm>
         <div id ="imgUpload">
             <div id = 'imgResult'>
                 <img class = 'profileImg' src ="./images/uploads/<?php echo ($user['profImage'])? $user['profImage'] :  "profiledefault.jpg";?>">
             </div>
             <form id = "uploadImgForm" method ="POST" action ="index.php?action=uploadImgUser" enctype='multipart/form-data'>
-            <!-- ^ add file permission to the directory (upload.php) where we plan to store the files after uploading it -->
+            <!-- ^ add file permission to the directory upload.php where we plan to store the files after uploading it -->
                 <input type ="hidden" name = "size" value = "1000000">
                     <div>
                         <input type ="file" name="profImage">
@@ -46,7 +43,7 @@ ob_start();
             <li><b>Country</b>: </li>
         </div>
     </div>
-</section>
-<script src="./scripts/modalMenu.js"></script>
+</div>
 <?php $content = ob_get_clean(); ?>
 <?php require("template.php") ?>
+<script src="./scripts/modalMenu.js"></script>
